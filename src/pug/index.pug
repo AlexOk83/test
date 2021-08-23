@@ -1,0 +1,219 @@
+extends templates/layout
+
+block content
+
+header.page-header
+  div.header-top
+    a.header-top__logo: img( src="img/logo.png", alt="Кваст")
+    ul.header-top__menu
+      li: a(href="#История")
+      li: a(href="#Производство")
+      li: a(href="#Ассортимент")
+      li: a(href="#Где купить")
+    h1.promo: a(href="#") Крафтовый квас br всему голова!
+section.new
+  h2.section-title Новинки
+  div.new-item
+    h3 Вахтёр
+div .new-item__ingridient
+Table
+tr
+tdАлк./td
+td &lt; 1%/td
+/tr
+tr
+tdКкал/td
+td35/td
+/tr
+/Table
+p .new-item__ingridient__compoundРжаной хлеб, Вода, Солод, Соль/p
+/div
+img src="img/bottle-left.jpg" alt="вахтер
+pТерпкий и мощный, вкус этого кваса взбодрит после тяжёлого дня и придаст сил для вечерних приключений!/p
+div .new-item__button
+a href="#" .new-item__button--details btnПодробнее/a
+a href="#" .new-item__button--buy btnКупить/a
+b .new-item__button--price150 Р./b
+/div
+/div
+
+div .new-item
+h3Романтик/h3        
+div .new-item__ingridient
+Table
+tr
+tdАлк./td
+td &lt; 0,5%/td
+/tr
+tr
+tdКкал/td
+td27123/td
+/tr
+/Table
+p .new-item__ingridient__compoundЯчменный хлеб, Вода, Солод, Апельсин/p
+/div
+img src="img/bottle-right.jpg" alt="вахтер
+pЛёгкий и освежающий напиток поможет сохранять отличное настроение в течение всего дня./p
+div .new-item__button
+a href="#" .new-item__button--details btnПодробнее/a
+a href="#" .new-item__button--buy btnКупить/a
+b .new-item__button--price90 Р./b
+tabletheadthtr*5
+/div
+/div
+/section
+section .features
+ul .features-items
+li .features-item
+h2 .feature-titleВарим сами/h2
+pВот этими самыми руками. Экспериментируем и творим, что хотим./p
+/li
+li .features-item
+h2 .feature-titleСвоё, родное/h2
+pНе заработка ради, а импортозамещения для. Поднимаем производство./p
+/li
+li .features-item
+h2 .feature-titleНе экономим/h2
+pЧеловек это то, что он ест и пьёт. У нас только качественные ингредиенты./p
+/li
+/ul
+/section
+section .history
+h2 .section-titleНемного истории/h2
+dl .history-item
+dt .history-item__name
+Происхождение кваса
+i .history-item__sourceИсточник: a href="https://ru.wikipedia.org" target="_blank ru.wikipedia.org/a/i
+/dt
+dd
+img src="img/wiki-1.png" alt="Происхождение кваса
+pКвас на Руси появился в X-XI веке. Само слово «квас» тоже имеет древнерусское происхождение. Помимо России квас готовят в Белоруссии, Сербии, Македонии, Словакии и многих других странах, но называется он везде одинаково — квас./p
+/dd
+dt .history-item__name
+Классификация кваса
+i .history-item__sourceИсточник: a href="https://ru.wikipedia.org" target="_blankru.wikipedia.org/a/i
+/dt
+dd
+img src="img/wiki-2.png" alt="Классификация кваса
+pПо российскому ГОСТу для промышленного изготовления — это напиток с объёмной долей этилового спирта не более 1,2%, изготовленный в результате незавершённого спиртового и молочнокислого брожения сусла./p
+/dd
+/dl
+/section
+section .press
+h2 .section-titleПресса о нас/h2
+blockquote .press-blck
+pСегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса. Да, да, вы не ослышались! Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!/p
+cite .review-authorГазета столичный Стольник/cite
+/blockquote
+a href="#" .press-blck-button btnЧитать далее/a
+/section
+section .assorti
+h2 .section-titleАссортимент/h2
+table .assorti-table
+tr
+thНазвание/th
+thАлк./th
+thКкал/th
+thОбъём/th
+thСтоимость/th
+/tr
+tr
+tdКлассика/td
+td&lt; 1,2%/td
+td33/td
+td330 мл/td
+td120 Р./td
+/tr
+tr
+tdШабаш/td
+td&gt; 1,2%/td
+td45/td
+td330 мл/td
+td250 Р./td
+/tr
+tr
+tdВахтёр supНовинка/sup/td
+td&lt; 1%/td
+td35/td
+td0,5 л/td
+td150 Р./td
+/tr
+tr
+tdРомантик supНовинка/sup/td
+td&lt; 0,5%/td
+td27/td
+td0,5 л/td
+td90 Р./td
+/tr
+/table
+/div
+/section
+section .order
+h2 .section-titleЗаказать/h2
+p .order-textНе ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%./p
+div .order-forms
+form action="#" method="POST
+div .order-form-group
+label for="fullnameПредставьтесь:/label
+input type="text" name="fullname" id="fullname
+/div
+div .order-form-group
+label for="phoneНомер телефона:/label
+input type="text" name="phone" id="phone
+/div
+div .order-form-group
+label for="phone-2Доп. номер:/label
+input type="text" name="phone-2" id="phone-2
+/div
+div .order-form-group
+label for="EmailEmail:/label
+input type="text" name="Email" id="Email
+/div
+div .order-form-group
+label for="size-orderОбъём заказа:/labelbr
+select name="size-order" id="size-order
+option value="1-5От 1 до 5 баррелей в неделю/option
+option value="5-10" selectedОт 5 до 10 баррелей в неделю/option
+option value="10-15От 5 до 15 баррелей в неделю/option
+/select
+/div
+div .order-form-group
+label for="messageДоп. комментарий:/label
+textarea name="message" id="message/textarea
+/div
+div .checkbox-area
+label
+input type="checkbox" name="subscription" checked Я согласен получать квасную рассылку
+/label
+/div
+input .btn" type="submit" name="order-push" value="Отправить заказ
+/form
+/div
+/section
+/main
+footer .footer
+div .footer-top
+a .footer-top__logoimg src="img/logo.png" alt="лого/a
+div .footer-top__menu
+ul
+lia href="#История")
+lia href="#Производство")
+lia href="#Ассортимент")
+lia href="#Где купить")
+/ul
+/div
+/div
+div .footer-bottom
+div .footer-bottom__social
+a .footer-bottom__social--social-btn" href="https://instagram.com/htmlacademyИнстаграм/a
+a .footer-bottom__social--social-btn" href="https://facebook.com/htmlacademyФейсбук/a
+a .footer-bottom__social--social-btn" href="https://vk.com/htmlacademyВконтакте/a
+pПри перепечатке материалов ссылка на сайт обязательна!/p
+/div
+div .footer-bottom__copyright
+img src="img/htmlacademy.png" alt="htmlacademy
+bРазработчик:/b
+a href="#HTML Academy/a
+/div       
+/div
+/footer

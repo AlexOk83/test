@@ -1,0 +1,7 @@
+mixin img(img, alt)
+  img(src=`img/${img}`, alt= alt)
+
+mixin list(list)
+  ul.header-top__menu
+    each item in list
+      li: a(href=item.url)= item.title
