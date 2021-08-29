@@ -7,6 +7,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     cleanCSS = require('gulp-clean-css'),
     concat = require('gulp-concat'),
+    pugLinter = require('gulp-pug-linter'),
     plumber = require('gulp-plumber');
 
 const paths = {
@@ -19,6 +20,12 @@ const paths = {
     dest: './dist/'
   }
 }
+
+gulp.task('lint:template', () => (
+    gulp
+        .src('./**/*.pug')
+        .pipe(pugLinter({ reporter: 'default' }))
+));
 
 gulp.task('browser-sync', function(done) {
   browserSync.init({
@@ -64,9 +71,10 @@ gulp.task('pug', function (done) {
   done();
 });
 
-gulp.task('watch', gulp.series('less', 'pug', 'browser-sync', function(done) {
+gulp.task('watch', gulp.series('less', 'pug', 'lint:template', 'browser-sync', function(done) {
   gulp.watch('src/less/**/*.less', gulp.series('less'));
   gulp.watch('src/pug/**/*.pug', gulp.series('pug'));
+  gulp.watch('src/pug/**/*.pug', gulp.series('lint:template'));
 
   done()
 }));
