@@ -6,42 +6,7 @@ block content
             a.header-top__logo: img( src="img/logo.png", alt="Кваст")
             +list(menu, 'header-top__menu')
             h1.promo: a(href="#") Крафтовый квас <br> всему голова!
-    section.new
-        h2.section-title Новинки
-        div.new-item
-            h3 Вахтёр
-            div.new-item__ingridient
-                Table
-                    tr
-                        td Алк
-                        td &lt; 1%
-                    tr
-                        td Ккал
-                        td 35
-                p.new-item__ingridient__compound Ржаной хлеб, Вода, Солод, Соль
-            img(src="img/bottle-left.jpg" alt="вахтер")
-            p Терпкий и мощный, вкус этого кваса взбодрит после тяжёлого дня и придаст сил для вечерних приключений!/p
-            div.new-item__button
-                a.new-item__button--details.btn(href="#")  Подробнее
-                a.new-item__button--buy.bt(href="#") Купить
-                b.new-item__button--price 150 Р.
-        div.new-item
-            h3  Романтик
-            div.new-item__ingridient
-                Table
-                    tr
-                        td  Алк.
-                        td &lt; 0,5%
-                    tr
-                        td Ккал
-                        td 27
-                p.new-item__ingridient__compound Ячменный хлеб, Вода, Солод, Апельсин
-            img(src="img/bottle-right.jpg" alt="вахтер")
-            p Лёгкий и освежающий напиток поможет сохранять отличное настроение в течение всего дня.
-            div.new-item__button
-                a.new-item__button--details.btn(href="#") Подробнее
-                a.new-item__button--buy.btn(href="#") Купить
-                b.new-item__button--price 90 Р.
+    +section_new()
     section.features
         ul.features-items
             li.features-item

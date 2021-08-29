@@ -1,0 +1,5 @@
+mixin section_new()
+    section.new
+        h2.section-title Новинки
+        each item in new_items
+            +new_item(item)

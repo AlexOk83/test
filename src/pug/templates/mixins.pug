@@ -9,7 +9,7 @@ mixin list(list, classList)
 mixin cat_item(item)
     tr
         td= item.title
-        td= `&gt; ${item.alc}%` // '&gt; ' + item.alc + '%'
+        td= `&gt; ${item.alc}%`
         td= item.cal
         td= `${item.ob} мл`
         td= item.sum + 'Р.'
@@ -18,3 +18,23 @@ mixin form_el(id, holder)
     .order-form-group
         label(for= id)= holder
         input(type="text" name= id id= id)
+
+
+mixin new_item(item)
+    div.new-item
+        h3= item.title
+        div.new-item__ingridient
+            Table
+                tr
+                    td  Алк.
+                    td= `&lt; ${item.alc}%`
+                tr
+                    td Ккал
+                    td= item.cal
+            p.new-item__ingridient__compound= item.sostav
+        img(src=`img/${item.img}` alt=item.title)
+        p= item.description
+        div.new-item__button
+            a.new-item__button--details.btn(href="#") Подробнее
+            a.new-item__button--buy.btn(href="#") Купить
+            b.new-item__button--price= `${item.price} Р.`
