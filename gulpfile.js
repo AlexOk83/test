@@ -1,14 +1,14 @@
 'use strict';
 
-var gulp = require('gulp'),
-    less = require('gulp-less'),
-    pug = require('gulp-pug'),
-    browserSync = require('browser-sync'),
-    autoprefixer = require('gulp-autoprefixer'),
-    cleanCSS = require('gulp-clean-css'),
-    concat = require('gulp-concat'),
-    pugLinter = require('gulp-pug-linter'),
-    plumber = require('gulp-plumber');
+import gulp from 'gulp';
+import less from'gulp-less';
+import pug from'gulp-pug';
+import browserSync from'browser-sync';
+import autoprefixer from'gulp-autoprefixer';
+import cleanCSS from'gulp-clean-css';
+import concat from'gulp-concat';
+import plumber from'gulp-plumber';
+import pugLinter from'gulp-pug-linter';
 
 const paths = {
   styles: {
