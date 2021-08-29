@@ -4,12 +4,8 @@ block content
     header.page-header
         div.header-top
             a.header-top__logo: img( src="img/logo.png", alt="Кваст")
-            ul.header-top__menu
-                li: a(href="#История")
-                li: a(href="#Производство")
-                li: a(href="#Ассортимент")
-                li: a(href="#Где купить")
-            h1.promo: a(href="#") Крафтовый квас br всему голова!
+            +list(menu, 'header-top__menu')
+            h1.promo: a(href="#") Крафтовый квас <br> всему голова!
     section.new
         h2.section-title Новинки
         div.new-item
@@ -81,53 +77,25 @@ block content
     section.assorti
         h2.section-title Ассортимент
         table.assorti-table
-            tr
-                th Название
-                th Алк.
-                th Ккал
-                th Объём
-                th Стоимость
-            tr
-                td Классика
-                td &lt; 1,2%
-                td 33
-                td 330 мл
-                td 120 Р.
-            tr
-                td Шабаш
-                td &gt; 1,2%
-                td 45
-                td 330 мл
-                td 250 Р.
-            tr
-                td Вахтёр <sup>Новинка</sup>
-                td &lt; 1%
-                td 35
-                td 0,5 л
-                td 150 Р.
-            tr
-                td Романтик <sup>Новинка</sup>
-                td  &lt; 0,5%
-                td 27
-                td 0,5 л
-                td 90 Р.
+            thead
+                tr
+                    th Название
+                    th Алк.
+                    th Ккал
+                    th Объём
+                    th Стоимость
+            tbody
+                each item in catalog
+                    + cat_item(item)
     section.order
         h2.section-title Заказать
         p.order-text Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.
         div.order-forms
             form(action="#" method="POST")
-                div.order-form-group
-                    label(for="fullname") Представьтесь:
-                    input(type="text" name="fullname" id="fullname")
-                div.order-form-group
-                    label(for="phone") Номер телефона:
-                    input(type="text" name="phone" id="phone")
-                div.order-form-group
-                    label(for="phone-2") Доп. номер:
-                    input(type="text" name="phone-2" id="phone-2")
-                div.order-form-group
-                    label(for="Email") Email:
-                    input(type="text" name="Email" id="Email")
+                +form_el('fullname', 'Представьтесь:')
+                +form_el('phone', 'Номер телефона:')
+                +form_el('phone-2', 'Доп. номер:')
+                +form_el('Email', 'Email:')
                 div.order-form-group
                     label(for="size-order") Объём заказа:<br>
                     select(name="size-order" id="size-order")
@@ -146,15 +114,7 @@ block content
             a.footer-top__logo
                 img(src="img/logo.png" alt="лого")
                 div.footer-top__menu
-                    ul
-                        li
-                            a(href="#История")
-                        li
-                            a(href="#Производство")
-                        li
-                            a(href="#Ассортимент")
-                        li
-                            a(href="#Где купить")
+                    +list(menu, '')
         div.footer-bottom
             div.footer-bottom__social
                 a.footer-bottom__social--social-btn(href="https://instagram.com/htmlacademy") Инстаграм
