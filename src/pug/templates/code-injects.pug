@@ -3,3 +3,10 @@ mixin section_new()
         h2.section-title Новинки
         each item in new_items
             +new_item(item)
+
+mixin section_history()
+    section.history
+        h2.section-title Немного истории
+        dl.history-item
+            each item in history_item
+                +history_item(item)
