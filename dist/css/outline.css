@@ -246,15 +246,15 @@ background-color: white;
 }
 
 .feature-self {
-    background: top left url("../img/icon-brew.png") no-repeat;
+    background: url("../img/icon-brew.png") no-repeat top left;
 }
 
 .feature-our {
-    background: top left url("../img/icon-matreshka.png") no-repeat;
+    background: url("../img/icon-matreshka.png") no-repeat top left;
 }
 
 .feature-expensive {
-    background: top left url("../img/icon-thumbsup.png") no-repeat;
+    background: url("../img/icon-thumbsup.png") no-repeat top left;
 }
 
 .features-item {
