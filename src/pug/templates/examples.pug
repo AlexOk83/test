@@ -1,0 +1,22 @@
+-
+  var
+          heads = [
+            { name: 'title', title: 'Название' },
+            { name: 'alc', title: 'Алк.' },
+            { name: 'cal', title: 'Ккал' },
+            { name: 'ob', title: 'Объём' },
+            { name: 'sum', title: 'Стоимость' },
+          ]
+
+mixin table(classTable, heads, body)
+  table(class= classTable)
+    thead
+      tr
+        each th_item in heads
+          th= th_item.title
+    tbody
+      each item in body
+        tr
+        each td in heads
+          td= item[td.name]
+

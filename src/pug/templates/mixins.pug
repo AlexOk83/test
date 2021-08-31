@@ -4,7 +4,7 @@ mixin img(img, alt)
 mixin list(list, classList)
     ul(class= classList)
         each item in list
-            li: a(href=item.url)= item.title
+            li(class= `${classList}__item`): a(href=item.url)= item.title
 
 mixin cat_item(item)
     tr
@@ -39,17 +39,10 @@ mixin new_item(item)
             a.new-item__button--buy.btn(href="#") Купить
             b.new-item__button--price= `${item.price} Р.`
 
-mixin features_items(listFeatures_items, classFeatures_items)
-    ul(class= classFeatures_items)
-        each item in listFeatures_items
-            li.features-item
-                h2.feature-title= item.h2
-                p.feature-text= item.p
-
 mixin history_item(item)
     dt.history-item__name= item.name
         i.history-item__source Источник:
             a(href= item.link target="_blank") ru.wikipedia.org
-    dd
+    dd.history-item__description
         img(src=`img/${item.img}` alt=item.name)
-        p.history-item-description= item.description
+        p.text= item.description

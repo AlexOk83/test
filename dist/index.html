@@ -5,18 +5,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <link rel="styleSheet" media="all" type="text/css" href="css/outline.css">
+    <link rel="styleSheet" media="all" type="text/css" href="css/styles.min.css">
   </head>
   <body>
-    <header class="page-header">
-      <div class="header-top"><a class="header-top__logo"><img src="img/logo.png" alt="Кваст"></a>
-        <ul class="header-top__menu">
-          <li><a href="#">История</a></li>
-          <li><a href="#">Производство</a></li>
-          <li><a href="#">Ассортимент</a></li>
-          <li><a href="#">Где купить</a></li>
+    <header class="header">
+      <div class="header__top"><a class="logo"><img src="img/logo.png" alt="Кваст"></a>
+        <ul class="menu">
+          <li class="menu__item"><a href="#">История</a></li>
+          <li class="menu__item"><a href="#">Производство</a></li>
+          <li class="menu__item"><a href="#">Ассортимент</a></li>
+          <li class="menu__item"><a href="#">Где купить</a></li>
         </ul>
-        <h1 class="promo"><a href="#">Крафтовый квас <br> всему голова!</a></h1>
       </div>
+      <h1 class="header__promo"><a href="#">Крафтовый квас <br> всему голова!</a></h1>
     </header>
     <section class="new">
       <h2 class="section-title">Новинки</h2>
@@ -58,31 +59,31 @@
       </div>
     </section>
     <section class="features">
-      <ul class="features-items">
-        <li class="features-item">
-          <h2 class="feature-title">Варим сами</h2>
-          <p class="feature-text">Вот этими самыми руками. Экспериментируем и творим, что хотим.</p>
+      <ul class="features__list">
+        <li class="features__item">
+          <h2 class="title">Варим сами</h2>
+          <p class="text">Вот этими самыми руками. Экспериментируем и творим, что хотим.</p>
         </li>
-        <li class="features-item">
-          <h2 class="feature-title">Своё, родное</h2>
-          <p class="feature-text">Не заработка ради, а импортозамещения для. Поднимаем производство.</p>
+        <li class="features__item">
+          <h2 class="title">Своё, родное</h2>
+          <p class="text">Не заработка ради, а импортозамещения для. Поднимаем производство.</p>
         </li>
-        <li class="features-item">
-          <h2 class="feature-title">Не экономим</h2>
-          <p class="feature-text">Человек это то, что он ест и пьёт. У нас только качественные ингредиенты.</p>
+        <li class="features__item">
+          <h2 class="title">Не экономим</h2>
+          <p class="text">Человек это то, что он ест и пьёт. У нас только качественные ингредиенты.</p>
         </li>
       </ul>
     </section>
     <section class="history">
-      <h2 class="section-title">Немного истории</h2>
-      <dl class="history-item">
+      <h2 class="history__title">Немного истории</h2>
+      <dl class="history__list">
         <dt class="history-item__name">Происхождение кваса<i class="history-item__source">Источник:<a href="https://ru.wikipedia.org" target="_blank">ru.wikipedia.org</a></i></dt>
-        <dd><img src="img/wiki-1.png" alt="Происхождение кваса">
-          <p class="history-item-description">Квас на Руси появился в X-XI веке. Само слово «квас» тоже имеет древнерусское происхождение. Помимо России квас готовят в Белоруссии, Сербии, Македонии, Словакии и многих других странах, но называется он везде одинаково — квас.</p>
+        <dd class="history-item__description"><img src="img/wiki-1.png" alt="Происхождение кваса">
+          <p class="text">Квас на Руси появился в X-XI веке. Само слово «квас» тоже имеет древнерусское происхождение. Помимо России квас готовят в Белоруссии, Сербии, Македонии, Словакии и многих других странах, но называется он везде одинаково — квас.</p>
         </dd>
         <dt class="history-item__name">Классификация кваса<i class="history-item__source">Источник:<a href="https://ru.wikipedia.org" target="_blank">ru.wikipedia.org</a></i></dt>
-        <dd><img src="img/wiki-2.png" alt="Классификация кваса">
-          <p class="history-item-description">По российскому ГОСТу для промышленного изготовления — это напиток с объёмной долей этилового спирта не более 1,2%, изготовленный в результате незавершённого спиртового и молочнокислого брожения сусла.</p>
+        <dd class="history-item__description"><img src="img/wiki-2.png" alt="Классификация кваса">
+          <p class="text">По российскому ГОСТу для промышленного изготовления — это напиток с объёмной долей этилового спирта не более 1,2%, изготовленный в результате незавершённого спиртового и молочнокислого брожения сусла.</p>
         </dd>
       </dl>
     </section>
@@ -136,6 +137,43 @@
           </tr>
         </tbody>
       </table>
+      <table class="assorti-table">
+        <thead>
+          <tr>
+            <th>Название</th>
+            <th>Алк.</th>
+            <th>Ккал</th>
+            <th>Объём</th>
+            <th>Стоимость</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr></tr>
+          <td>Классика</td>
+          <td>1,2</td>
+          <td>33</td>
+          <td>330</td>
+          <td>120</td>
+          <tr></tr>
+          <td>Шабаш</td>
+          <td>1,2</td>
+          <td>45</td>
+          <td>330</td>
+          <td>250</td>
+          <tr></tr>
+          <td>Вахтёр &lt;sup&gt;Новинка&lt;/sup&gt;</td>
+          <td>1</td>
+          <td>35</td>
+          <td>0,5</td>
+          <td>150</td>
+          <tr></tr>
+          <td>Романтик &lt;sup&gt;Новинка&lt;/sup&gt;</td>
+          <td>0,5</td>
+          <td>27</td>
+          <td>0,5</td>
+          <td>90</td>
+        </tbody>
+      </table>
     </section>
     <section class="order">
       <h2 class="section-title">Заказать</h2>
@@ -182,10 +220,10 @@
       <div class="footer-top"><a class="footer-top__logo"><img src="img/logo.png" alt="лого">
           <div class="footer-top__menu">
             <ul>
-              <li><a href="#">История</a></li>
-              <li><a href="#">Производство</a></li>
-              <li><a href="#">Ассортимент</a></li>
-              <li><a href="#">Где купить</a></li>
+              <li class="__item"><a href="#">История</a></li>
+              <li class="__item"><a href="#">Производство</a></li>
+              <li class="__item"><a href="#">Ассортимент</a></li>
+              <li class="__item"><a href="#">Где купить</a></li>
             </ul>
           </div></a></div>
       <div class="footer-bottom">

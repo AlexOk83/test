@@ -4,9 +4,17 @@ mixin section_new()
         each item in new_items
             +new_item(item)
 
+mixin section_features()
+    section.features
+        ul.features__list
+            each item in features_items
+                li.features__item
+                    h2.title= item.h2
+                    p.text= item.p
+
 mixin section_history()
     section.history
-        h2.section-title Немного истории
-        dl.history-item
+        h2.history__title Немного истории
+        dl.history__list
             each item in history_item
                 +history_item(item)

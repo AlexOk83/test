@@ -1,15 +1,15 @@
 extends templates/layout
 
 block content
-    header.page-header
-        div.header-top
-            a.header-top__logo: img( src="img/logo.png", alt="Кваст")
-            +list(menu, 'header-top__menu')
-            h1.promo: a(href="#") Крафтовый квас <br> всему голова!
+    header.header
+        div.header__top
+            a.logo: img( src="img/logo.png", alt="Кваст")
+            +list(menu, 'menu')
+        h1.header__promo: a(href="#") Крафтовый квас <br> всему голова!
     +section_new()
 
-    section.features
-        +features_items(features_items, 'features-items')
+    +section_features()
+
 
     +section_history()
 
@@ -32,6 +32,7 @@ block content
             tbody
                 each item in catalog
                     + cat_item(item)
+        +table('assorti-table', heads, catalog)
     section.order
         h2.section-title Заказать
         p.order-text Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.
