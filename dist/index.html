@@ -87,16 +87,20 @@
         </dd>
       </dl>
     </section>
-    <section class="press">
+    <section class="news">
       <h2 class="section-title">Пресса о нас</h2>
-      <blockquote class="press-blck">
-        <p>Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса. Да, да, вы не ослышались! Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!</p>
-        <cite class="review-author">Газета столичный Стольник</cite>
-      </blockquote><a class="press-blck-button btn" href="#">Читать далее</a>
+      <blockquote class="news__block">
+        <p>
+          Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса.
+          Да, да, вы не ослышались!
+          Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!
+        </p>
+        <cite class="news__author">Газета столичный Стольник</cite><a class="button" href="#">Читать далее</a>
+      </blockquote>
     </section>
-    <section class="assorti">
+    <section class="range">
       <h2 class="section-title">Ассортимент</h2>
-      <table class="assorti-table">
+      <table class="range__table">
         <thead>
           <tr>
             <th>Название</th>
@@ -137,84 +141,45 @@
           </tr>
         </tbody>
       </table>
-      <table class="assorti-table">
-        <thead>
-          <tr>
-            <th>Название</th>
-            <th>Алк.</th>
-            <th>Ккал</th>
-            <th>Объём</th>
-            <th>Стоимость</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr></tr>
-          <td>Классика</td>
-          <td>1,2</td>
-          <td>33</td>
-          <td>330</td>
-          <td>120</td>
-          <tr></tr>
-          <td>Шабаш</td>
-          <td>1,2</td>
-          <td>45</td>
-          <td>330</td>
-          <td>250</td>
-          <tr></tr>
-          <td>Вахтёр &lt;sup&gt;Новинка&lt;/sup&gt;</td>
-          <td>1</td>
-          <td>35</td>
-          <td>0,5</td>
-          <td>150</td>
-          <tr></tr>
-          <td>Романтик &lt;sup&gt;Новинка&lt;/sup&gt;</td>
-          <td>0,5</td>
-          <td>27</td>
-          <td>0,5</td>
-          <td>90</td>
-        </tbody>
-      </table>
     </section>
     <section class="order">
       <h2 class="section-title">Заказать</h2>
-      <p class="order-text">Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.</p>
-      <div class="order-forms">
-        <form action="#" method="POST">
-          <div class="order-form-group">
-            <label for="fullname">Представьтесь:</label>
-            <input type="text" name="fullname" id="fullname">
-          </div>
-          <div class="order-form-group">
-            <label for="phone">Номер телефона:</label>
-            <input type="text" name="phone" id="phone">
-          </div>
-          <div class="order-form-group">
-            <label for="phone-2">Доп. номер:</label>
-            <input type="text" name="phone-2" id="phone-2">
-          </div>
-          <div class="order-form-group">
-            <label for="Email">Email:</label>
-            <input type="text" name="Email" id="Email">
-          </div>
-          <div class="order-form-group">
-            <label for="size-order">Объём заказа:<br></label>
-            <select name="size-order" id="size-order">
-              <option value="1-5">От 1 до 5 баррелей в неделю</option>
-              <option value="5-10" selected>От 5 до 10 баррелей в неделю</option>
-              <option value="10-15">От 5 до 15 баррелей в неделю</option>
-            </select>
-          </div>
-          <div class="order-form-group">
-            <label for="message">Доп. комментарий:</label>
-            <textarea name="message" id="message"></textarea>
-          </div>
-          <div class="checkbox-area">
-            <label for="send">Я согласен получать квасную рассылку</label>
-            <input type="checkbox" id="send" name="subscription" checked>
-          </div>
-          <input class="btn" type="submit" name="order-push" value="Отправить заказ">
-        </form>
-      </div>
+      <p class="order__text">Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.</p>
+      <form class="order__form" action="#" method="POST">
+        <div class="form__group">
+          <label for="fullName">Представьтесь:</label>
+          <input type="text" name="fullName" id="fullName">
+        </div>
+        <div class="form__group">
+          <label for="phone">Номер телефона:</label>
+          <input type="text" name="phone" id="phone">
+        </div>
+        <div class="form__group">
+          <label for="phone-2">Доп. номер:</label>
+          <input type="text" name="phone-2" id="phone-2">
+        </div>
+        <div class="form__group">
+          <label for="Email">Email:</label>
+          <input type="text" name="Email" id="Email">
+        </div>
+        <div class="form__group">
+          <label for="size-order">Объём заказа:</label>
+          <select name="size-order" id="size-order">
+            <option value="1-5">От 1 до 5 баррелей в неделю</option>
+            <option value="5-10" selected>От 5 до 10 баррелей в неделю</option>
+            <option value="10-15">От 5 до 15 баррелей в неделю</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label for="message">Доп. комментарий:</label>
+          <textarea name="message" id="message"></textarea>
+        </div>
+        <div class="form__group form__group--checkbox">
+          <label for="send">Я согласен получать квасную рассылку</label>
+          <input type="checkbox" id="send" name="subscription" checked>
+        </div>
+        <input class="btn" type="submit" name="order-push" value="Отправить заказ">
+      </form>
     </section>
     <footer class="footer">
       <div class="footer-top"><a class="footer-top__logo"><img src="img/logo.png" alt="лого">

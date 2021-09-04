@@ -7,21 +7,21 @@ block content
             +list(menu, 'menu')
         h1.header__promo: a(href="#") Крафтовый квас <br> всему голова!
     +section_new()
-
     +section_features()
-
-
     +section_history()
 
-    section.press
+    section.news
         h2.section-title Пресса о нас
-        blockquote.press-blck
-            p Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса. Да, да, вы не ослышались! Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!
-            cite.review-author Газета столичный Стольник
-        a.press-blck-button.btn(href="#") Читать далее
-    section.assorti
+        blockquote.news__block
+            p
+                | Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса.
+                | Да, да, вы не ослышались!
+                | Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!
+            cite.news__author Газета столичный Стольник
+            a.button(href="#") Читать далее
+    section.range
         h2.section-title Ассортимент
-        table.assorti-table
+        table.range__table
             thead
                 tr
                     th Название
@@ -32,29 +32,27 @@ block content
             tbody
                 each item in catalog
                     + cat_item(item)
-        +table('assorti-table', heads, catalog)
     section.order
         h2.section-title Заказать
-        p.order-text Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.
-        div.order-forms
-            form(action="#" method="POST")
-                +form_el('fullname', 'Представьтесь:')
-                +form_el('phone', 'Номер телефона:')
-                +form_el('phone-2', 'Доп. номер:')
-                +form_el('Email', 'Email:')
-                div.order-form-group
-                    label(for="size-order") Объём заказа:<br>
-                    select(name="size-order" id="size-order")
-                        option(value="1-5") От 1 до 5 баррелей в неделю
-                        option(value="5-10" selected) От 5 до 10 баррелей в неделю
-                        option(value="10-15") От 5 до 15 баррелей в неделю
-                div.order-form-group
-                    label(for="message") Доп. комментарий:
-                    textarea(name="message" id="message")
-                div.checkbox-area
-                    label(for="send") Я согласен получать квасную рассылку
-                    input(type="checkbox", id="send" name="subscription" checked)
-                input.btn(type="submit" name="order-push" value="Отправить заказ")
+        p.order__text Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.
+        form(action="#" method="POST").order__form
+            +form_el('fullName', 'Представьтесь:')
+            +form_el('phone', 'Номер телефона:')
+            +form_el('phone-2', 'Доп. номер:')
+            +form_el('Email', 'Email:')
+            div.form__group
+                label(for="size-order") Объём заказа:
+                select(name="size-order" id="size-order")
+                    option(value="1-5") От 1 до 5 баррелей в неделю
+                    option(value="5-10" selected) От 5 до 10 баррелей в неделю
+                    option(value="10-15") От 5 до 15 баррелей в неделю
+            .form__group
+                label(for="message") Доп. комментарий:
+                textarea(name="message" id="message")
+            .form__group.form__group--checkbox
+                label(for="send") Я согласен получать квасную рассылку
+                input(type="checkbox", id="send" name="subscription" checked)
+            input.btn(type="submit" name="order-push" value="Отправить заказ")
     footer.footer
         div.footer-top
             a.footer-top__logo
