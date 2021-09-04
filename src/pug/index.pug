@@ -4,7 +4,7 @@ block content
     header.header
         div.header__top
             a.logo: img( src="img/logo.png", alt="Кваст")
-            +list(menu, 'menu')
+            +list(menu, 'header__menu')
         h1.header__promo: a(href="#") Крафтовый квас <br> всему голова!
     +section_new()
     +section_features()
@@ -57,7 +57,7 @@ block content
         .footer__top
             a.footer__logo
                 img(src="img/logo.png" alt="лого")
-                +list(menu, 'footer__menu')
+            +list(menu, 'footer__menu')
         .footer__bottom
             .footer__social
                 a.social-btn(href="https://instagram.com/htmlacademy") Инстаграм

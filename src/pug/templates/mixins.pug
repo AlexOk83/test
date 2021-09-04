@@ -4,7 +4,7 @@ mixin img(img, alt)
 mixin list(list, classList)
     ul(class= classList)
         each item in list
-            li(class= `${classList}__item`): a(href=item.url)= item.title
+            li.menu__item: a(href=item.url)= item.title
 
 mixin cat_item(item)
     tr
