@@ -19,6 +19,22 @@ mixin form_el(id, holder)
         label(for= id)= holder
         input(type="text" name= id id= id)
 
+mixin form_select(id, holder)
+    .form__group
+        label(for= id)= holder
+        select(name= id id= id)
+            each item in select_option
+                    option(value= item.value)=item.title
+
+mixin form_textarea(id, holder)
+    .form__group
+        label(for= id)= holder
+        textarea(name=id id=id)
+
+mixin form_checkbox(id, holder)
+    .form__group.form__group--checkbox
+        label(for= id)= holder
+        input(type="checkbox" id= id name= id checked)
 
 mixin new_item(item)
     div.new-item
