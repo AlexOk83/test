@@ -44,10 +44,7 @@ mixin section_order()
     section.order
         h2.section-title Заказать
         p.order__text Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.
-        form(action="#" method="POST").order__form
-            each formItem in formConfig
-                +form_el(formItem.id, formItem.params)
-            input.btn(type="submit" name="order-push" value="Отправить заказ")
+        +form('order__form', formConfig)
 
 mixin footer()
     footer.footer

@@ -60,3 +60,4 @@ mixin form(className, config)
     form(action="#" method="POST", class= className)
         each formItem in config
             +form_el(formItem)
+        input.btn(type="submit" name="order-push" value="Отправить заказ")
