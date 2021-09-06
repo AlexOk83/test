@@ -14,27 +14,20 @@ mixin cat_item(item)
         td= `${item.ob} мл`
         td= item.sum + 'Р.'
 
-mixin form_el(id, holder)
+mixin form_el(params)
     .form__group
-        label(for= id)= holder
-        input(type="text" name= id id= id)
-
-mixin form_select(id, holder)
-    .form__group
-        label(for= id)= holder
-        select(name= id id= id)
-            each item in select_option
-                    option(value= item.value)=item.title
-
-mixin form_textarea(id, holder)
-    .form__group
-        label(for= id)= holder
-        textarea(name=id id=id)
-
-mixin form_checkbox(id, holder)
-    .form__group.form__group--checkbox
-        label(for= id)= holder
-        input(type="checkbox" id= id name= id checked)
+        label(for= params.id)= params.label
+        if (params.list)
+            select(name= params.id, id= params.id)
+                option(value='') Выберите вариант
+                each item in params.list
+                    option(value= item.value, selected=item.value == params.value)=item.title
+        else if(params.longText)
+            textarea(name= params.id, id= params.id)= params.value
+        else if(params.checkbox)
+            input(type="checkbox" id= params.id name= params.id checked= params.value)
+        else
+            input(type="text", name= params.id, id= params.id, value= params.value)
 
 mixin new_item(item)
     div.new-item
@@ -62,3 +55,8 @@ mixin history_item(item)
     dd.history-item__description
         img(src=`img/${item.img}` alt=item.name)
         p.text= item.description
+
+mixin form(className, config)
+    form(action="#" method="POST", class= className)
+        each formItem in config
+            +form_el(formItem)
