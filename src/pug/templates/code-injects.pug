@@ -53,3 +53,18 @@ mixin section_order()
             +form_textarea('message','Доп. комментарий:')
             +form_checkbox('send', 'Я согласен получать квасную рассылку')
             input.btn(type="submit" name="order-push" value="Отправить заказ")
+
+mixin footer()
+    .footer__top
+        a.footer__logo
+            img(src="img/logo.png" alt="лого")
+        +list(menu, 'footer__menu')
+    .footer__bottom
+        .footer__social
+            each item in social-btns
+                a.social-btn(href= item.link)= item.name
+            p При перепечатке материалов ссылка на сайт обязательна!
+        div.footer__copyright
+            img(src="img/htmlacademy.png" alt="htmlacademy")
+            b Разработчик:
+            a(href="#") HTML Academy
