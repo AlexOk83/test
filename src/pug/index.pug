@@ -2,9 +2,9 @@ extends templates/layout
 
 block content
     header.header
-        div.header__top
+        div.header__top.clearfix.container--small
             a.logo: img( src="img/logo.png", alt="Кваст")
-            +list(menu, 'header__menu')
+            +list(menu, 'menu')
         h1.header__promo: a(href="#") Крафтовый квас <br> всему голова!
     +section_new()
     +section_features()

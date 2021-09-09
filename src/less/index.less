@@ -1,4 +1,5 @@
 @import "mixins";
+@import "vars";
 * {
   margin: 0;
   padding: 0;
@@ -7,28 +8,61 @@
 a {
   text-decoration: none;
 }
+.body {
+  font-size: 16px;
+  line-height: 30px;
+  font-family: "Arial", sans-serif;
+  color: #333333;
+  background-color: white;
+}
+
+.container {
+  &--big {
+    width: 1015px;
+    margin: 0 auto;
+  }
+  &--small {
+    width: 800px;
+    margin: 0 auto;
+  }
+}
+
+.section-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  line-height: 61px;
+  font-weight: bold;
+  color: @titleColor;
+  text-transform: uppercase;
+}
+
 .header {
   color: white;
-  height: 640px;
+  min-height: 550px;
   .bg("../img/wheat-back.jpg");
   background-size: cover;
-
+  padding: 0;
+  padding-top: 35px;
   &__top {
     .clearfix();
     max-width: 900px;
-    margin: 0 auto;
+    margin: 0 auto 125px auto;
     .logo {
       float: left;
+      width: 140px;
+      height: 85px;
     }
     .menu {
       display: block;
       float: right;
-      list-style: none;
+      width: 600px;
       text-transform: uppercase;
       border-bottom: 1px solid rgba(255, 255, 255, 0.5) ;
+      margin-left: 60px;
       &__item {
         border-top: 1px solid rgba(255, 255, 255, 0.5);
         border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        list-style: none;
         a {
           text-decoration:  none;
           color: white;
@@ -55,14 +89,30 @@ a {
 
 .features {
   display: block;
-
+  padding-top: 80px;
+  padding-bottom: 95px;
+  background-color: @bgColorBrn;
   &__list {
     display: block;
+    list-style: none;
+    // margin: 0;
   }
 
   &__item {
+    border-left: 1px solid  #cc9966;
+    float: left;
+    width: 200px;
+    padding-left: 60px;
+    padding-right: 60px;
+      &:first-child {
+        border-left: 1px solid  transparent;
+      }
     .title {
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 20px;
+      line-height: 30px;
+      font-weight: bold;
+      color: @titleColor;
     }
 
     .text {
@@ -72,23 +122,33 @@ a {
 }
 
 .history {
-  &__title {
-
+  padding-top: 90px;
+  padding-bottom: 90px;
+  .history-container {
+    &:first-child {
+      margin-bottom: 70px;
+    }
   }
 
   &__list {
-
+    width: 480px;
   }
 }
 
 .history-item {
   &__name {
-
+    margin: 0;
+    .font_title(20px, 30px);
   }
 
   &__source {
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: none;
     a {
-
+      color: @brnColor;
     }
   }
 
@@ -103,6 +163,9 @@ a {
 }
 
 .news {
+  background-color: @bgColorGray;
+  padding-bottom: 90px;
+  padding-top: 90px;
   &__block {
 
   }
@@ -112,12 +175,14 @@ a {
 }
 
 .range {
+
   &__table {
 
   }
 }
 
 .order {
+
   &__text {
 
   }
@@ -134,6 +199,7 @@ a {
 }
 
 .footer {
+  padding: 0;
   &__top {
 
   }

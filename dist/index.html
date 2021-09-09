@@ -4,13 +4,13 @@
     <title>Marafon</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <link rel="styleSheet" media="all" type="text/css" href="css/outline.css">
+    <!-- link(rel="styleSheet", media="all", type="text/css", href="css/outline.css")-->
     <link rel="styleSheet" media="all" type="text/css" href="css/styles.min.css">
   </head>
   <body>
     <header class="header">
-      <div class="header__top"><a class="logo"><img src="img/logo.png" alt="Кваст"></a>
-        <ul class="header__menu">
+      <div class="header__top clearfix container--small"><a class="logo"><img src="img/logo.png" alt="Кваст"></a>
+        <ul class="menu">
           <li class="menu__item"><a href="#">История</a></li>
           <li class="menu__item"><a href="#">Производство</a></li>
           <li class="menu__item"><a href="#">Ассортимент</a></li>
@@ -59,33 +59,41 @@
       </div>
     </section>
     <section class="features">
-      <ul class="features__list">
-        <li class="features__item">
-          <h2 class="title">Варим сами</h2>
-          <p class="text">Вот этими самыми руками. Экспериментируем и творим, что хотим.</p>
-        </li>
-        <li class="features__item">
-          <h2 class="title">Своё, родное</h2>
-          <p class="text">Не заработка ради, а импортозамещения для. Поднимаем производство.</p>
-        </li>
-        <li class="features__item">
-          <h2 class="title">Не экономим</h2>
-          <p class="text">Человек это то, что он ест и пьёт. У нас только качественные ингредиенты.</p>
-        </li>
-      </ul>
+      <div class="container--big">
+        <ul class="features__list clearfix">
+          <li class="features__item">
+            <h2 class="title">Варим сами</h2>
+            <p class="text">Вот этими самыми руками. Экспериментируем и творим, что хотим.</p>
+          </li>
+          <li class="features__item">
+            <h2 class="title">Своё, родное</h2>
+            <p class="text">Не заработка ради, а импортозамещения для. Поднимаем производство.</p>
+          </li>
+          <li class="features__item">
+            <h2 class="title">Не экономим</h2>
+            <p class="text">Человек это то, что он ест и пьёт. У нас только качественные ингредиенты.</p>
+          </li>
+        </ul>
+      </div>
     </section>
     <section class="history">
-      <h2 class="history__title">Немного истории</h2>
-      <dl class="history__list">
-        <dt class="history-item__name">Происхождение кваса<i class="history-item__source">Источник:<a href="https://ru.wikipedia.org" target="_blank">ru.wikipedia.org</a></i></dt>
-        <dd class="history-item__description"><img src="img/wiki-1.png" alt="Происхождение кваса">
-          <p class="text">Квас на Руси появился в X-XI веке. Само слово «квас» тоже имеет древнерусское происхождение. Помимо России квас готовят в Белоруссии, Сербии, Македонии, Словакии и многих других странах, но называется он везде одинаково — квас.</p>
-        </dd>
-        <dt class="history-item__name">Классификация кваса<i class="history-item__source">Источник:<a href="https://ru.wikipedia.org" target="_blank">ru.wikipedia.org</a></i></dt>
-        <dd class="history-item__description"><img src="img/wiki-2.png" alt="Классификация кваса">
-          <p class="text">По российскому ГОСТу для промышленного изготовления — это напиток с объёмной долей этилового спирта не более 1,2%, изготовленный в результате незавершённого спиртового и молочнокислого брожения сусла.</p>
-        </dd>
-      </dl>
+      <div class="container--small">
+        <h2 class="section-title">Немного истории</h2>
+        <dl class="history__list">
+          <div class="history-container">
+            <dt class="history-item__name">Происхождение кваса<i class="history-item__source">Источник:<a href="https://ru.wikipedia.org" target="_blank">ru.wikipedia.org</a></i></dt>
+            <dd class="history-item__description"><img src="img/wiki-1.png" alt="Происхождение кваса">
+              <p class="text">Квас на Руси появился в X-XI веке. Само слово «квас» тоже имеет древнерусское происхождение. Помимо России квас готовят в Белоруссии, Сербии, Македонии, Словакии и многих других странах, но называется он везде одинаково — квас.</p>
+            </dd>
+          </div>
+          <div class="history-container">
+            <dt class="history-item__name">Классификация кваса<i class="history-item__source">Источник:<a href="https://ru.wikipedia.org" target="_blank">ru.wikipedia.org</a></i></dt>
+            <dd class="history-item__description"><img src="img/wiki-2.png" alt="Классификация кваса">
+              <p class="text">По российскому ГОСТу для промышленного изготовления — это напиток с объёмной долей этилового спирта не более 1,2%, изготовленный в результате незавершённого спиртового и молочнокислого брожения сусла.</p>
+            </dd>
+          </div>
+        </dl>
+      </div>
     </section>
     <section class="news">
       <h2 class="section-title">Пресса о нас</h2>
