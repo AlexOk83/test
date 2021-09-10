@@ -1,0 +1,102 @@
+@import "grid";
+@import "vars";
+@IMG_PATH: '../images/';
+// ------------------------- text ----------------------------------
+.font(@size: 14px, @line_height: 16px, @weight: normal ) {
+  font-size: @size;
+  line-height: @line_height;
+  font-weight: @weight;
+}
+
+// большой текст обрезается в конце с многоточием (можно выводить в несколько строк)
+.longText-overflow(@countLine: 2, @fontSize: 14px, @lineHeight: 16px, @fontWeight: 400) {
+  .font(@fontSize, @lineHeight, @fontWeight);
+  max-height: @lineHeight * @countLine + 4px;
+  -webkit-line-clamp: @countLine;
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  word-break: break-word;
+  hyphens: auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// обрезаение текста в одну строку
+.text_overflow() {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+// ------------------ работа с изображениями -----------------------
+.bg(@img, @size: contain, @pos: center, @repeat: no-repeat) {
+  background-image: url('@{IMG_PATH}@{img}');
+  background-size: @size;
+  background-position: @pos;
+  background-repeat: @repeat;
+}
+
+.mixed_bg(@type : overlay) {
+  background-blend-mode: @type;
+}
+
+.img_cover(@pos: relative) {
+  position: @pos;
+  img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+// ------------------------------- анимация -------------------------
+.transition(@property: all, @duration: 0.3s, @func: ease-out, @delay: 0s) {
+  transition-property: @property;
+  transition-duration: @duration;
+  transition-timing-function: @func; // ease, ease-in, ease-in-out, cubic-bezier(x1, y1, x2, y2)
+  transition-delay: @delay;
+}
+
+.animation(@name, @duration: 1s, @func: ease-out, @mode: forwards, @delay: 0s) {
+  animation-name: @name;
+  animation-duration: @duration;
+  animation-timing-function: @func;
+  animation-fill-mode: @mode; // forwards, backwards, both
+  animation-delay: @delay;
+}
+
+.animation-full(@name, @duration: 1s, @func: ease-out, @mode: forwards, @delay: 0s, @iterationCount: 0, @direction: normal) {
+  animation-name: @name;
+  animation-duration: @duration;
+  animation-timing-function: @func;
+  animation-delay: @delay;
+  animation-fill-mode: @mode; // forwards, backwards, both
+  animation-iteration-count: @iterationCount; // infinite or number
+  animation-direction: @direction; //reverse alternate alternate-reverse
+}
+
+// ---------------------- позиционирование и фигуры ---------------------------
+.circle(@diameter) {
+  width: @diameter;
+  height: @diameter;
+  border-radius: 50%;
+}
+
+.center_static(@w, @h) {
+  top: 50%;
+  left: 50%;
+  width: @w;
+  height: @h;
+  margin-top: -(@h / 2);
+  margin-left: -(@w / 2);
+}
+
+.center() {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
