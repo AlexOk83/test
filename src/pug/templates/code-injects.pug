@@ -1,8 +1,10 @@
 mixin section_new()
     section.new
-        h2.section-title Новинки
-        each item in new_items
-            +new_item(item)
+        .container--small
+            h2.section-title Новинки
+            .new-items.clearfix
+                each item in new_items
+                    +new_item(item)
 
 mixin section_features()
     section.features
@@ -23,42 +25,46 @@ mixin section_history()
 
 mixin section_news()
     section.news
-        h2.section-title Пресса о нас
-        blockquote.news__block
-            each item in news__block
-                p= item.text
-                cite.news__author= item.author
-                a.button(href="#") Читать далее
+        .container--small
+            h2.section-title Пресса о нас
+            blockquote.news__block
+                each item in news__block
+                    p= item.text
+                    cite.news__author= item.author
+                    a.button(href="#") Читать далее
 
 mixin section_range()
     section.range
-        h2.section-title Ассортимент
-        table.range__table
-            thead
-                tr
-                    each item in th_table
-                        th= item
-            tbody
-                each item in catalog
-                    + cat_item(item)
+        .container--small
+            h2.section-title Ассортимент
+            table.range__table
+                thead
+                    tr
+                        each item in th_table
+                            th= item
+                tbody
+                    each item in catalog
+                        + cat_item(item)
 
 mixin section_order()
     section.order
-        h2.section-title Заказать
-        p.order__text Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.
-        +form('order__form', formConfig)
+        .container--small
+            h2.section-title Заказать
+            p.order__text Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.
+            +form('order__form', formConfig)
 
 mixin footer()
     footer.footer
-        .footer__top
-            a.footer__logo: img(src="img/logo.png" alt="лого")
-            +list(menu, 'footer__menu')
-        .footer__bottom
-            .footer__social
-                each item in social_btns
-                    a.social-btn(href= item.link)= item.name
-                p При перепечатке материалов ссылка на сайт обязательна!
-            div.footer__copyright
-                img(src="img/htmlacademy.png" alt="htmlacademy")
-                b Разработчик:
-                a(href="#") HTML Academy
+        .container--big
+            .footer__top.clearfix
+                a.footer__logo: img(src="img/logo.png" alt="лого")
+                +list(menu, 'footer__menu')
+            .footer__bottom.clearfix
+                .footer__social
+                    each item in social_btns
+                        a.social-btn(href= item.link)= item.name
+                    p При перепечатке материалов ссылка на сайт обязательна!
+                .footer__copyright
+                    img(src="img/htmlacademy.png" alt="htmlacademy")
+                    b Разработчик:
+                    a(href="#") HTML Academy

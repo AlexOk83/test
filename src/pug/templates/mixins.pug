@@ -31,7 +31,7 @@ mixin form_el(params)
 
 mixin new_item(item)
     div.new-item
-        h3= item.title
+        h3.new-title= item.title
         div.new-item__ingridient
             Table
                 tr
@@ -54,7 +54,7 @@ mixin history_item(item)
             i.history-item__source Источник:
                 a(href= item.link target="_blank") ru.wikipedia.org
         dd.history-item__description
-            img(src=`img/${item.img}` alt=item.name)
+            img.pic(src=`img/${item.img}` alt=item.name)
             p.text= item.description
 
 mixin form(className, config)
