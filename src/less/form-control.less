@@ -38,7 +38,48 @@
         .font(14px, 18px);
         color: @dark_50;
         cursor: pointer;
-
+        .transition(color, 0.2s);
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border-radius: 4px;
+          top: 0;
+          left: 0;
+          border: 1px solid @dark_25;
+          .transition(border-color, 0.2s);
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 6px;
+          height: 8px;
+          border-bottom: 4px solid @purple;
+          border-right: 4px solid @purple;
+          top: 3px;
+          left: 6px;
+          transform: rotate(45deg)  scale(0);
+          .transition(transform);
+        }
+        &:hover {
+          color: @purple;
+          &:before {
+            border-color: @purple;
+          }
+        }
+      }
+      &:checked{
+        &+label {
+          &:before {
+            border-color: @purple;
+          }
+          &:after {
+            transform: rotate(45deg) scale(1);
+          }
+        }
       }
     }
   }
