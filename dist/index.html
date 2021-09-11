@@ -10,7 +10,7 @@
   <body>
     <header class="header">
       <div class="header__top clearfix container--small"><a class="logo"><img src="img/logo.png" alt="Кваст"></a>
-        <ul class="menu">
+        <ul class="menu clearfix">
           <li class="menu__item"><a href="#">История</a></li>
           <li class="menu__item"><a href="#">Производство</a></li>
           <li class="menu__item"><a href="#">Ассортимент</a></li>
@@ -39,7 +39,7 @@
               <p class="new-item__ingridient__compound">Ржаной хлеб, Вода, Солод, Соль</p>
             </div><img src="img/bottle-left.jpg" alt="Вахтёр">
             <p>Терпкий и мощный, вкус этого кваса взбодрит после тяжёлого дня и придаст сил для вечерних приключений!</p>
-            <div class="new-item__button"><a class="new-item__button--details btn" href="#">Подробнее</a><a class="new-item__button--buy btn" href="#">Купить</a><b class="new-item__button--price">150 Р.</b></div>
+            <div class="new-item__button"><a class="btn btn--wht" href="#">Подробнее</a><a class="btn btn--brn" href="#">Купить</a><b class="new-item__button--price">150 Р.</b></div>
           </div>
           <div class="new-item">
             <h3 class="new-title">Романтик</h3>
@@ -57,7 +57,7 @@
               <p class="new-item__ingridient__compound">Ячменный хлеб, Вода, Солод, Апельсин</p>
             </div><img src="img/bottle-right.jpg" alt="Романтик">
             <p>Лёгкий и освежающий напиток поможет сохранять отличное настроение в течение всего дня.</p>
-            <div class="new-item__button"><a class="new-item__button--details btn" href="#">Подробнее</a><a class="new-item__button--buy btn" href="#">Купить</a><b class="new-item__button--price">90 Р.</b></div>
+            <div class="new-item__button"><a class="btn btn--wht" href="#">Подробнее</a><a class="btn btn--brn" href="#">Купить</a><b class="new-item__button--price">90 Р.</b></div>
           </div>
         </div>
       </div>
@@ -65,15 +65,15 @@
     <section class="features">
       <div class="container--big">
         <ul class="features__list clearfix">
-          <li class="features__item">
+          <li class="feature-item feature-item--self">
             <h2 class="title">Варим сами</h2>
             <p class="text">Вот этими самыми руками. Экспериментируем и творим, что хотим.</p>
           </li>
-          <li class="features__item">
+          <li class="feature-item feature-item--our">
             <h2 class="title">Своё, родное</h2>
             <p class="text">Не заработка ради, а импортозамещения для. Поднимаем производство.</p>
           </li>
-          <li class="features__item">
+          <li class="feature-item feature-item--expensive">
             <h2 class="title">Не экономим</h2>
             <p class="text">Человек это то, что он ест и пьёт. У нас только качественные ингредиенты.</p>
           </li>
@@ -104,7 +104,7 @@
         <h2 class="section-title">Пресса о нас</h2>
         <blockquote class="news__block">
           <p>Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса. Да, да, вы не ослышались! Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!</p>
-          <cite class="news__author">Газета столичный Стольник</cite><a class="button" href="#">Читать далее</a>
+          <cite class="news__author">Газета столичный Стольник</cite><a class="btn btn--gray" href="#">Читать далее</a>
         </blockquote>
       </div>
     </section>
@@ -192,7 +192,7 @@
             <label for="send">Я согласен получать квасную рассылку</label>
             <input type="checkbox" id="send" name="send">
           </div>
-          <input class="btn" type="submit" name="order-push" value="Отправить заказ">
+          <input class="btn btn--brn" type="submit" name="order-push" value="Отправить заказ">
         </form>
       </div>
     </section>

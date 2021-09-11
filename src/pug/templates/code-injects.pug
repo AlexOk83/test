@@ -11,7 +11,7 @@ mixin section_features()
         .container--big
             ul.features__list.clearfix
                 each item in features_items
-                    li.features__item
+                    li(class= ['feature-item', `feature-item--${item.class}`])
                         h2.title= item.h2
                         p.text= item.p
 
@@ -31,7 +31,7 @@ mixin section_news()
                 each item in news__block
                     p= item.text
                     cite.news__author= item.author
-                    a.button(href="#") Читать далее
+                    a.btn.btn--gray(href="#") Читать далее
 
 mixin section_range()
     section.range

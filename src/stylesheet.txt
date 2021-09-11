@@ -1,0 +1,42 @@
+.stitches-sprite(@x: 0, @y: 0, @width: 0, @height: 0) {
+    background-position: @x @y;
+    width: @width;
+    height: @height;
+}
+
+.sprite {
+    background-image: url(spritesheet.png);    background-repeat: no-repeat;
+    display: block;
+
+    &.sprite-htmlacademy {
+        .stitches-sprite(-5px, -5px, 27px, 34px);
+    }
+
+    &.sprite-icon-brew {
+        .stitches-sprite(-5px, -49px, 50px, 68px);
+    }
+
+    &.sprite-icon-fb {
+        .stitches-sprite(-5px, -127px, 8px, 16px);
+    }
+
+    &.sprite-icon-insta {
+        .stitches-sprite(-5px, -153px, 14px, 14px);
+    }
+
+    &.sprite-icon-matreshka {
+        .stitches-sprite(-5px, -177px, 46px, 65px);
+    }
+
+    &.sprite-icon-thumbsup {
+        .stitches-sprite(-5px, -252px, 63px, 58px);
+    }
+
+    &.sprite-icon-vk {
+        .stitches-sprite(-5px, -320px, 20px, 11px);
+    }
+
+    &.sprite-quotes {
+        .stitches-sprite(-5px, -341px, 41px, 31px);
+    }
+}

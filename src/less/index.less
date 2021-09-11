@@ -9,10 +9,7 @@ a {
   text-decoration: none;
 }
 .body {
-  font-size: 16px;
-  line-height: 30px;
-  font-family: "Arial", sans-serif;
-  color: #333333;
+  .font_txt(); //почему не работает на body
   background-color: white;
 }
 
@@ -50,19 +47,26 @@ a {
     .logo {
       float: left;
       width: 140px;
-      height: 85px;
+      height: 80px;
     }
     .menu {
       display: block;
       float: right;
       width: 600px;
       text-transform: uppercase;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5) ;
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       margin-left: 60px;
+      margin-top: 10px;
+      padding-top: 25px;
+      padding-bottom: 25px;
       &__item {
-        border-top: 1px solid rgba(255, 255, 255, 0.5);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        //border-top: 1px solid rgba(255, 255, 255, 0.5);
+        //border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         list-style: none;
+        float: left;
+        margin-right: 50px;
+        &:last-child{margin-right: 0}
         a {
           text-decoration:  none;
           color: white;
@@ -117,16 +121,43 @@ a {
 }
 
 .btn {
-  color:  @brnColor;
+  display: inline-block;
+  vertical-align: center;
+  border: 2px solid @brnColor;
+  padding: 20px;
   text-decoration: none;
   text-transform: uppercase;
+  .font_title(16px, 20px);
+  margin-right: 5px;
+  &--wht {
+    color: @brnColor;
     &:hover {
       color: @brnDark;
+      border-color: @brnDark;
+    };
+    &:active {opacity: 0.5};
+  }
+  &--brn {
+    background-color: @brnColor;
+    color: white;
+    &:hover {
+      background-color: @brnDark;
+      color: #ffffff;
     }
     &:active {
-      opacity: 0.5;
-    }
-
+      background-color: @brnDark;
+      color: @whtTransp;
+    };
+  }
+  &--gray {
+    border-color: @colorGray;
+    color: @colorGray;
+    &:hover {
+      color: @colorWhite;
+      background-color: @colorGray
+    };
+    &:active {color: @whtTransp};
+  }
 }
 
 .clearfix::after {
@@ -140,32 +171,63 @@ a {
   padding-top: 80px;
   padding-bottom: 95px;
   background-color: @bgColorBrn;
+
   &__list {
     display: block;
     list-style: none;
     // margin: 0;
   }
+}
 
-  &__item {
-    border-left: 1px solid  #cc9966;
-    float: left;
-    width: 200px;
-    padding-left: 60px;
-    padding-right: 60px;
-      &:first-child {
-        border-left: 1px solid  transparent;
-      }
-    .title {
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 20px;
-      line-height: 30px;
-      font-weight: bold;
-      color: @titleColor;
-    }
+.feature-item {
+  border-left: 1px solid #cc9966;
+  float: left;
+  width: 200px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 80px;
+  margin: 0;
+  position: relative;
+  &:first-child {
+    border-left: 1px solid transparent;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: red;
+    opacity: 0.5;
+    top: 0;
+    left: 137px;
+  }
+  .title {
+    .font_title(20px,30px);
+    margin: 0;
+    margin-bottom: 40px;
+  }
 
-    .text {
-      font-size: 16px;
-    }
+  .text {
+    .font_txt();
+  }
+
+  &--self {
+    // background: .bg("../img/icon-brew.png", top left)} Почему не работает?
+    background-image: url('../img/icon-brew.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  &--our {
+    background-image: url('../img/icon-matreshka.png');
+    background-repeat: no-repeat;
+    background-position: top left;
+  }
+
+  &--expensive {
+    background-image: url('../img/icon-thumbsup.png');
+    background-repeat: no-repeat;
+    background-position: top left;
   }
 }
 
@@ -261,7 +323,7 @@ a {
 }
 
 .footer {
-  padding: 60px 0px 40px 0px;
+  padding: 60px 0 40px 0;
   margin: 0;
   background-color: black;
   color: @colorGray;
@@ -295,7 +357,7 @@ a {
     float: left;
     margin-right: 55px;
       &:last-child {
-        margin-right: 0px;
+        margin-right: 0;
       }
   }
   &__logo {
