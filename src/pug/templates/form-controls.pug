@@ -1,0 +1,62 @@
+mixin form_control(params)
+  .form-control
+    if (!['radio', 'checkbox', 'toggle'].includes(params.type))
+      label.form-control__label(for=params.id)= params.label
+    case params.type
+      when 'select'
+        +select(params)
+      when 'textarea'
+        textarea(id=params.id, placeholder= params.placeholder)= params.value
+      when 'dropdown'
+        +dropdown(params)
+      when 'checkBoxList'
+        +checkBoxList(params)
+      when 'rangeSlider'
+        +rangeSlider(params)
+      when 'dateDropdown'
+        +dateDropdown(params)
+      when 'toggle'
+        +toggle(params)
+      when 'filterDateDropdown'
+        +filterDateDropdown(params)
+      when 'radio'
+        +radio(params)
+      when 'checkbox'
+        +checkBox(params)
+      default
+        input.form-control__input(type=params.type, id=params.id, placeholder= params.placeholder)
+
+mixin select(params)
+  .select
+    select(id= params.id)
+      if (params.emptyLabel)
+        option(value='')= params.emptyLabel
+      each option in params.options
+        option(value= option.value)= option.title
+
+mixin dropdown(params)
+  div
+
+mixin checkBoxList(params)
+  div
+
+mixin rangeSlider(params)
+  div
+
+mixin dateDropdown(params)
+  div
+
+mixin toggle(params)
+  div
+
+mixin filterDateDropdown(params)
+  div
+
+mixin radio(params)
+  div
+
+mixin checkBox(params)
+  .form-control__checkbox
+    input(type='checkbox', id= params.id, name= params.id checked=params.value)
+    label(for= params.id)= params.label
+

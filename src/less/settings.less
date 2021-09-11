@@ -1,8 +1,11 @@
+@import "mixins";
+
 * {
-  font: normal normal 16px/18px 'AvenirNextCyr', sans-serif ;
+  font: normal normal 16px/18px 'Montserrat', sans-serif ;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  color: @dark;
 }
 
 body {
@@ -33,3 +36,25 @@ i, span {
   font-weight: inherit;
   line-height: inherit;
 }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: @padding;
+  padding-right: @padding;
+  position: relative;
+  .clearfix();
+}
+
+
+.row {
+  margin-left: -@padding;
+  margin-right: -@padding;
+  display: flex;
+  flex-wrap: wrap;
+  .media_mobile({
+    margin-left: 0;
+    margin-right: 0;
+  });
+}
+

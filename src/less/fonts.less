@@ -1,0 +1,19 @@
+@font-path: '../fonts/';
+
+.fontFace(@font-family, @file, @weight, @style) {
+  @font-face {
+    font-family: '@{font-family}';
+    src:  url('@{font-path}@{file}.eot');
+    src:  url('@{font-path}@{file}.eot') format('embedded-opentype'),
+    url('@{font-path}@{file}.ttf') format('truetype'),
+    url('@{font-path}@{file}.svg') format('svg'),
+    url('@{font-path}@{file}.woff') format('woff');
+    font-weight: @weight;
+    font-style: @style;
+  }
+}
+
+.fontFace('Montserrat', 'Montserrat-Regular', normal, normal);
+.fontFace('Montserrat', 'Montserrat-Medium', 500, normal);
+.fontFace('Montserrat', 'Montserrat-Bold', 600, normal);
+.fontFace('Montserrat', 'Montserrat-ExtraBold', 700, normal);
