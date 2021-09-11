@@ -1,15 +1,17 @@
 @import "mixins";
 @import "vars";
+@import 'sprite_icon';
 * {
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+  .font_txt();
 }
 a {
   text-decoration: none;
 }
 .body {
-  .font_txt(); //почему не работает на body
+   //почему не работает на body
   background-color: white;
 }
 
@@ -31,6 +33,8 @@ a {
   font-weight: bold;
   color: @titleColor;
   text-transform: uppercase;
+  margin-bottom: 85px;
+  margin-right: 180px;
 }
 
 .header {
@@ -103,12 +107,32 @@ a {
     }
     &-item {
       float: left;
-      width: 335px;
-      padding: 0 30px 65px 30px;
+      padding: 0 25px 0 25px;
+      &__ingridient {
+        width: 150px;
+      }
+      &__compound {
+        .font_txt(14px, 24px)
+      }
+      table {
+        border: 1px solid @bgColorGray;
+        .font_title();
+        border-collapse: collapse;
+      }
+      td {
+        border: 1px solid @bgColorGray;
+        padding: 10px;
+      }
       .img {
         width: 100%;
         height: auto;
       }
+      &__text{
+        padding: 10px;
+        width: 330px;
+      }
+      &__buttons {
+        margin-top: 60px;
     }
     &-title {
       font-size: 40px;
@@ -116,15 +140,20 @@ a {
       font-weight: bold;
       text-transform: uppercase;
       color: @titleColor;
-      font-family: "Arial", sans-serif; // почему не работает в боди общее условие?
+      //font-family: "Arial", sans-serif; // почему не работает в боди общее условие?
     }
+  .price {
+    padding: 20px;
+  }
+    }
+    &-title {.font_title(40px, 60px)}
 }
 
 .btn {
   display: inline-block;
   vertical-align: center;
   border: 2px solid @brnColor;
-  padding: 20px;
+  padding: 15px 20px;
   text-decoration: none;
   text-transform: uppercase;
   .font_title(16px, 20px);
@@ -196,10 +225,10 @@ a {
     position: absolute;
     width: 75px;
     height: 75px;
-    background-color: red;
-    opacity: 0.5;
+    // background-color: red;
+    // opacity: 0.5;
     top: 0;
-    left: 137px;
+    left: 60px;
   }
   .title {
     .font_title(20px,30px);
@@ -212,22 +241,24 @@ a {
   }
 
   &--self {
-    // background: .bg("../img/icon-brew.png", top left)} Почему не работает?
-    background-image: url('../img/icon-brew.png');
-    background-repeat: no-repeat;
-    background-position: top left;
+    &::before {
+      .sprite();
+      .stitches-sprite(-5px, -49px, 50px, 68px);
+      }
   }
 
   &--our {
-    background-image: url('../img/icon-matreshka.png');
-    background-repeat: no-repeat;
-    background-position: top left;
+    &::before {
+      .sprite();
+      .stitches-sprite(-5px, -177px, 46px, 65px);
+    }
   }
 
   &--expensive {
-    background-image: url('../img/icon-thumbsup.png');
-    background-repeat: no-repeat;
-    background-position: top left;
+    &::before {
+      .sprite();
+      .stitches-sprite(-5px, -252px, 63px, 58px);
+    }
   }
 }
 
@@ -243,7 +274,7 @@ a {
     }
   }
   &__list {
-    width: 480px;
+    //width: 480px;
   }
 }
 
@@ -251,24 +282,32 @@ a {
   &__name {
     margin: 0;
     .font_title(20px, 30px);
+    margin-bottom: 35px;
   }
-
   &__source {
-    font-size: 16px;
-    line-height: 30px;
+    .font_txt();
     font-weight: normal;
     font-style: italic;
     text-transform: none;
+    float: right;
       a {
         color: @brnColor;
         &:hover {color: @brnDark;}
         &:active {color: rgba(102, 51, 0, 0.3);}
+        text-decoration: underline;
       }
   }
-
   &__description {
-    img {
-
+    position: relative;
+    padding-right: 330px;
+    min-height: 100px;
+    margin: 0;
+    .pic {
+      position: absolute;
+      top: 0;
+      right: 0px;
+      width: 200px;
+      height: 100px;
     }
     .text {
 
@@ -282,9 +321,38 @@ a {
   padding-top: 90px;
   &__block {
     padding: 0;
+    position: relative;
   }
-  &__author {
+  .wrapper {
+    display: block;
+    vertical-align: center;
+  }
+  .read-more {
+    //position: absolute;
+    //bottom: 20px;
+    //left: 0;
+    float: left;
+  }
+  &-author {
+    .font_title();
+    font-style: normal;
+    float: right;
+    // text-align: right;
+    margin-top: 15px;
 
+  }
+  &-text {
+    padding-bottom: 55px;
+    position: relative;
+    width: 700px;
+    &:before {
+      content: '';
+      .sprite();
+      .stitches-sprite(-5px, -341px, 41px, 31px);
+      position: absolute;
+      left: -95px;
+      top: 10px;
+    }
   }
 }
 

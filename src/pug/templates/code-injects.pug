@@ -29,9 +29,10 @@ mixin section_news()
             h2.section-title Пресса о нас
             blockquote.news__block
                 each item in news__block
-                    p= item.text
-                    cite.news__author= item.author
-                    a.btn.btn--gray(href="#") Читать далее
+                    p.news-text= item.text
+                    .wrapper.clearfix
+                        cite.news-author= item.author
+                        a.btn.btn--gray.read-more(href="#") Читать далее
 
 mixin section_range()
     section.range

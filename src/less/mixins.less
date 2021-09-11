@@ -14,7 +14,7 @@
   background-size: @size;
 }
 
-.font_title(@size, @line) {
+.font_title(@size: 20px, @line: 30px) {
   font-family: Arial, Helvetica, sans-serif;
   font-size: @size;
   line-height: @line;
@@ -23,9 +23,9 @@
   text-transform: uppercase;
 }
 
-.font_txt() {
-  font-size: 16px;
-  line-height: 30px;
+.font_txt(@size: 16px, @line: 30px) {
+  font-size: @size;
+  line-height: @line;
   font-family: "Arial", sans-serif;
   color: @colorTxt;
 }

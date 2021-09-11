@@ -40,13 +40,13 @@ mixin new_item(item)
                 tr
                     td Ккал
                     td= item.cal
-            p.new-item__ingridient__compound= item.sostav
+            p.new-item__compound= item.sostav
         img(src=`img/${item.img}` alt=item.title)
-        p= item.description
-        div.new-item__button
+        p.new-item__text= item.description
+        div.new-item__buttons
             a.btn.btn--wht(href="#") Подробнее
             a.btn.btn--brn(href="#") Купить
-            b.new-item__button--price= `${item.price} Р.`
+            b.price= `${item.price} Р.`
 
 mixin history_item(item)
     .history-container
