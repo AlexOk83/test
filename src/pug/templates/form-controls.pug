@@ -11,7 +11,7 @@ mixin form_control(params)
         +dropdown(params)
       when 'checkBoxList'
         +checkBoxList(params)
-      when 'rangeSlider'
+      when 'range'
         +rangeSlider(params)
       when 'dateDropdown'
         +dateDropdown(params)
@@ -43,7 +43,13 @@ mixin checkBoxList(params)
   div
 
 mixin rangeSlider(params)
-  div
+  .form-control__range(data-id= params.id, data-min= params.min, data-max= params.max)
+    .slider(id=`slider-${params.id}`)
+      .slider__value
+        span.slider__count(id=`first-${params.id}`)= params.value[0]
+        span.slider__count(id=`last-${params.id}`)= params.value[1]
+      input(type='text', id=`count-min-${params.id}`, name= params.name[0], value= params.value[0])
+      input(type='text', id=`count-max-${params.id}`, name= params.name[1], value= params.value[1])
 
 mixin dateDropdown(params)
   div
@@ -74,6 +80,4 @@ mixin checkBox(params)
 mixin like(params)
   .form-control__like(class={'clicked': params.clicked})
     input(type='text', name= params.name, value= params.value, disabled)
-
-
 
