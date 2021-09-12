@@ -1,7 +1,12 @@
 @icomoon-font-family: "icons";
-@icomoon-font-path: "fonts";
 
 @icon-insert_emoticon: "\ea22";
+@icon-arrow_back: "\eb4d";
+@icon-arrow_forward: "\eb51";
+@icon-arrow_upward: "\eb5e";
+@icon-arrow_downward: "\eb61";
+@icon-arrow_back_ios: "\eb66";
+@icon-arrow_forward_ios: "\eb67";
 @icon-location_city: "\eba3";
 @icon-whatshot: "\ebb4";
 @icon-star1: "\ebbf";
@@ -34,9 +39,6 @@
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: '@{icomoon-font-family}' !important;
   speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
   text-transform: none;
   line-height: 1;
 
@@ -48,6 +50,36 @@
 .icon-insert_emoticon {
   &:before {
     content: @icon-insert_emoticon;
+  }
+}
+.icon-arrow_back {
+  &:before {
+    content: @icon-arrow_back;
+  }
+}
+.icon-arrow_forward {
+  &:before {
+    content: @icon-arrow_forward;
+  }
+}
+.icon-arrow_upward {
+  &:before {
+    content: @icon-arrow_upward;
+  }
+}
+.icon-arrow_downward {
+  &:before {
+    content: @icon-arrow_downward;
+  }
+}
+.icon-arrow_back_ios {
+  &:before {
+    content: @icon-arrow_back_ios;
+  }
+}
+.icon-arrow_forward_ios {
+  &:before {
+    content: @icon-arrow_forward_ios;
   }
 }
 .icon-location_city {
@@ -185,4 +217,3 @@
     content: @icon-whatsapp;
   }
 }
-

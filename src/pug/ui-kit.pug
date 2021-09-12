@@ -8,8 +8,23 @@ block content
           each formItem in formConfig1
             +form_control(formItem)
         .ui-kit__column
-          each formItem in formConfig2
-            +form_control(formItem)
+          .form-control__label Checkbox Buttons
+          .ui-kit__wrapper
+            each formItem in checkboxes
+              +form_control(formItem)
+
+          .form-control__label radio Buttons
+          .ui-kit__wrapper
+            +inlineList(radioButtons, 20)
+
+          .form-control__label toggle
+          .ui-kit__wrapper
+            each formItem in toggleButtons
+              +form_control(formItem)
+
+          .form-control__label like button
+          .ui-kit__wrapper
+            +inlineList(likeButtons, 10)
         .ui-kit__column
           each formItem in formConfig3
             +form_control(formItem)

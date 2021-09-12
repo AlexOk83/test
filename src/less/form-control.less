@@ -1,4 +1,5 @@
 @import "mixins";
+@import "icons";
 
 .form-control {
   width: 100%;
@@ -17,6 +18,7 @@
     border: 1px solid @dark_25;
     padding: 0 15px;
     border-radius: 4px;
+    margin-bottom: 20px;
     .text_overflow();
     .font(14px, 18px);
     .transition(border);
@@ -55,12 +57,12 @@
           content: '';
           display: block;
           position: absolute;
-          width: 6px;
+          width: 5px;
           height: 8px;
-          border-bottom: 4px solid @purple;
-          border-right: 4px solid @purple;
-          top: 3px;
-          left: 6px;
+          border-bottom: 2px solid @purple;
+          border-right: 2px solid @purple;
+          top: 4px;
+          left: 8px;
           transform: rotate(45deg)  scale(0);
           .transition(transform);
         }
@@ -81,6 +83,190 @@
           }
         }
       }
+    }
+  }
+
+  &__radio {
+    input {
+      display: none;
+      &+label {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+        padding-left: 30px;
+        .font(14px, 18px);
+        color: @dark_50;
+        cursor: pointer;
+        .transition(color, 0.2s);
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          border-radius: 10px;
+          top: 0;
+          left: 0;
+          border: 1px solid @dark_25;
+          .transition(border-color, 0.2s);
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          .circle(12px);
+          background: @gradient;
+          top: 4px;
+          left: 4px;
+          .transition(transform);
+          transform: scale(0);
+        }
+        &:hover {
+          color: @purple;
+          &:before {
+            border-color: @purple;
+          }
+        }
+      }
+      &:checked{
+        &+label {
+          &:before {
+            border-color: @purple;
+          }
+          &:after {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+  }
+
+  &__toggle {
+    input {
+      display: none;
+      &+label {
+        position: relative;
+        display: block;
+        width: 100%;
+        margin-bottom: 12px;
+        padding-left: 50px;
+        .font(14px, 24px);
+        color: @dark_75;
+        cursor: pointer;
+        .transition(color, 0.2s);
+        &:before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 40px;
+          height: 20px;
+          border-radius: 10px;
+          top: 0;
+          left: 0;
+          border: 1px solid @dark_25;
+          .transition(border-color, 0.2s);
+        }
+        &:after {
+          content: '';
+          display: block;
+          position: absolute;
+          background: @dark_25;
+          .circle(12px);
+          top: 4px;
+          left: 4px;
+          .transition(all);
+        }
+        &:hover {
+          color: @purple;
+          &:before {
+            border-color: @purple;
+          }
+        }
+      }
+      &:checked{
+        &+label {
+          &:before {
+            border-color: @purple;
+          }
+          &:after {
+            left: 25px;
+            background: @gradient;
+          }
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    &--line-10 {
+      .form-control {
+        width: auto;
+        margin-right: 20px;
+      }
+    }
+    &--line-20 {
+      .form-control {
+        width: auto;
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &__like {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid @dark_25;
+    .transition(border-color, 0.2s);
+    padding-left: 20px;
+    overflow: hidden;
+    padding-top: 0;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    &:before {
+      .icon();
+      .font(9px);
+      content: @icon-heart-o;
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      justify-content: center;
+      align-items: center;
+      vertical-align: center;
+      color: @dark_25;
+      user-select: none;
+      .transition(color);
+    }
+    &:hover, &.clicked {
+      border-color: @purple;
+      &:before {
+        content: @icon-heart;
+        color: @purple;
+      }
+    }
+    &:active {
+      &:before {
+        content: @icon-heart;
+        .font(12px);
+        color: @purple;
+      }
+    }
+    input {
+      width: 20px;
+      padding: 0;
+      border: none;
+      .font(10px, 20px);
+      position: relative;
+      top: -1px;
+      user-select: none;
+      z-index: -1;
     }
   }
 }

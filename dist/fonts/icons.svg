@@ -24,6 +24,12 @@
 <missing-glyph horiz-adv-x="1024" />
 <glyph unicode="&#x20;" horiz-adv-x="512" d="" />
 <glyph unicode="&#xea22;" glyph-name="insert_emoticon" data-tags="insert_emoticon, tag_faces, mood" d="M512 192.667q-74 0-133 41t-85 107h436q-26-66-85-107t-133-41zM362 468.667q-26 0-45 19t-19 45 19 45 45 19 45-19 19-45-19-45-45-19zM662 468.667q-26 0-45 19t-19 45 19 45 45 19 45-19 19-45-19-45-45-19zM512 84.667q140 0 241 101t101 241-101 241-241 101-241-101-101-241 101-241 241-101zM512 852.667q176 0 301-125t125-301-125-301-301-125-301 125-125 301 125 301 301 125z" />
+<glyph unicode="&#xeb4d;" glyph-name="arrow_back" data-tags="arrow_back" d="M854 468.667v-84h-520l238-240-60-60-342 342 342 342 60-60-238-240h520z" />
+<glyph unicode="&#xeb51;" glyph-name="arrow_forward" data-tags="arrow_forward" d="M512 768.667l342-342-342-342-60 60 238 240h-520v84h520l-238 240z" />
+<glyph unicode="&#xeb5e;" glyph-name="arrow_upward" data-tags="arrow_upward" d="M170 426.667l342 342 342-342-62-60-238 238v-520h-84v520l-240-238z" />
+<glyph unicode="&#xeb61;" glyph-name="arrow_downward" data-tags="arrow_downward" d="M854 426.667l-342-342-342 342 62 60 238-238v520h84v-520l240 238z" />
+<glyph unicode="&#xeb66;" glyph-name="arrow_back_ios" data-tags="arrow_back_ios" d="M498 772.667l-346-346 346-346-76-76-422 422 422 422z" />
+<glyph unicode="&#xeb67;" glyph-name="arrow_forward_ios" data-tags="arrow_forward_ios" d="M250 762.667l92 90 426-426-426-426-92 90 338 336z" />
 <glyph unicode="&#xeba3;" glyph-name="location_city" data-tags="location_city" d="M810 298.667v86h-84v-86h84zM810 128.667v84h-84v-84h84zM554 640.667v84h-84v-84h84zM554 468.667v86h-84v-86h84zM554 298.667v86h-84v-86h84zM554 128.667v84h-84v-84h84zM298 468.667v86h-84v-86h84zM298 298.667v86h-84v-86h84zM298 128.667v84h-84v-84h84zM640 468.667h256v-426h-768v598h256v84l128 128 128-128v-256z" />
 <glyph unicode="&#xebb4;" glyph-name="whatshot" data-tags="whatshot" d="M500 128.667q86 0 145 59t59 145q0 88-24 172-62-82-198-110-120-26-120-132 0-56 40-95t98-39zM576 910.667q128-104 203-253t75-317q0-140-100-240t-242-100-242 100-100 240q0 216 138 380v-16q0-66 44-112t110-46q64 0 105 45t41 113q0 40-8 92t-16 82z" />
 <glyph unicode="&#xebbf;" glyph-name="star1" data-tags="star, grade" d="M512 202.667l-264-160 70 300-232 202 306 26 120 282 120-282 306-26-232-202 70-300z" />

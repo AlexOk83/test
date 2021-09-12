@@ -8,7 +8,7 @@
               placeholder: 'Email'
             }
           ],
-          formConfig2 = [
+          checkboxes = [
             {
               id: 'check-1',
               label: 'Можно курить',
@@ -26,6 +26,51 @@
               label: 'Можно пригласить гостей (до 10 человек)',
               value: true,
               type: 'checkbox'
+            }
+          ],
+          radioButtons = [
+            {
+              id: 'male',
+              label: 'Мужчина',
+              value: 'male',
+              name: 'sex',
+              type: 'radio',
+              checked: true,
+            },
+            {
+              id: 'female',
+              label: 'Женщина',
+              value: 'female',
+              name: 'sex',
+              type: 'radio',
+              checked: false,
+            }
+          ],
+          toggleButtons = [
+            {
+              id: 'toggle-1',
+              label: 'Получать спецпредложения',
+              value: true,
+              type: 'toggle'
+            },
+            {
+              id: 'toggle-2',
+              label: 'Получать спецпредложения',
+              value: false,
+              type: 'toggle'
+            },
+          ],
+          likeButtons = [
+            {
+              name: 'like-1',
+              value: 6,
+              type: 'like'
+            },
+            {
+              name: 'like-2',
+              value: 12,
+              type: 'like',
+              clicked: true,
             }
           ],
           formConfig3 = [];

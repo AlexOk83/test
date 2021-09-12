@@ -4,6 +4,7 @@
     <title>MetaLamp</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+    <script src="js/jquery.js"></script>
     <link rel="styleSheet" media="all" type="text/css" href="css/styles.min.css">
   </head>
   <body>
@@ -17,22 +18,72 @@
             </div>
           </div>
           <div class="ui-kit__column">
-            <div class="form-control">
-              <div class="form-control__checkbox">
-                <input type="checkbox" id="check-1" name="check-1">
-                <label for="check-1">Можно курить</label>
+            <div class="form-control__label">Checkbox Buttons</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control">
+                <div class="form-control__checkbox">
+                  <input type="checkbox" id="check-1" name="check-1">
+                  <label for="check-1">Можно курить</label>
+                </div>
+              </div>
+              <div class="form-control">
+                <div class="form-control__checkbox">
+                  <input type="checkbox" id="check-2" name="check-2" checked>
+                  <label for="check-2">Можно с питомцами</label>
+                </div>
+              </div>
+              <div class="form-control">
+                <div class="form-control__checkbox">
+                  <input type="checkbox" id="check-3" name="check-3" checked>
+                  <label for="check-3">Можно пригласить гостей (до 10 человек)</label>
+                </div>
               </div>
             </div>
-            <div class="form-control">
-              <div class="form-control__checkbox">
-                <input type="checkbox" id="check-2" name="check-2" checked>
-                <label for="check-2">Можно с питомцами</label>
+            <div class="form-control__label">radio Buttons</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control__list form-control__list--line-20">
+                <div class="form-control">
+                  <div class="form-control__radio">
+                    <input type="radio" id="male" name="sex" value="male" checked>
+                    <label for="male">Мужчина</label>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__radio">
+                    <input type="radio" id="female" name="sex" value="female">
+                    <label for="female">Женщина</label>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="form-control">
-              <div class="form-control__checkbox">
-                <input type="checkbox" id="check-3" name="check-3" checked>
-                <label for="check-3">Можно пригласить гостей (до 10 человек)</label>
+            <div class="form-control__label">toggle</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control">
+                <div class="form-control__toggle">
+                  <input type="checkbox" id="toggle-1" name="toggle-1" checked>
+                  <label for="toggle-1">Получать спецпредложения</label>
+                </div>
+              </div>
+              <div class="form-control">
+                <div class="form-control__toggle">
+                  <input type="checkbox" id="toggle-2" name="toggle-2">
+                  <label for="toggle-2">Получать спецпредложения</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-control__label">like button</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control__list form-control__list--line-10">
+                <div class="form-control">
+                  <div class="form-control__like">
+                    <input type="text" name="like-1" value="6" disabled>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__like clicked">
+                    <input type="text" name="like-2" value="12" disabled>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -41,5 +92,6 @@
         </div>
       </div>
     </div>
+    <script src="js/script.js"></script>
   </body>
 </html>

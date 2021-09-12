@@ -1,6 +1,6 @@
 mixin form_control(params)
   .form-control
-    if (!['radio', 'checkbox', 'toggle'].includes(params.type))
+    if (!['radio', 'checkbox', 'toggle', 'like'].includes(params.type))
       label.form-control__label(for=params.id)= params.label
     case params.type
       when 'select'
@@ -21,6 +21,8 @@ mixin form_control(params)
         +filterDateDropdown(params)
       when 'radio'
         +radio(params)
+      when 'like'
+        +like(params)
       when 'checkbox'
         +checkBox(params)
       default
@@ -47,16 +49,31 @@ mixin dateDropdown(params)
   div
 
 mixin toggle(params)
-  div
+  .form-control__toggle
+    input(type='checkbox', id= params.id, name= params.id, checked=params.value)
+    label(for= params.id)= params.label
 
 mixin filterDateDropdown(params)
   div
 
 mixin radio(params)
-  div
+  .form-control__radio
+    input(type='radio', id= params.id, name= params.name, value= params.value, checked=params.checked)
+    label(for= params.id)= params.label
+
+mixin inlineList(list, indent)
+  .form-control__list(class=`form-control__list--line-${indent}`)
+    each formItem in list
+      +form_control(formItem)
 
 mixin checkBox(params)
   .form-control__checkbox
     input(type='checkbox', id= params.id, name= params.id checked=params.value)
     label(for= params.id)= params.label
+
+mixin like(params)
+  .form-control__like(class={'clicked': params.clicked})
+    input(type='text', name= params.name, value= params.value, disabled)
+
+
 
