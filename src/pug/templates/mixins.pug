@@ -25,6 +25,7 @@ mixin form_el(params)
         else if(params.longText)
             textarea(name= params.id, id= params.id)= params.value
         else if(params.checkbox)
+            // $(params.checkbox).parentsUntil('form__group').addClass('checkbox-area');
             input(type="checkbox" id= params.id name= params.id checked= params.value)
         else
             input(type="text", name= params.id, id= params.id, value= params.value)

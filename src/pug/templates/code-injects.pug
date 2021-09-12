@@ -63,7 +63,8 @@ mixin footer()
             .footer__bottom.clearfix
                 .footer__social
                     each item in social_btns
-                        a.social-btn(href= item.link)= item.name
+                        .social-btn
+                            a(class= item.class href= item.link)= item.name
                     p При перепечатке материалов ссылка на сайт обязательна!
                 .footer__copyright
                     img(src="img/htmlacademy.png" alt="htmlacademy")

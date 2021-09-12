@@ -48,11 +48,13 @@ a {
     .clearfix();
     max-width: 900px;
     margin: 0 auto 125px auto;
+
     .logo {
       float: left;
       width: 140px;
       height: 80px;
     }
+
     .menu {
       display: block;
       float: right;
@@ -62,30 +64,22 @@ a {
       border-bottom: 1px solid rgba(255, 255, 255, 0.5);
       margin-left: 60px;
       margin-top: 10px;
-      padding-top: 25px;
-      padding-bottom: 25px;
+      padding: 15px 0;
+
       &__item {
-        //border-top: 1px solid rgba(255, 255, 255, 0.5);
-        //border-bottom: 1px solid rgba(255, 255, 255, 0.5);
         list-style: none;
         float: left;
         margin-right: 50px;
-        &:last-child{margin-right: 0}
-        a {
-          text-decoration:  none;
-          color: white;
-          &:hover {
-            color: #ffcc66;
-            border-bottom: 1px solid white;
-          }
 
-          &:active {
-            opacity: 0.7;
-          }
+        &:last-child {
+          margin-right: 0
         }
       }
+
+      .menu_hover_act()
     }
   }
+
   &__promo {
     display: block;
     font-family: Arial, Helvetica, sans-serif;
@@ -95,6 +89,8 @@ a {
     text-align: center;
     a {
       color: white;
+      font-size: 70px;
+      line-height: 70px;
     }
   }
 }
@@ -155,7 +151,6 @@ a {
     padding: 20px;
   }
 }
-
 
 .btn {
   display: inline-block;
@@ -367,16 +362,34 @@ a {
 .range {
   padding-bottom: 90px;
   padding-top: 100px;
+
   &__table {
     line-height: 30px;
     border-collapse: collapse;
-      th {
-        font-size: 11px;
-        text-transform: uppercase;
-        color: @colorGray;
-        font-weight: normal;
+    width: 800px;
+
+    th {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: @colorGray;
+      font-weight: normal;
+      text-align: left;
+      &:last-child {text-align: right}
+      padding-top: 25px;
+      padding-bottom: 25px;
+    }
+
+    td {
+      border-top: 1px solid @bgColorGray;
+      border-bottom: 1px solid @bgColorGray;
+      padding-top: 25px;
+      padding-bottom: 25px;
+      text-transform: uppercase;
+      &:first-child {
+        .font_title(16px, 30px)
       }
-      td {border: 1px solid @bgColorGray;}
+      &:last-child {text-align: right}
+    }
   }
 }
 
@@ -385,15 +398,43 @@ a {
   padding-top: 90px;
   padding-bottom: 110px;
   &__text {
-
+    margin-bottom: 85px;
   }
   &__form {
-    width: 640px;
+    width: 630px;
   }
 
   .form__group {
+    margin-bottom: 25px;
+    padding: 0;
+    label {
+      .font_title(16px, 20px);
+      display: inline-block;
+      padding: 10px 0;
+    }
+    input, textarea, select {
+      .font_title(16px, 20px);
+      color: rgba(0, 0, 0, 0.3);
+      border: none;
+      background-color: @colorForm;
+      width: 100%;
+      padding: 5px 20px;
+      height: 45px;
+      block-size: border-box;
+        &:hover {background-color: @colorFormHov}
+        &:focus {background-color: white}
+    }
     &--checkbox {
-
+      margin-bottom: 45px;
+    }
+    &:nth-child(2) // временное решение, непонятно что делать с циклом. clearfix так и не сделал
+    {
+      float: left;
+      width: 250px;
+    }
+    &:nth-child(3) {
+      float: right;
+      width: 290px;
     }
   }
 }
@@ -402,61 +443,72 @@ a {
   padding: 60px 0 40px 0;
   margin: 0;
   background-color: black;
-  color: @colorGray;
-  font-family: "Arial", sans-serif;
-  text-decoration: none;
   &__top {margin-bottom: 50px}
   &__menu {
     border-top: solid 1px #333333;
     list-style: none;
     float: left;
     width: 600px;
-    margin-right: 130px;
-      a {
-        color: white;
-        text-decoration: none;
-        text-transform: uppercase;
-        font-size: 16px;
-        font-weight: bold;
-        border-top: 1px solid rgba(255, 255, 255, 0.5);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-          &:hover {
-            color: #ffcc66;
-            border-bottom: 1px solid rgba(255, 255, 255, 1);
-            }
-          &:active {
-            opacity: 0.7;
-            }
-        }
+    margin-left: 125px;
+    .menu_hover_act()
   }
   .menu__item {
     float: left;
-    margin-right: 55px;
+    margin-right: 50px;
+    padding: 20px 0;
       &:last-child {
         margin-right: 0;
       }
   }
   &__logo {
     float: left;
-    width: 135px;
+    width: 140px;
     height: 75px;
+    margin-left: 35px;
   }
   &__bottom {
-
   }
   &__social {
-    font-size: 14px;
-      a {color: white}
+    a {
+      font-size: 0;
+      color: white;
+      font-size: 0}
     float: left;
     width: 510px;
   }
   .social-btn {
-
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: inline-block;
+    vertical-align: center;
+    width: 70px;
+    height: 70px;
+    background-color: @colorTxt;
+  }
+  .social-btn-in {
+    .sprite();
+    .stitches-sprite(-5px, -153px, 14px, 14px);
+  }
+  .social-btn-fb {
+    .sprite();
+    .stitches-sprite(-5px, -127px, 8px, 16px);
+  }
+  .social-btn-vk {
+    .sprite();
+    .stitches-sprite(-5px, -320px, 20px, 11px);
   }
   &__copyright {
-    font-size: 14px;
-      a {color: @colorGray}
-    float: right;
-    width: 305px;
+      font-size: 14px;
+
+      a {
+        color: @colorGray
+      }
+
+      float: right;
+      width: 305px;
+
+      b {
+        margin-left: 30px
+      }
+    ;
+    }
   }
-}
