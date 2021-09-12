@@ -1,25 +1,26 @@
+@import 'vars';
+
 .clearfix() {
   &:after, &:before {
     content: '';
     display: table;
     clear: both;
   }
-
 }
 
-.bg(@img, @size: cover, @repeat: no-repeat, @pos: center) {
+.bg(@img, @size: cover, @pos: center, @repeat: no-repeat) {
   background-image: url(@img);
-  background-repeat: @repeat;
-  background-position: @pos;
   background-size: @size;
+  background-position: @pos;
+  background-repeat: @repeat;
 }
 
-.font_title(@size: 20px, @line: 30px) {
+.font_title(@size: 20px, @line: 30px, @color: @titleColor) {
   font-family: Arial, Helvetica, sans-serif;
   font-size: @size;
   line-height: @line;
   font-weight: bold;
-  color: @titleColor;
+  color: @color;
   text-transform: uppercase;
 }
 

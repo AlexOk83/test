@@ -9,7 +9,8 @@ mixin list(list, classList)
 mixin cat_item(item)
     tr
         td= item.title
-        td= `&gt; ${item.alc}%`
+        td &gt;
+            span= ` ${item.alc}%`
         td= item.cal
         td= `${item.ob} мл`
         td= item.sum + 'Р.'
