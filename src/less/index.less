@@ -4,7 +4,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: content-box;
+  box-sizing: border-box;
   .font_txt();
 }
 a {
@@ -424,6 +424,10 @@ a {
         &:hover {background-color: @colorFormHov}
         &:focus {background-color: white}
     }
+    textarea {
+      max-width: 100%;
+      resize: none;
+    }
     &--checkbox {
       margin-bottom: 45px;
     }
@@ -541,3 +545,22 @@ a {
     }
     }
   }
+
+.grid {
+  &__row {
+    display: block;
+    position: relative;
+    margin-right: -20px;
+    margin-left: -20px;
+    .clearfix();
+  }
+  &__col {
+    width: 100%;
+    padding: 0 20px;
+
+    float: left;
+    &--50 {
+      width: 50%;
+    }
+  }
+}

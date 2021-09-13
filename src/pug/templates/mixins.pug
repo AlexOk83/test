@@ -62,7 +62,8 @@ mixin history_item(item)
 
 mixin form(className, config)
     form(action="#" method="POST", class= className)
-        each formItem in config
-            .col(class= formItem.classes)
-                +form_el(formItem)
+        .grid__row
+            each formItem in config
+                .grid__col(class= formItem.classes)
+                    +form_el(formItem)
         input.btn.btn--brn(type="submit" name="order-push" value="Отправить заказ")

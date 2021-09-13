@@ -161,52 +161,54 @@
         <h2 class="section-title">Заказать</h2>
         <p class="order__text">Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.</p>
         <form class="order__form" action="#" method="POST">
-          <div class="col col">
-            <div class="form__group">
-              <label for="fullName">Представьтесь:</label>
-              <input type="text" name="fullName" id="fullName">
+          <div class="grid__row">
+            <div class="grid__col">
+              <div class="form__group">
+                <label for="fullName">Представьтесь:</label>
+                <input type="text" name="fullName" id="fullName">
+              </div>
             </div>
-          </div>
-          <div class="col col">
-            <div class="form__group">
-              <label for="phone">Номер телефона:</label>
-              <input type="text" name="phone" id="phone">
+            <div class="grid__col grid__col--50">
+              <div class="form__group">
+                <label for="phone">Номер телефона:</label>
+                <input type="text" name="phone" id="phone">
+              </div>
             </div>
-          </div>
-          <div class="col col">
-            <div class="form__group">
-              <label for="phone-2">Доп. номер:</label>
-              <input type="text" name="phone-2" id="phone-2">
+            <div class="grid__col grid__col--50">
+              <div class="form__group">
+                <label for="phone-2">Доп. номер:</label>
+                <input type="text" name="phone-2" id="phone-2">
+              </div>
             </div>
-          </div>
-          <div class="col col">
-            <div class="form__group">
-              <label for="Email">Email:</label>
-              <input type="text" name="Email" id="Email" value="a@mail.ru">
+            <div class="grid__col">
+              <div class="form__group">
+                <label for="Email">Email:</label>
+                <input type="text" name="Email" id="Email" value="a@mail.ru">
+              </div>
             </div>
-          </div>
-          <div class="col col">
-            <div class="form__group">
-              <label for="size-order">Объём заказа:</label>
-              <select name="size-order" id="size-order">
-                <option value="">Выберите вариант</option>
-                <option value="1-5">От 1 до 5 баррелей в неделю</option>
-                <option value="5-10">От 5 до 10 баррелей в неделю</option>
-                <option value="10-15" selected>От 10 до 15 баррелей в неделю</option>
-              </select>
+            <div class="grid__col">
+              <div class="form__group">
+                <label for="size-order">Объём заказа:</label>
+                <select name="size-order" id="size-order">
+                  <option value="">Выберите вариант</option>
+                  <option value="1-5">От 1 до 5 баррелей в неделю</option>
+                  <option value="5-10">От 5 до 10 баррелей в неделю</option>
+                  <option value="10-15" selected>От 10 до 15 баррелей в неделю</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="col col">
-            <div class="form__group">
-              <label for="message">Доп. комментарий:</label>
-              <textarea name="message" id="message">asdasdasd</textarea>
+            <div class="grid__col">
+              <div class="form__group">
+                <label for="message">Доп. комментарий:</label>
+                <textarea name="message" id="message">asdasdasd</textarea>
+              </div>
             </div>
-          </div>
-          <div class="col col">
-            <div class="form__group">
-              <label for="send">Я согласен получать квасную рассылку</label>
-              <!-- $(params.checkbox).parentsUntil('form__group').addClass('checkbox-area');-->
-              <input type="checkbox" id="send" name="send">
+            <div class="grid__col">
+              <div class="form__group">
+                <label for="send">Я согласен получать квасную рассылку</label>
+                <!-- $(params.checkbox).parentsUntil('form__group').addClass('checkbox-area');-->
+                <input type="checkbox" id="send" name="send">
+              </div>
             </div>
           </div>
           <input class="btn btn--brn" type="submit" name="order-push" value="Отправить заказ">
