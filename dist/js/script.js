@@ -42,10 +42,10 @@ jQuery(document).ready(function () {
             let value = values[handle];
             if (handle) {
                 cost_last.text(Math.round(value));
-                input_max.val(Math.round(value))
+                input_max.val(Math.round(value));
             } else {
                 cost_first.text(Math.round(value));
-                input_min.val(Math.round(value))
+                input_min.val(Math.round(value));
             }
         });
     });
