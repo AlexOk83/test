@@ -63,10 +63,11 @@ mixin footer()
             .footer__bottom.clearfix
                 .footer__social
                     each item in social_btns
-                        .social-btn
-                            a(class= item.class href= item.link)= item.name
-                    p При перепечатке материалов ссылка на сайт обязательна!
+                        a.social-btn(href= item.link)= item.name
+                            div(class= item.class href= item.link)= item.name
+                    p.social-description При перепечатке материалов ссылка на сайт обязательна!
                 .footer__copyright
-                    img(src="img/htmlacademy.png" alt="htmlacademy")
+                    a.academy-btn(href= 'https://htmlacademy.ru/')
+                        //img(src="img/htmlacademy.png" alt="htmlacademy")
                     b Разработчик:
-                    a(href="#") HTML Academy
+                    a(href="#")  HTML Academy

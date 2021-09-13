@@ -469,17 +469,18 @@ a {
   &__bottom {
   }
   &__social {
+    font-size: 0;
     a {
       font-size: 0;
       color: white;
-      font-size: 0}
+      }
     float: left;
     width: 510px;
   }
   .social-btn {
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: inline-block;
-    vertical-align: center;
+    //vertical-align: center;
     width: 70px;
     height: 70px;
     background-color: @colorTxt;
@@ -487,28 +488,56 @@ a {
   .social-btn-in {
     .sprite();
     .stitches-sprite(-5px, -153px, 14px, 14px);
+    font-size: 0;
+    margin: auto;
   }
   .social-btn-fb {
     .sprite();
     .stitches-sprite(-5px, -127px, 8px, 16px);
+    font-size: 0;
+    margin: auto;
   }
   .social-btn-vk {
     .sprite();
     .stitches-sprite(-5px, -320px, 20px, 11px);
+    font-size: 0;
+    margin: auto;
+  }
+  .social-description {
+    float: right;
+    width: 200px;
+    .font_txt(14px, 20px);
+    color: @colorGray;
+    margin-top: 15px;
   }
   &__copyright {
-      font-size: 14px;
-
-      a {
-        color: @colorGray
+    float: right;
+    width: 315px;
+    vertical-align: center;
+    .academy-btn {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      background-color: @colorTxt;
+      text-align: center;
+      position: relative;
+      &::after {
+        content: '';
+        .sprite();
+        .stitches-sprite(-5px, -5px, 27px, 34px);
+        display: inline-block;
+        vertical-align: center;
+        position: absolute;
+        top: 20px;
+        left: 22px;
       }
-
-      float: right;
-      width: 305px;
-
-      b {
-        margin-left: 30px
-      }
-    ;
+    }
+    a {color: @colorGray}
+    b {
+      .font_txt(14px, 20px);
+      color: @colorGray;
+      margin-left: 30px;
+    }
     }
   }
