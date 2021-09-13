@@ -524,17 +524,13 @@ a {
       width: 70px;
       height: 70px;
       background-color: @colorTxt;
-      text-align: center;
       position: relative;
       &::after {
         content: '';
         .sprite();
         .stitches-sprite(-5px, -5px, 27px, 34px);
-        display: inline-block;
-        vertical-align: center;
-        position: absolute;
-        top: 20px;
-        left: 22px;
+        display: block;
+        .center(27px, 34px);
       }
     }
     a {color: @colorGray}
@@ -557,7 +553,6 @@ a {
   &__col {
     width: 100%;
     padding: 0 20px;
-
     float: left;
     &--50 {
       width: 50%;
