@@ -1,6 +1,6 @@
 mixin form_control(params)
   .form-control
-    if (!['radio', 'checkbox', 'toggle', 'like'].includes(params.type))
+    if (formElementsWithLabel.includes(params.type))
       label.form-control__label(for=params.id)= params.label
     case params.type
       when 'select'
