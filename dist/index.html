@@ -29,7 +29,7 @@
               <Table>
                 <tr>
                   <td> Алк.</td>
-                  <td>&amp;lt; 1%</td>
+                  <td>&lt;<span> 1%</span></td>
                 </tr>
                 <tr>
                   <td>Ккал</td>
@@ -47,7 +47,7 @@
               <Table>
                 <tr>
                   <td> Алк.</td>
-                  <td>&amp;lt; 0,5%</td>
+                  <td>&lt;<span> 0,5%</span></td>
                 </tr>
                 <tr>
                   <td>Ккал</td>
@@ -126,28 +126,28 @@
           <tbody>
             <tr>
               <td>Классика</td>
-              <td>&amp;gt; 1,2%</td>
+              <td>&gt;<span> 1,2%</span></td>
               <td>33</td>
               <td>330 мл</td>
               <td>120Р.</td>
             </tr>
             <tr>
               <td>Шабаш</td>
-              <td>&amp;gt; 1,2%</td>
+              <td>&gt;<span> 1,2%</span></td>
               <td>45</td>
               <td>330 мл</td>
               <td>250Р.</td>
             </tr>
             <tr>
               <td>Вахтёр &lt;sup&gt;Новинка&lt;/sup&gt;</td>
-              <td>&amp;gt; 1%</td>
+              <td>&gt;<span> 1%</span></td>
               <td>35</td>
               <td>0,5 мл</td>
               <td>150Р.</td>
             </tr>
             <tr>
               <td>Романтик &lt;sup&gt;Новинка&lt;/sup&gt;</td>
-              <td>&amp;gt; 0,5%</td>
+              <td>&gt;<span> 0,5%</span></td>
               <td>27</td>
               <td>0,5 мл</td>
               <td>90Р.</td>
@@ -161,39 +161,53 @@
         <h2 class="section-title">Заказать</h2>
         <p class="order__text">Не ждите пока нас отрекламируют, как Вятский квас, и мы поднимем цены! Закажите настоящий крафтовый квас сейчас. При заказе от 10 баррелей — скидка 10%.</p>
         <form class="order__form" action="#" method="POST">
-          <div class="form__group">
-            <label for="fullName">Представьтесь:</label>
-            <input type="text" name="fullName" id="fullName">
+          <div class="col col">
+            <div class="form__group">
+              <label for="fullName">Представьтесь:</label>
+              <input type="text" name="fullName" id="fullName">
+            </div>
           </div>
-          <div class="form__group">
-            <label for="phone">Номер телефона:</label>
-            <input type="text" name="phone" id="phone">
+          <div class="col col">
+            <div class="form__group">
+              <label for="phone">Номер телефона:</label>
+              <input type="text" name="phone" id="phone">
+            </div>
           </div>
-          <div class="form__group">
-            <label for="phone-2">Доп. номер:</label>
-            <input type="text" name="phone-2" id="phone-2">
+          <div class="col col">
+            <div class="form__group">
+              <label for="phone-2">Доп. номер:</label>
+              <input type="text" name="phone-2" id="phone-2">
+            </div>
           </div>
-          <div class="form__group">
-            <label for="Email">Email:</label>
-            <input type="text" name="Email" id="Email" value="a@mail.ru">
+          <div class="col col">
+            <div class="form__group">
+              <label for="Email">Email:</label>
+              <input type="text" name="Email" id="Email" value="a@mail.ru">
+            </div>
           </div>
-          <div class="form__group">
-            <label for="size-order">Объём заказа:</label>
-            <select name="size-order" id="size-order">
-              <option value="">Выберите вариант</option>
-              <option value="1-5">От 1 до 5 баррелей в неделю</option>
-              <option value="5-10">От 5 до 10 баррелей в неделю</option>
-              <option value="10-15" selected>От 10 до 15 баррелей в неделю</option>
-            </select>
+          <div class="col col">
+            <div class="form__group">
+              <label for="size-order">Объём заказа:</label>
+              <select name="size-order" id="size-order">
+                <option value="">Выберите вариант</option>
+                <option value="1-5">От 1 до 5 баррелей в неделю</option>
+                <option value="5-10">От 5 до 10 баррелей в неделю</option>
+                <option value="10-15" selected>От 10 до 15 баррелей в неделю</option>
+              </select>
+            </div>
           </div>
-          <div class="form__group">
-            <label for="message">Доп. комментарий:</label>
-            <textarea name="message" id="message">asdasdasd</textarea>
+          <div class="col col">
+            <div class="form__group">
+              <label for="message">Доп. комментарий:</label>
+              <textarea name="message" id="message">asdasdasd</textarea>
+            </div>
           </div>
-          <div class="form__group">
-            <label for="send">Я согласен получать квасную рассылку</label>
-            <!-- $(params.checkbox).parentsUntil('form__group').addClass('checkbox-area');-->
-            <input type="checkbox" id="send" name="send">
+          <div class="col col">
+            <div class="form__group">
+              <label for="send">Я согласен получать квасную рассылку</label>
+              <!-- $(params.checkbox).parentsUntil('form__group').addClass('checkbox-area');-->
+              <input type="checkbox" id="send" name="send">
+            </div>
           </div>
           <input class="btn btn--brn" type="submit" name="order-push" value="Отправить заказ">
         </form>

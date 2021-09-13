@@ -9,7 +9,8 @@ mixin list(list, classList)
 mixin cat_item(item)
     tr
         td= item.title
-        td= `&gt; ${item.alc}%`
+        td &gt;
+            span= ` ${item.alc}%`
         td= item.cal
         td= `${item.ob} мл`
         td= item.sum + 'Р.'
@@ -37,7 +38,8 @@ mixin new_item(item)
             Table
                 tr
                     td  Алк.
-                    td= `&lt; ${item.alc}%`
+                    td &lt;
+                        span= ` ${item.alc}%`
                 tr
                     td Ккал
                     td= item.cal
@@ -61,5 +63,6 @@ mixin history_item(item)
 mixin form(className, config)
     form(action="#" method="POST", class= className)
         each formItem in config
-            +form_el(formItem)
+            .col(class= formItem.classes)
+                +form_el(formItem)
         input.btn.btn--brn(type="submit" name="order-push" value="Отправить заказ")
