@@ -10,7 +10,7 @@
   <body>
     <div class="ui-kit">
       <div class="container">
-        <div class="row">
+        <div class="ui-kit__row">
           <div class="ui-kit__column">
             <div class="form-control">
               <label class="form-control__label" for="text">text field</label>
@@ -86,9 +86,31 @@
                 </div>
               </div>
             </div>
+            <div class="form-control__label">rate button</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control__list form-control__list--line-10">
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--40" data-value="40"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--50" data-value="50"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--0" data-value="0"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--0" data-value="0"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="ui-kit__column">
             <div class="form-control">
+              <label class="form-control__label" for="1">range slider</label>
               <div class="form-control__range" data-id="1" data-min="0" data-max="15000">
                 <div class="slider" id="slider-1">
                   <div class="slider__value"><span class="slider__count" id="first-1">5000</span><span class="slider__count" id="last-1">10000</span></div>
@@ -96,6 +118,23 @@
                   <input type="text" id="count-max-1" name="cost-max" value="10000">
                 </div>
               </div>
+            </div>
+            <div class="form-control__label">buttons</div>
+            <div class="ui-kit__wrapper">
+              <div class="btn btn--color">click me
+              </div>
+              <button class="btn btn--color" type="submit" disabled>click me
+              </button>
+              <div class="btn btn--border">click me
+              </div>
+              <button class="btn btn--border" type="submit" disabled>click me
+              </button>
+              <div class="btn btn--link">click me
+              </div>
+              <div class="btn btn--color btn--full btn--arrow-right">перейти к оплате
+              </div>
+              <button class="btn btn--color btn--full btn--arrow-right" type="submit" disabled>перейти к оплате
+              </button>
             </div>
           </div>
         </div>

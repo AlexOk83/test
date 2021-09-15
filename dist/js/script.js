@@ -21,7 +21,7 @@ jQuery(document).ready(function () {
         const costSlider = document.getElementById('slider-' + id);
 
         let cost_min = $('#first-' + id).text() * 1;
-        let cost_max = $('#last-'+ id).text() * 1;
+        let cost_max = $('#last-' + id).text() * 1;
 
         noUiSlider.create(costSlider, {
             start: [cost_min, cost_max],
@@ -35,9 +35,9 @@ jQuery(document).ready(function () {
 
         costSlider.noUiSlider.on('update', function (values, handle) {
             const cost_first = $(`#first-${id}`);
-            const cost_last  = $(`#last-${id}`);
+            const cost_last = $(`#last-${id}`);
             const input_min = $(`#count-min-${id}`);
-            const input_max  = $(`#count-max-${id}`);
+            const input_max = $(`#count-max-${id}`);
 
             let value = values[handle];
             if (handle) {
@@ -50,5 +50,44 @@ jQuery(document).ready(function () {
         });
     });
 
+    $('.form-control__rate').each(function () {
+        const $this = $(this);
+        const star = $('.star', $this);
+        let oldClasses = $this.attr('class');
+
+        star.hover(function () {
+            if ($this.hasClass('clicked')) {
+                return;
+            }
+
+            const starClasses = $(this).attr('class');
+            const modify = starClasses.split(' ').filter(className => className !== 'star');
+            const arg = modify[0] && modify[0].length > 0 && modify[0][modify[0].length - 1]
+            console.clear();
+            console.log(arg);
+            $this
+                .removeClass()
+                .addClass(`form-control__rate form-control__rate--${arg}0`);
+        });
+
+        $this.mouseleave(function () {
+            if ($this.hasClass('clicked')) {
+                return;
+            }
+
+            $this
+                .removeClass()
+                .addClass(oldClasses);
+        });
+
+        $this.click(function() {
+            if ($this.hasClass('clicked')) {
+                return;
+            }
+
+            oldClasses = $this.attr('class');
+            $this.addClass('clicked');
+        })
+    });
 
 });

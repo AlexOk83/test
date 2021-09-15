@@ -51,13 +51,6 @@ i, span {
 
 
 .row {
-  margin-left: -@padding;
-  margin-right: -@padding;
-  display: flex;
-  flex-wrap: wrap;
-  .media_mobile({
-    margin-left: 0;
-    margin-right: 0;
-  });
+  .grid_row(@padding);
 }
 

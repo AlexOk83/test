@@ -1,6 +1,6 @@
 mixin form_control(params)
   .form-control
-    if (formElementsWithLabel.includes(params.type))
+    if (formElementsWithLabel.includes(params.type) && params.label)
       label.form-control__label(for=params.id)= params.label
     case params.type
       when 'select'
@@ -23,6 +23,8 @@ mixin form_control(params)
         +radio(params)
       when 'like'
         +like(params)
+      when 'rate'
+        +rate(params)
       when 'checkbox'
         +checkBox(params)
       default
@@ -81,3 +83,13 @@ mixin like(params)
   .form-control__like(class={'clicked': params.clicked})
     input(type='text', name= params.name, value= params.value, disabled)
 
+mixin rate(params)
+  .form-control__rate(class=`form-control__rate--${params.value}`, data-value= params.value)
+    each className in ['star--1', 'star--2', 'star--3','star--4','star--5' ]
+      span.star(class=className)
+
+mixin button(params)
+  if (params.type)
+    button.btn(type= params.type, class= params.classes, disabled= params.disabled): block
+  else
+    .btn(class= params.classes): block

@@ -2,7 +2,7 @@
 @full_width: 100%;
 @width_column: @full_width / 12;
 @width_column2: @full_width / 10;
-@padding: 15*@rem;
+@padding: 20*@rem;
 
 @extra_mobile_width: 500px;
 @mobile_width: 767px;
@@ -146,4 +146,15 @@
     padding-left: @p / 2;
     padding-right: @p / 2;
   })
+}
+
+.grid_row(@p: @padding) {
+  margin-left: -@p;
+  margin-right: -@p;
+  display: flex;
+  flex-wrap: wrap;
+  .media_mobile({
+    margin-left: 0;
+    margin-right: 0;
+  });
 }

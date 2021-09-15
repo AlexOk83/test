@@ -1,10 +1,17 @@
 @import "mixins";
 
+@uiPadding: 63px;
+
 .ui-kit {
   padding-top: 30px;
+
+  &__row {
+    .grid_row(@uiPadding);
+  }
+
   &__column {
-    .column(3, 6);
-    .column_padding();
+    .column(4, 6);
+    .column_padding(@uiPadding);
   }
 
   &__wrapper {

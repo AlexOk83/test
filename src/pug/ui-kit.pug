@@ -3,7 +3,7 @@ extends templates/layout
 block content
   .ui-kit
     .container
-      .row
+      .ui-kit__row
         .ui-kit__column
           each formItem in formConfig1
             +form_control(formItem)
@@ -25,6 +25,17 @@ block content
           .form-control__label like button
           .ui-kit__wrapper
             +inlineList(likeButtons, 10)
+          .form-control__label rate button
+          .ui-kit__wrapper
+            +inlineList(rateButtons, 10)
         .ui-kit__column
-          each formItem in formConfig3
-            +form_control(formItem)
+          +form_control(rangeSliders[0])
+          .form-control__label buttons
+          .ui-kit__wrapper
+            +button({ classes: ['btn--color'] }) click me
+            +button({ type: 'submit', disabled: true, classes: ['btn--color'] }) click me
+            +button({ classes: ['btn--border'] }) click me
+            +button({ type: 'submit', disabled: true, classes: ['btn--border'] }) click me
+            +button({ classes: ['btn--link'] }) click me
+            +button({ classes: ['btn--color', 'btn--full', 'btn--arrow-right'] }) перейти к оплате
+            +button({ type: 'submit', disabled: true, classes: ['btn--color', 'btn--full', 'btn--arrow-right'] }) перейти к оплате
