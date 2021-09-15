@@ -39,7 +39,20 @@ mixin select(params)
         option(value= option.value)= option.title
 
 mixin dropdown(params)
-  div
+  .dropdown
+    .dropdown__select= params.placeholder
+    .dropdown__list
+      each option in params.list
+        +counter(option, params.id)
+
+mixin counter(params, id)
+  .dropdown__item
+    .title= params.title
+    .counter
+      .counter__btn.counter__btn--minus
+      input.counter__value(type='text', disabled, name=params.name + '-' +id, value= params.value)
+      .counter__btn.counter__btn--plus
+
 
 mixin checkBoxList(params)
   div
@@ -84,7 +97,7 @@ mixin like(params)
     input(type='text', name= params.name, value= params.value, disabled)
 
 mixin rate(params)
-  .form-control__rate(class=`form-control__rate--${params.value}`, data-value= params.value)
+  .form-control__rate(class=[`form-control__rate--${params.value}`, params.clicked ? 'clicked': null])
     each className in ['star--1', 'star--2', 'star--3','star--4','star--5' ]
       span.star(class=className)
 

@@ -6,6 +6,29 @@
               type: 'text',
               label: 'text field',
               placeholder: 'Email'
+            },
+            {
+              type: 'dropdown',
+              id: '1',
+              label: 'dropdown',
+              placeholder: 'Сколько гостей',
+              list: [
+                {
+                  name: 'parent',
+                  title: 'взрослые',
+                  value: 0
+                },
+                {
+                  name: 'children',
+                  title: 'дети',
+                  value: 0
+                },
+                {
+                  name: 'baby',
+                  title: 'младенцы',
+                  value: 0
+                },
+              ]
             }
           ],
           checkboxes = [
@@ -83,19 +106,19 @@
               name: 'rate-2',
               value: 50,
               type: 'rate',
-              clicked: true,
+              clicked: false,
             },
             {
               name: 'rate-3',
               value: 15,
               type: 'rate',
-              clicked: true,
+              clicked: false,
             },
             {
               name: 'rate-4',
-              value: 0,
+              value: 20,
               type: 'rate',
-              clicked: true,
+              clicked: false,
             }
           ],
           formElementsWithLabel = [
