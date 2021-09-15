@@ -1,5 +1,12 @@
 jQuery(document).ready(function () {
 
+    function getCountStars(classes) {
+        const modify = classes.split(' ').find(className => className.includes('--'));
+        const indexArg = modify.indexOf('--');
+
+        return modify && modify.length > 0 && modify[indexArg + 2]
+    }
+
     $('.form-control__like').click(function () {
         let $this = $(this);
         let counter = $('input', $this);
@@ -61,13 +68,10 @@ jQuery(document).ready(function () {
             }
 
             const starClasses = $(this).attr('class');
-            const modify = starClasses.split(' ').filter(className => className !== 'star');
-            const arg = modify[0] && modify[0].length > 0 && modify[0][modify[0].length - 1]
-            console.clear();
-            console.log(arg);
+            const stars = getCountStars(starClasses);
             $this
                 .removeClass()
-                .addClass(`form-control__rate form-control__rate--${arg}0`);
+                .addClass(`form-control__rate form-control__rate--${stars}0`);
         });
 
         $this.mouseleave(function () {
@@ -85,7 +89,10 @@ jQuery(document).ready(function () {
                 return;
             }
 
-            oldClasses = $this.attr('class');
+            const starClasses = $this.attr('class');
+            const arg = getCountStars(starClasses);
+            console.log(`Вы поставили ${arg} звезды`);
+            oldClasses = starClasses;
             $this.addClass('clicked');
         })
     });
