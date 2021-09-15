@@ -37,7 +37,7 @@ mixin form_el(params)
         input(type="text", name= params.id, id= params.id)
 
 
-mixin new_item(item)
+mixin new_item  (item)
     div.new-item
         h3.new-title= item.title
         div.new-item__ingridient
@@ -59,7 +59,7 @@ mixin new_item(item)
 
 mixin history_item(item)
     dt.history-item__name= item.name
-        i.history-item__source Источник:
+        i.history-item__source= 'Источник: '
             a(href= item.link target="_blank") ru.wikipedia.org
     dd.history-item__description
         img.pic(src=`img/${item.img}` alt=item.name)

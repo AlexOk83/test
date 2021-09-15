@@ -8,7 +8,7 @@
   }
 }
 
-.bg(@img, @size: cover, @pos: center, @repeat: no-repeat) {
+.bg(@img, @size: cover, @pos: center bottom, @repeat: no-repeat) {
   background-image: url(@img);
   background-size: @size;
   background-position: @pos;
@@ -48,7 +48,7 @@
     text-transform: uppercase;
     font-size: 16px;
     font-weight: bold;
-    padding: 20px 0;
+    padding: 18px 0;
     &:hover {
       color: @bgColorBrn;
       border-bottom: 1px solid rgba(255, 255, 255, 1);

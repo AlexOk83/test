@@ -4,7 +4,7 @@ mixin section_header
             div.header__top.clearfix.container--small
                 a.logo: img( src="img/logo.png", alt="Кваст")
                 +list(menu, 'menu clearfix')
-            p.header__promo Крафтовый квас всему голова!
+            p.header__promo Крафтовый квас <br> всему голова!
 
 mixin section_new()
     section.new
@@ -35,9 +35,11 @@ mixin section_news()
     section.news
         .container--small
             h2.section-title Пресса о нас
-            blockquote.news__block
+            blockquote.news__block.clearfix
                 each item in news__block
-                    p.news-text= item.text
+                    p.news-text= item.row1 + item.row2
+                    //p.news-text= item.row1 + `br` + item.row2
+                            item.row2
                     cite.news-author= item.author
                     a.btn.btn--gray.read-more(href="#") Читать далее
 
