@@ -4,7 +4,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   .font_txt();
 }
 a {
@@ -33,8 +33,8 @@ a {
   font-weight: bold;
   color: @titleColor;
   text-transform: uppercase;
-  margin-bottom: 85px;
-  margin-right: 180px;
+  margin-bottom: 75px;
+  //margin-right: 180px;
 }
 
 .header {
@@ -42,8 +42,7 @@ a {
   min-height: 550px;
   .bg("../img/wheat-back.jpg");
   background-size: cover;
-  padding: 0;
-  padding-top: 35px;
+  padding-top: 60px;
   &__top {
     .clearfix();
     max-width: 900px;
@@ -60,8 +59,8 @@ a {
       float: right;
       width: 600px;
       text-transform: uppercase;
-      border-top: 1px solid rgba(255, 255, 255, 0.5);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
       margin-left: 60px;
       margin-top: 10px;
       padding: 15px 0;
@@ -87,24 +86,25 @@ a {
     line-height: 70px;
     font-weight: bold;
     text-align: center;
-    a {
-      color: white;
-      font-size: 70px;
-      line-height: 70px;
+    color: white;
     }
   }
-}
 
 .new {
-  padding-top: 95px;
+  padding-top: 75px;
   padding-bottom: 110px;
-  &-items {
-    margin-top: 110px;
+  &-title {
+    .font_title(40px, 60px);
+    margin-bottom: 45px;
   }
+  &-items {}
   &-item {
     float: left;
-    padding: 0 25px 0 25px;
+    padding: 0 25px 0 35px;
+    width: 338px;
     position: relative;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    &:last-child{border-right: 1px solid rgba(0, 0, 0, 0.1);}
 
     &__ingridient {
       width: 150px;
@@ -121,6 +121,7 @@ a {
       border: 1px solid @bgColorGray;
       .font_title();
       border-collapse: collapse;
+      width: 150px;
     }
 
     td {
@@ -134,7 +135,7 @@ a {
     }
 
     &__text {
-      padding: 10px;
+      //padding: 10px;
       width: 330px;
     }
 
@@ -142,13 +143,8 @@ a {
       margin-top: 60px;
     }
   }
-  &-title {
-    .font_title(40px, 60px);
-    margin-bottom: 45px;
-    //font-family: "Arial", sans-serif; // почему не работает в боди общее условие?
-  }
   .price {
-    padding: 20px;
+    padding: 20px 0 20px 20px;
   }
 }
 
@@ -212,27 +208,25 @@ a {
 }
 
 .feature-item {
-  border-left: 1px solid #cc9966;
+  border-left: 1px solid rgba(204, 153, 102, 0.30);
+  //width: 200px;
   float: left;
-  width: 200px;
-  padding-left: 60px;
-  padding-right: 60px;
-  padding-top: 80px;
+  padding-left: 95px;
+  padding-right: 95px;
+  padding-top: 100px;
   margin: 0;
   position: relative;
   &:first-child {
     border-left: 1px solid transparent;
+    padding-left: 0;
   }
   &::before {
     content: '';
     position: absolute;
-    width: 75px;
-    height: 75px;
-    // background-color: red;
-    // opacity: 0.5;
     top: 0;
-    left: 60px;
+    left: 95px;
   }
+
   .title {
     .font_title(20px,30px);
     margin: 0;
@@ -241,13 +235,15 @@ a {
 
   .text {
     .font_txt();
+    width: 210px;
   }
 
   &--self {
     &::before {
+      left: 0px;
       .sprite();
       .stitches-sprite(-5px, -49px, 50px, 68px);
-      }
+    }
   }
 
   &--our {
@@ -258,6 +254,8 @@ a {
   }
 
   &--expensive {
+    float: right;
+    padding-right: 0;
     &::before {
       .sprite();
       .stitches-sprite(-5px, -252px, 63px, 58px);
@@ -266,16 +264,13 @@ a {
 }
 
 .history {
-  padding-top: 90px;
-  padding-bottom: 90px;
-  .history-container {
-    &:first-child {
-      margin-bottom: 70px;
-    }
-    .pic {
-        border-radius: 5px;
-    }
+  padding-top: 80px;
+  padding-bottom: 30px;
+
+  .pic {
+    borer-radius: 5px
   }
+
   &__list {
     //width: 480px;
   }
@@ -302,9 +297,10 @@ a {
   }
   &__description {
     position: relative;
-    padding-right: 330px;
+    padding-right: 315px;
     min-height: 100px;
     margin: 0;
+    margin-bottom: 60px;
     .pic {
       position: absolute;
       top: 0;
@@ -320,8 +316,8 @@ a {
 
 .news {
   background-color: @bgColorGray;
-  padding-bottom: 90px;
-  padding-top: 90px;
+  padding-bottom: 150px;
+  padding-top: 80px;
   &__block {
     padding: 0;
     position: relative;
@@ -331,21 +327,17 @@ a {
     vertical-align: center;
   }
   .read-more {
-    //position: absolute;
-    //bottom: 20px;
-    //left: 0;
     float: left;
   }
   &-author {
     .font_title();
     font-style: normal;
     float: right;
-    // text-align: right;
     margin-top: 15px;
 
   }
   &-text {
-    padding-bottom: 55px;
+    margin-bottom: 35px;
     position: relative;
     width: 700px;
     &:before {
@@ -361,7 +353,7 @@ a {
 
 .range {
   padding-bottom: 90px;
-  padding-top: 100px;
+  padding-top: 90px;
 
   &__table {
     line-height: 30px;
@@ -375,30 +367,37 @@ a {
       font-weight: normal;
       text-align: left;
       &:last-child {text-align: right}
-      padding-top: 25px;
-      padding-bottom: 25px;
+      padding: 12px 0;
     }
 
     td {
-      border-top: 1px solid @bgColorGray;
-      border-bottom: 1px solid @bgColorGray;
-      padding-top: 25px;
-      padding-bottom: 25px;
+      border-top: 1px solid @colorGrayPlus;
+      border-bottom: 1px solid @colorGrayPlus;
+      padding: 12px 0;
       text-transform: uppercase;
       &:first-child {
         .font_title(16px, 30px)
       }
       &:last-child {text-align: right}
     }
+    sup {
+      font-size: 8px;
+      color: white;
+      background-color: black;
+      border-radius: 4px;
+      padding: 3px 3px;
+      margin-left: 25px ;
+
+    }
   }
 }
 
 .order {
   background-color: @bgColorBrn;
-  padding-top: 90px;
-  padding-bottom: 110px;
+  padding-top: 75px;
+  padding-bottom: 100px;
   &__text {
-    margin-bottom: 85px;
+    margin-bottom: 80px;
   }
   &__form {
     width: 630px;
@@ -546,16 +545,41 @@ a {
   &__row {
     display: block;
     position: relative;
-    margin-right: -20px;
-    margin-left: -20px;
     .clearfix();
+    margin-bottom: 25px;
+    padding: 0;
+    label {
+      .font_title(16px, 20px);
+      display: inline-block;
+      padding: 10px 0;
+    }
+    input, textarea, select {
+      .font_title(16px, 20px);
+      color: rgba(0, 0, 0, 0.3);
+      border: none;
+      background-color: @colorForm;
+      width: 100%;
+      padding: 5px 20px;
+      height: 45px;
+      block-size: border-box;
+      &:hover {background-color: @colorFormHov}
+      &:focus {background-color: white}
+    }
+    textarea {
+      max-width: 100%;
+      resize: none;
+    }
+    &--checkbox {
+      margin-bottom: 45px;
+    }
+
   }
   &__col {
     width: 100%;
-    padding: 0 20px;
+    //padding: 0 20px;
     float: left;
     &--50 {
-      width: 50%;
+      width: 300px;
     }
   }
 }

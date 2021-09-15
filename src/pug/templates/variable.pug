@@ -9,6 +9,7 @@
 			catalog = [
 				{
 					title: 'Классика',
+
 					alc:   '1,2',
 					cal:   '33',
 					ob:    '330',
@@ -16,24 +17,29 @@
 				},
 				{
 					title: 'Шабаш',
+					more: '1',
 					alc:   '1,2',
 					cal:   '45',
 					ob:    '330',
 					sum:   '250',
 				},
 				{
-					title: `Вахтёр <sup>Новинка</sup>`,
+					title: `Вахтёр`,
+
 					alc:   '1',
 					cal:   '35',
 					ob:    '0,5',
 					sum:   '150',
+					new: 	'1',
 				},
 				{
-					title: 'Романтик <sup>Новинка</sup>',
+					title: `Романтик`,
+					more: '1',
 					alc:   '0,5',
 					cal:   '27',
 					ob:    '0,5',
 					sum:   '90',
+					new: 	'1',
 				},
 			],
 			new_items = [
@@ -132,7 +138,7 @@
 				{ label: 'Номер телефона:', id: 'phone', classes: ['grid__col--50'] },
 				{ label: 'Доп. номер:', id: 'phone-2', classes: ['grid__col--50']},
 				{ label: 'Email:', value: 'a@mail.ru', id: 'Email', classes: [] },
-				{ label: 'Объём заказа:', list: select_option, value: select_option[2].value, id: 'size-order', classes: [] },
+				{ label: 'Объём заказа:', list: select_option, value: select_option[1].value, id: 'size-order', classes: [] },
 				{ label: 'Доп. комментарий:', longText: true, value: 'asdasdasd', id: 'message', classes: [] },
 				{ label: 'Я согласен получать квасную рассылку', checkbox: true, value: false, id: 'send', classes: [] }
 			]

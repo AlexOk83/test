@@ -1,3 +1,11 @@
+mixin section_header
+    header.header
+        .container--small
+            div.header__top.clearfix.container--small
+                a.logo: img( src="img/logo.png", alt="Кваст")
+                +list(menu, 'menu clearfix')
+            p.header__promo Крафтовый квас всему голова!
+
 mixin section_new()
     section.new
         .container--small
@@ -30,9 +38,8 @@ mixin section_news()
             blockquote.news__block
                 each item in news__block
                     p.news-text= item.text
-                    .wrapper.clearfix
-                        cite.news-author= item.author
-                        a.btn.btn--gray.read-more(href="#") Читать далее
+                    cite.news-author= item.author
+                    a.btn.btn--gray.read-more(href="#") Читать далее
 
 mixin section_range()
     section.range
