@@ -70,10 +70,10 @@ mixin footer()
             .footer__bottom.clearfix
                 .footer__social
                     each item in social_btns
-                        a.social-btn(href= item.link)= item.name
-                            div(class= item.class href= item.link)= item.name
-                    p.social-description При перепечатке материалов ссылка на сайт обязательна!
+                        a.social-btn(class= item.class href= item.link)= item.name
+                p.social-description При перепечатке материалов ссылка на сайт обязательна!
                 .footer__copyright
                     a.academy-btn(href= 'https://htmlacademy.ru/')
+                        img.icon-academy(src="img/htmlacademy.png")
                     b Разработчик:
                     a(href="#")  HTML Academy

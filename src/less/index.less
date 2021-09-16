@@ -397,10 +397,11 @@ a {
 .order {
   background-color: @bgColorBrn;
   padding-top: 80px;
-  padding-bottom: 100px;
+  padding-bottom: 110px;
   &__text {
-    margin-bottom: 70px;
+    margin-bottom: 65px;
     width: 660px;
+    color: @clorTxtHist;
   }
   &__form {
     width: 630px;
@@ -449,76 +450,79 @@ a {
     display: block;
     position: relative;
     .clearfix();
-    margin-bottom: 25px;
+    margin-bottom: 17px;
     padding: 0;
     label {
       .font_title(16px, 20px);
       display: inline-block;
-      padding: 10px 0;
+      padding: 0 0 10px 0;
     }
-    input, textarea, select {
+    input, textarea {
       .font_title(16px, 20px);
       color: rgba(0, 0, 0, 0.3);
       border: none;
       background-color: @colorForm;
       width: 590px;
       padding: 5px 20px;
-      height: 45px;
+      height: 40px;
       block-size: border-box;
       &:hover {background-color: @colorFormHov}
       &:focus {background-color: white}
     }
     textarea {
       max-width: 100%;
+      min-height: 115px;
       resize: none;
     }
-    &--checkbox {
-      margin-bottom: 45px;
+    input[type='checkbox'] {
+      all: revert;
     }
-
   }
   &__col {
     width: 100%;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     float: left;
     &--50 {
       width: 290px;
-      &:first-child {
-        margin-right: 25px;
-        }
+      &:nth-of-type(2) {margin-right: 50px}
       input {
-        width: 250px;
+        width: 250px
+      }
+    }
+    &:last-child {
+      display: inline-block;
       }
     }
   }
-}
 
 .footer {
-  padding: 60px 0 40px 0;
+  padding: 60px 0 65px 0;
   margin: 0;
   background-color: black;
-  &__top {margin-bottom: 50px}
+  &__top {margin-bottom: 47px}
   &__menu {
     border-top: solid 1px #333333;
+    border-bottom: solid 1px #333333;
     list-style: none;
     float: left;
     width: 600px;
-    margin-left: 125px;
+    margin-left: 130px;
+    margin-top: 7px;
     .menu_hover_act()
   }
   .menu__item {
     float: left;
-    margin-right: 50px;
-    padding: 20px 0;
+    margin-right: 54px;
+    padding: 14px 0;
       &:last-child {
         margin-right: 0;
       }
   }
   &__logo {
     float: left;
-    width: 140px;
-    height: 75px;
-    margin-left: 35px;
+    width: 143px;
+    height: 76px;
+    margin-left: 36px;
   }
   &__bottom {
   }
@@ -529,51 +533,55 @@ a {
       color: white;
       }
     float: left;
-    width: 510px;
+    width: 225px;
+    display: inline-block;
+    margin-right: 80px;
   }
   .social-btn {
     border: 1px solid rgba(255, 255, 255, 0.1);
     display: inline-block;
-    //vertical-align: center;
-    width: 70px;
-    height: 70px;
-    background-color: @colorTxt;
+    width: 69px;
+    height: 69px;
+    background-color: @colorbtn;
+      &:not(:last-child) {border-right: none}
   }
-  .social-btn-in {
+  .social-btn-in::after {
+    content: '';
     .sprite();
     .stitches-sprite(-5px, -153px, 14px, 14px);
-    font-size: 0;
     margin: auto;
-  }
-  .social-btn-fb {
+    }
+  .social-btn-fb::after {
+    content: '';
     .sprite();
     .stitches-sprite(-5px, -127px, 8px, 16px);
-    font-size: 0;
     margin: auto;
-  }
-  .social-btn-vk {
+    }
+  .social-btn-vk::after {
+    content: '';
     .sprite();
     .stitches-sprite(-5px, -320px, 20px, 11px);
-    font-size: 0;
     margin: auto;
-  }
+    }
   .social-description {
-    float: right;
+    float: left;
     width: 200px;
     .font_txt(14px, 20px);
     color: @colorGray;
-    margin-top: 15px;
+    margin-top: 13px;
   }
   &__copyright {
     float: right;
-    width: 315px;
+    width: 300px;
+    display: inline-block;
+    margin-right: 10px;
     vertical-align: center;
     .academy-btn {
       border: 1px solid rgba(255, 255, 255, 0.1);
       display: inline-block;
-      width: 70px;
-      height: 70px;
-      background-color: @colorTxt;
+      width: 69px;
+      height: 69px;
+      background-color: @colorbtn;
       position: relative;
       &::after {
         content: '';
@@ -583,12 +591,16 @@ a {
         .center(27px, 34px);
       }
     }
-    a {color: @colorGray}
+    a {
+      .font_txt(14px, 20px);
+      color: @colorGray;
+    }
     b {
       .font_txt(14px, 20px);
       color: @colorGray;
-      margin-left: 30px;
+      margin-left: 32px;
     }
+    .icon-academy {visibility: hidden}
     }
   }
 
