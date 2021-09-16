@@ -336,11 +336,13 @@ a {
     font-style: normal;
     float: right;
     margin-top: 10px;
+    margin-right: 2px;
   }
   &-text {
     margin-bottom: 35px;
     position: relative;
-    width: 700px;
+    width: 690px;
+    color: @clorTxtHist;
     &:before {
       content: '';
       .sprite();
@@ -360,7 +362,6 @@ a {
     line-height: 30px;
     border-collapse: collapse;
     width: 800px;
-
     th {
       font-size: 11px;
       text-transform: uppercase;
@@ -368,16 +369,16 @@ a {
       font-weight: normal;
       text-align: left;
       &:last-child {text-align: right}
-      padding: 12px 0;
+      padding-bottom: 32px;
     }
-
     td {
       border-top: 1px solid @colorGrayPlus;
       border-bottom: 1px solid @colorGrayPlus;
-      padding: 12px 0;
+      padding: 17px 0;
       text-transform: uppercase;
       &:first-child {
-        .font_title(16px, 30px)
+        .font_title(16px, 30px);
+        width: 400px;
       }
       &:last-child {text-align: right}
     }
@@ -385,8 +386,8 @@ a {
       font-size: 8px;
       color: white;
       background-color: black;
-      border-radius: 4px;
-      padding: 3px 3px;
+      border-radius: 3px;
+      padding: 3px 5px;
       margin-left: 25px ;
 
     }
@@ -395,15 +396,15 @@ a {
 
 .order {
   background-color: @bgColorBrn;
-  padding-top: 75px;
+  padding-top: 80px;
   padding-bottom: 100px;
   &__text {
-    margin-bottom: 80px;
+    margin-bottom: 70px;
+    width: 660px;
   }
   &__form {
     width: 630px;
   }
-
   .form__group {
     margin-bottom: 25px;
     padding: 0;
@@ -439,6 +440,55 @@ a {
     &:nth-child(3) {
       float: right;
       width: 290px;
+    }
+  }
+}
+
+.grid {
+  &__row {
+    display: block;
+    position: relative;
+    .clearfix();
+    margin-bottom: 25px;
+    padding: 0;
+    label {
+      .font_title(16px, 20px);
+      display: inline-block;
+      padding: 10px 0;
+    }
+    input, textarea, select {
+      .font_title(16px, 20px);
+      color: rgba(0, 0, 0, 0.3);
+      border: none;
+      background-color: @colorForm;
+      width: 590px;
+      padding: 5px 20px;
+      height: 45px;
+      block-size: border-box;
+      &:hover {background-color: @colorFormHov}
+      &:focus {background-color: white}
+    }
+    textarea {
+      max-width: 100%;
+      resize: none;
+    }
+    &--checkbox {
+      margin-bottom: 45px;
+    }
+
+  }
+  &__col {
+    width: 100%;
+    margin-bottom: 25px;
+    float: left;
+    &--50 {
+      width: 290px;
+      &:first-child {
+        margin-right: 25px;
+        }
+      input {
+        width: 250px;
+      }
     }
   }
 }
@@ -542,45 +592,3 @@ a {
     }
   }
 
-.grid {
-  &__row {
-    display: block;
-    position: relative;
-    .clearfix();
-    margin-bottom: 25px;
-    padding: 0;
-    label {
-      .font_title(16px, 20px);
-      display: inline-block;
-      padding: 10px 0;
-    }
-    input, textarea, select {
-      .font_title(16px, 20px);
-      color: rgba(0, 0, 0, 0.3);
-      border: none;
-      background-color: @colorForm;
-      width: 100%;
-      padding: 5px 20px;
-      height: 45px;
-      block-size: border-box;
-      &:hover {background-color: @colorFormHov}
-      &:focus {background-color: white}
-    }
-    textarea {
-      max-width: 100%;
-      resize: none;
-    }
-    &--checkbox {
-      margin-bottom: 45px;
-    }
-
-  }
-  &__col {
-    width: 100%;
-    //padding: 0 20px;
-    float: left;
-    &--50 {
-      width: 300px;
-    }
-  }
-}

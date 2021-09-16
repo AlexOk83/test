@@ -14,14 +14,15 @@ mixin cat_item(item)
         if (item.more)
             td > #{item.alc}%
         else
-            td &lt; #{item.alc}
+            td &lt; #{item.alc}%
         td= item.cal
-        td= `${item.ob} мл`
-        td= item.sum + 'Р.'
+        td= item.ob
+        td= item.sum + ' Р.'
 
 mixin form_el(params)
     label(for= params.id)= params.label
     if (params.list)
+        br
         select(name= params.id, id= params.id)
             option(value='') Выберите вариант
             each item in params.list
@@ -29,7 +30,6 @@ mixin form_el(params)
     else if(params.longText)
         textarea(name= params.id, id= params.id)
     else if(params.checkbox)
-        // $(params.checkbox).parentsUntil('form__group').addClass('checkbox-area');
         input(type="checkbox" id= params.id name= params.id checked= params.value)
     else
         input(type="text", name= params.id, id= params.id)

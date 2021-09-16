@@ -8,36 +8,35 @@
 			],
 			catalog = [
 				{
-					title: 'Классика',
+					title: 'Классика ',
 
 					alc:   '1,2',
 					cal:   '33',
-					ob:    '330',
+					ob:    '330  мл',
 					sum:   '120'
 				},
 				{
-					title: 'Шабаш',
+					title: 'Шабаш ',
 					more: '1',
 					alc:   '1,2',
 					cal:   '45',
-					ob:    '330',
+					ob:    '330 мл',
 					sum:   '250',
 				},
 				{
-					title: `Вахтёр`,
+					title: `Вахтёр `,
 
 					alc:   '1',
 					cal:   '35',
-					ob:    '0,5',
+					ob:    '0,5 л',
 					sum:   '150',
 					new: 	'1',
 				},
 				{
-					title: `Романтик`,
-					more: '1',
+					title: `Романтик `,
 					alc:   '0,5',
 					cal:   '27',
-					ob:    '0,5',
+					ob:    '0,5 л',
 					sum:   '90',
 					new: 	'1',
 				},
@@ -95,12 +94,12 @@
 			],
 			news__block = [
 				{
-					row1: 'Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса.',
+					row1: 'Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса. ',
 					row2: 'Да, да, вы не ослышались! Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!',
 					author: 'Газета столичный Стольник'
 				}
 			],
-			th_table = ['Название', 'Алк', 'Ккал', 'Объём', 'Стоимость'],
+			th_table = [' Название', 'Алк', 'Ккал', 'Объём', 'Стоимость'],
 			select_option = [
 				{
 					value: '1-5',
@@ -136,10 +135,10 @@
 			],
 			formConfig = [
 				{ label: 'Представьтесь:', id: 'fullName', classes: [] },
-				{ label: 'Номер телефона:', id: 'phone', classes: ['grid__col--50'] },
-				{ label: 'Доп. номер:', id: 'phone-2', classes: ['grid__col--50']},
+				{ label: 'Номер телефона:', id: 'phone', classes: ['grid__col--50', 'phone'] },
+				{ label: 'Доп. номер:', id: 'phone-2', classes: ['grid__col--50', 'phone-alt']},
 				{ label: 'Email:', value: 'a@mail.ru', id: 'Email', classes: [] },
 				{ label: 'Объём заказа:', list: select_option, value: select_option[1].value, id: 'size-order', classes: [] },
 				{ label: 'Доп. комментарий:', longText: true, value: 'asdasdasd', id: 'message', classes: [] },
-				{ label: 'Я согласен получать квасную рассылку', checkbox: true, value: false, id: 'send', classes: [] }
+				{ label: 'Я согласен получать квасную рассылку', checkbox: true, value: true, id: 'send', classes: [] }
 			]

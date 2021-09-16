@@ -37,7 +37,7 @@ mixin section_news()
             h2.section-title Пресса о нас
             blockquote.news__block.clearfix
                 each item in news__block
-                    p.news-text #{item.row1} <br/> #{item.row2}
+                    p.news-text #{item.row1} #{item.row2}
                     cite.news-author= item.author
                     a.btn.btn--gray.read-more(href="#") Читать далее
 

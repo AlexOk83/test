@@ -101,7 +101,7 @@
       <div class="container--small">
         <h2 class="section-title">Пресса о нас</h2>
         <blockquote class="news__block clearfix">
-          <p class="news-text">Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса. <br/> Да, да, вы не ослышались! Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!</p>
+          <p class="news-text">Сегодня мы провели дегустацию чего-то действительно новенького — крафтового кваса.  Да, да, вы не ослышались! Спасибо Арсену и Руслану за то, что предоставили целую бочку своего напитка!</p>
           <cite class="news-author">Газета столичный Стольник</cite><a class="btn btn--gray read-more" href="#">Читать далее</a>
         </blockquote>
       </div>
@@ -112,7 +112,7 @@
         <table class="range__table">
           <thead>
             <tr>
-              <th>Название</th>
+              <th> Название</th>
               <th>Алк</th>
               <th>Ккал</th>
               <th>Объём</th>
@@ -121,36 +121,36 @@
           </thead>
           <tbody>
             <tr>
-              <td>Классика
+              <td>Классика 
               </td>
-              <td>&lt; 1,2</td>
+              <td>&lt; 1,2%</td>
               <td>33</td>
-              <td>330 мл</td>
-              <td>120Р.</td>
+              <td>330  мл</td>
+              <td>120 Р.</td>
             </tr>
             <tr>
-              <td>Шабаш
+              <td>Шабаш 
               </td>
               <td>> 1,2%</td>
               <td>45</td>
               <td>330 мл</td>
-              <td>250Р.</td>
+              <td>250 Р.</td>
             </tr>
             <tr>
-              <td>Вахтёр<sup>Новинка</sup>
+              <td>Вахтёр <sup>Новинка</sup>
               </td>
-              <td>&lt; 1</td>
+              <td>&lt; 1%</td>
               <td>35</td>
-              <td>0,5 мл</td>
-              <td>150Р.</td>
+              <td>0,5 л</td>
+              <td>150 Р.</td>
             </tr>
             <tr>
-              <td>Романтик<sup>Новинка</sup>
+              <td>Романтик <sup>Новинка</sup>
               </td>
-              <td>> 0,5%</td>
+              <td>&lt; 0,5%</td>
               <td>27</td>
-              <td>0,5 мл</td>
-              <td>90Р.</td>
+              <td>0,5 л</td>
+              <td>90 Р.</td>
             </tr>
           </tbody>
         </table>
@@ -166,11 +166,11 @@
               <label for="fullName">Представьтесь:</label>
               <input type="text" name="fullName" id="fullName">
             </div>
-            <div class="grid__col grid__col--50">
+            <div class="grid__col grid__col--50 phone">
               <label for="phone">Номер телефона:</label>
               <input type="text" name="phone" id="phone">
             </div>
-            <div class="grid__col grid__col--50">
+            <div class="grid__col grid__col--50 phone-alt">
               <label for="phone-2">Доп. номер:</label>
               <input type="text" name="phone-2" id="phone-2">
             </div>
@@ -179,7 +179,7 @@
               <input type="text" name="Email" id="Email">
             </div>
             <div class="grid__col">
-              <label for="size-order">Объём заказа:</label>
+              <label for="size-order">Объём заказа:</label><br>
               <select name="size-order" id="size-order">
                 <option value="">Выберите вариант</option>
                 <option value="1-5">От 1 до 5 баррелей в неделю</option>
@@ -193,8 +193,7 @@
             </div>
             <div class="grid__col">
               <label for="send">Я согласен получать квасную рассылку</label>
-              <!-- $(params.checkbox).parentsUntil('form__group').addClass('checkbox-area');-->
-              <input type="checkbox" id="send" name="send">
+              <input type="checkbox" id="send" name="send" checked>
             </div>
           </div>
           <input class="btn btn--brn" type="submit" name="order-push" value="Отправить заказ">
