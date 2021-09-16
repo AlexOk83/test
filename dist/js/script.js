@@ -7,6 +7,73 @@ jQuery(document).ready(function () {
         return modify && modify.length > 0 && modify[indexArg + 2]
     }
 
+    function getDeclinedRemainder(number, declensions) {
+        const stringNumber = String(number);
+        const [one, two, other] = declensions;
+        let balance = number;
+        if (balance > 20) {
+            let lastSymbol = stringNumber[stringNumber.length - 1];
+            balance = Number(lastSymbol);
+        }
+
+        if (balance === 1) {
+            return `${number} ${one}`
+        }
+        if (balance < 5 && balance !== 0) {
+            return `${number} ${two}`
+        }
+        return `${number} ${other}`
+    }
+
+    function getCounter(parent) {
+        let counter = [];
+
+        $('.dropdown__item', parent).each(function() {
+            counter.push({
+                title: $('.title', $(this)).text(),
+                value: $('.counter__value', $(this)).val()
+            })
+        });
+
+        return counter.filter(c => c.value > 0);
+    }
+
+    function changeTitle(parent) {
+        const counter = getCounter(parent);
+        const holder = parent.attr('holder');
+        const totalParams = parent.attr('total-params');
+        const select = $('.dropdown__select', parent);
+        let text;
+
+        if (counter.length === 0) {
+            text = holder
+        }
+
+        else if (totalParams === undefined) {
+            text = counter.map((count, index) => {
+                let delimiter = index === 0 ? '' : ' ';
+                return `${delimiter}${count.value} ${count.title}`
+            });
+
+        }
+
+        else {
+            const delitimer = totalParams.split(', ');
+            const reducer = (accumulator, currentValue) => (accumulator + Number(currentValue.value))
+            text = getDeclinedRemainder(counter.reduce(reducer, 0), delitimer);
+        }
+
+        select.text(text);
+
+    }
+
+    function addOverClass(parent) {
+        parent.addClass('over');
+        setTimeout(() => {
+            parent.removeClass('over');
+        }, 500)
+    }
+
     $('.form-control__like').click(function () {
         let $this = $(this);
         let counter = $('input', $this);
@@ -95,6 +162,69 @@ jQuery(document).ready(function () {
             oldClasses = starClasses;
             $this.addClass('clicked');
         })
+    });
+
+    $('.counter').each(function () {
+        const $this = $(this);
+
+        const btn_minus = $('.counter__btn--minus', $this);
+        const btn_plus = $('.counter__btn--plus', $this);
+        const counter = $('.counter__value', $this);
+        const maxValue = $this.attr('max') || 10;
+
+        btn_plus.click(function () {
+            let value = Number(counter.val());
+            if (value >= maxValue) {
+                return;
+            }
+            counter.val( value + 1);
+        });
+
+        btn_minus.click(function () {
+            let value = Number(counter.val());
+            if (value === 0) {
+                return;
+            }
+            counter.val(Number(counter.val()) - 1);
+        });
+    });
+
+    $('.dropdown').each(function () {
+        const $this = $(this);
+        changeTitle($this);
+        const select = $('.dropdown__select', $this);
+        const clear = $('.link__clear', $this);
+        const submit = $('.link__submit', $this);
+        select.click(function () {
+            $this.toggleClass('opened');
+            if (!$this.hasClass('opened')) {
+                addOverClass($this);
+                changeTitle($this);
+            }
+        });
+
+        clear.click(function () {
+            $('.counter__value', $this).val(0);
+        });
+
+        submit.click(function () {
+            $this.removeClass('opened');
+            addOverClass($this);
+            changeTitle($this);
+        });
+    });
+
+    $(document).click(function (event) {
+        if ($(event.target).closest(".dropdown").length) return;
+        $('.dropdown').each(function () {
+            if ($(this).hasClass('opened')) {
+                $(this).removeClass('opened');
+                addOverClass($(this));
+                changeTitle($(this));
+            }
+        })
+
+        event.stopPropagation();
     });
 
 });

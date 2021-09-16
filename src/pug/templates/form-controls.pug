@@ -39,11 +39,15 @@ mixin select(params)
         option(value= option.value)= option.title
 
 mixin dropdown(params)
-  .dropdown
+  .dropdown(holder= params.placeholder, total-params= params.reminder)
     .dropdown__select= params.placeholder
     .dropdown__list
       each option in params.list
         +counter(option, params.id)
+      if (params.footer)
+        .dropdown__footer
+          .link.link__clear очистить
+          .link.link__submit применить
 
 mixin counter(params, id)
   .dropdown__item

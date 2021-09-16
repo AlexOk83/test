@@ -18,19 +18,19 @@
             </div>
             <div class="form-control">
               <label class="form-control__label" for="1">dropdown</label>
-              <div class="dropdown">
+              <div class="dropdown" holder="Сколько гостей">
                 <div class="dropdown__select">Сколько гостей</div>
                 <div class="dropdown__list">
                   <div class="dropdown__item">
-                    <div class="title">взрослые</div>
+                    <div class="title">взрослых</div>
                     <div class="counter">
                       <div class="counter__btn counter__btn--minus"></div>
-                      <input class="counter__value" type="text" disabled name="parent-1" value="0">
+                      <input class="counter__value" type="text" disabled name="parent-1" value="2">
                       <div class="counter__btn counter__btn--plus"></div>
                     </div>
                   </div>
                   <div class="dropdown__item">
-                    <div class="title">дети</div>
+                    <div class="title">детей</div>
                     <div class="counter">
                       <div class="counter__btn counter__btn--minus"></div>
                       <input class="counter__value" type="text" disabled name="children-1" value="0">
@@ -38,12 +38,84 @@
                     </div>
                   </div>
                   <div class="dropdown__item">
-                    <div class="title">младенцы</div>
+                    <div class="title">младенцев</div>
                     <div class="counter">
                       <div class="counter__btn counter__btn--minus"></div>
                       <input class="counter__value" type="text" disabled name="baby-1" value="0">
                       <div class="counter__btn counter__btn--plus"></div>
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-control">
+              <label class="form-control__label" for="2">dropdown</label>
+              <div class="dropdown" holder="Сколько гостей" total-params="гость, гостя, гостей">
+                <div class="dropdown__select">Сколько гостей</div>
+                <div class="dropdown__list">
+                  <div class="dropdown__item">
+                    <div class="title">взрослые</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="parent-2" value="2">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">дети</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="children-2" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">младенцы</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="baby-2" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__footer">
+                    <div class="link link__clear">очистить</div>
+                    <div class="link link__submit">применить</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-control">
+              <label class="form-control__label" for="3">dropdown</label>
+              <div class="dropdown" holder="Удобства">
+                <div class="dropdown__select">Удобства</div>
+                <div class="dropdown__list">
+                  <div class="dropdown__item">
+                    <div class="title">спальни</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="bedroom-3" value="2">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">кровати</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="bad-3" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">ванные комнаты</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="bathroom-3" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__footer">
+                    <div class="link link__clear">очистить</div>
+                    <div class="link link__submit">применить</div>
                   </div>
                 </div>
               </div>

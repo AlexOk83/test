@@ -12,11 +12,37 @@
               id: '1',
               label: 'dropdown',
               placeholder: 'Сколько гостей',
+
+              list: [
+                {
+                  name: 'parent',
+                  title: 'взрослых',
+                  value: 2
+                },
+                {
+                  name: 'children',
+                  title: 'детей',
+                  value: 0
+                },
+                {
+                  name: 'baby',
+                  title: 'младенцев',
+                  value: 0
+                },
+              ]
+            },
+            {
+              type: 'dropdown',
+              id: '2',
+              label: 'dropdown',
+              placeholder: 'Сколько гостей',
+              reminder: 'гость, гостя, гостей',
+              footer: true,
               list: [
                 {
                   name: 'parent',
                   title: 'взрослые',
-                  value: 0
+                  value: 2
                 },
                 {
                   name: 'children',
@@ -29,7 +55,31 @@
                   value: 0
                 },
               ]
-            }
+            },
+            {
+              type: 'dropdown',
+              id: '3',
+              label: 'dropdown',
+              placeholder: 'Удобства',
+              footer: true,
+              list: [
+                {
+                  name: 'bedroom',
+                  title: 'спальни',
+                  value: 2
+                },
+                {
+                  name: 'bad',
+                  title: 'кровати',
+                  value: 0
+                },
+                {
+                  name: 'bathroom',
+                  title: 'ванные комнаты',
+                  value: 0
+                },
+              ]
+            },
           ],
           checkboxes = [
             {
