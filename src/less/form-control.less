@@ -429,11 +429,14 @@
   }
   &__footer {
     display: flex;
-    justify-content: space-between;
-    padding-top: 10px;
+    position: relative;
+    margin-top: 15px;
+    height: 20px;
     .link {
       color: @purple;
       cursor: pointer;
+      position: absolute;
+      top: 0;
       text-transform: uppercase;
       .h3();
       user-select: none;
@@ -441,6 +444,14 @@
       &:active {
         transform: scale(0.9);
       }
+
+      &__clear {
+        left: 0;
+      }
+      &__submit {
+        right: 0;
+      }
+
     }
   }
 }

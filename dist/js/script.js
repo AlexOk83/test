@@ -74,6 +74,16 @@ jQuery(document).ready(function () {
         }, 500)
     }
 
+    function isCountersEmpty(parent) {
+        const clear = $('.link__clear', parent);
+
+        if (getCounter(parent).length === 0) {
+            clear.hide();
+        } else {
+            clear.show();
+        }
+    }
+
     $('.form-control__like').click(function () {
         let $this = $(this);
         let counter = $('input', $this);
@@ -195,6 +205,14 @@ jQuery(document).ready(function () {
         const select = $('.dropdown__select', $this);
         const clear = $('.link__clear', $this);
         const submit = $('.link__submit', $this);
+        const counter_btns = $('.counter__btn', $this);
+
+        isCountersEmpty($this);
+        counter_btns.click(function () {
+            isCountersEmpty($this);
+        })
+
+
         select.click(function () {
             $this.toggleClass('opened');
             if (!$this.hasClass('opened')) {
@@ -205,6 +223,7 @@ jQuery(document).ready(function () {
 
         clear.click(function () {
             $('.counter__value', $this).val(0);
+            clear.hide();
         });
 
         submit.click(function () {
