@@ -1,0 +1,10 @@
+mixin accordion (id)
+    .accordion(id=id)
+        each item in accordion_item
+            .accordion-item
+                h2.accordion-header(id=item.id_header)
+                    button.accordion-button(class=item.class type="button" data-bs-toggle=item.data_bs_toggle data-bs-target=`#${item.data_bs_target}` aria-expanded=item.aria_expanded aria-controls=item.data_bs_target)= item.header_text
+                .accordion-collapse(id=item.data_bs_target class=`${item.data_bs_toggle} show` aria-labelledby=item.id_header data-bs-parent=id)
+                    .accordion-body
+                        strong= item.strong_text
+                            |${item.text}

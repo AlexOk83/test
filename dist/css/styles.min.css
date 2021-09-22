@@ -1,4 +1,4 @@
 @media screen and (max-width:767px){.hide_mobile{display:none!important}}@media screen and (min-width:766px) and (max-width:1280px){.hide_tablet{display:none!important}}@media screen and (max-width:1280px){.hide_device{display:none!important}}@media screen and (min-width:1279px){.hide_desktop{display:none!important}}
-
+.test{background-color:red}
 @media screen and (max-width:767px){.hide_mobile{display:none!important}}@media screen and (min-width:766px) and (max-width:1280px){.hide_tablet{display:none!important}}@media screen and (max-width:1280px){.hide_device{display:none!important}}@media screen and (min-width:1279px){.hide_desktop{display:none!important}}
 *{font:normal normal 16px/18px AvenirNextCyr,sans-serif;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0;margin:0}body{width:100%;max-width:100%;overflow-x:hidden}button,input,textarea{outline:0}li{list-style-type:none}a{text-decoration:none;color:inherit;line-height:inherit;font-size:inherit;font-weight:inherit}i,span{color:inherit;font-size:inherit;font-weight:inherit;line-height:inherit}
