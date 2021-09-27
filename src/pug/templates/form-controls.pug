@@ -59,7 +59,11 @@ mixin counter(params, id)
 
 
 mixin checkBoxList(params)
-  div
+  .checkboxes(holder= params.placeholder, total-params= params.reminder)
+    .checkboxes__select= params.label
+    .checkboxes__list
+      each option in params.list
+        +checkBox(option)
 
 mixin rangeSlider(params)
   .form-control__range(data-id= params.id, data-min= params.min, data-max= params.max)
@@ -93,7 +97,7 @@ mixin inlineList(list, indent)
 
 mixin checkBox(params)
   .form-control__checkbox
-    input(type='checkbox', id= params.id, name= params.id checked=params.value)
+    input(type='checkbox', id= params.id, name=(params.name || params.id) checked=params.value)
     label(for= params.id)= params.label
 
 mixin like(params)
