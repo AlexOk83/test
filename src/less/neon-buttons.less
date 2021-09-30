@@ -1,0 +1,119 @@
+@bg: #050801;
+@neon: #03e9f4;
+@keyframes leftBorder {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 100%;
+  }
+}
+@keyframes topBorder {
+  0% {
+    top: -100%;
+  }
+  50%, 100% {
+    top: 100%;
+  }
+}
+@keyframes rightBorder {
+  0% {
+    right: -100%;
+  }
+  50%, 100% {
+    right: 100%;
+  }
+}
+@keyframes bottomBorder {
+  0% {
+    top: 100%;
+  }
+  50%, 100% {
+    top: -100%;
+  }
+}
+
+.centered-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  &--black {
+    background: @bg;
+  }
+}
+.button {
+  position: relative;
+  display: inline-block;
+  padding: 25px 30px;
+  margin: 40px 0;
+  color: @neon;
+  font-size: 24px;
+  text-decoration: none;
+  overflow: hidden;
+  transition: all 0.5s linear;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  -webkit-box-reflect: below 1px linear-gradient(to top, transparent, #005);
+
+  &:hover {
+    background: @neon;
+    color: @bg;
+    box-shadow: 0 0 5px @neon, 0 0 25px @neon, 0 0 50px @neon, 0 0 200px @neon;
+  }
+
+  &:nth-child(2) {
+    filter: hue-rotate(290deg);
+  }
+
+  &:nth-child(3) {
+    filter: hue-rotate(180deg);
+  }
+
+  span {
+    position: absolute;
+    display: block;
+
+    &:nth-child(1) {
+      width: 100%;
+      height: 2px;
+      top: 0;
+      left: -100%;
+      background: linear-gradient(90deg, transparent, @neon);
+      animation: leftBorder 1s linear infinite;
+    }
+
+    &:nth-child(2) {
+      width: 2px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      background: linear-gradient(180deg, transparent, @neon);
+      animation: topBorder 1s linear infinite;
+      animation-delay: 0.25s;
+    }
+
+    &:nth-child(3) {
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      right: -100%;
+      background: linear-gradient(270deg, transparent, @neon);
+      animation: rightBorder 1s linear infinite;
+      animation-delay: 0.5s;
+    }
+
+    &:nth-child(4) {
+      width: 2px;
+      height: 100%;
+      top: 100%;
+      left: 0;
+      background: linear-gradient(360deg, transparent, @neon);
+      animation: bottomBorder 1s linear infinite;
+      animation-delay: 0.75s;
+    }
+  }
+}
+

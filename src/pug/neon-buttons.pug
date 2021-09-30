@@ -1,0 +1,14 @@
+extends templates/layout
+block vars
+  mixin button()
+    a.button(href="/")
+      span
+      span
+      span
+      span
+      | Neon Button
+block content
+  .centered-container.centered-container--black
+    +button()
+    +button()
+    +button()

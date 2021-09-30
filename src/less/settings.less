@@ -1,3 +1,5 @@
+@import "mixins";
+
 * {
   font: normal normal 16px/18px 'AvenirNextCyr', sans-serif ;
   box-sizing: border-box;
@@ -32,4 +34,26 @@ i, span {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: @padding;
+  padding-right: @padding;
+  position: relative;
+  .clearfix();
+}
+
+
+.row {
+  margin-left: -@padding;
+  margin-right: -@padding;
+  display: flex;
+  flex-wrap: wrap;
+  .media_mobile({
+    margin-left: 0;
+    margin-right: 0;
+  });
 }
