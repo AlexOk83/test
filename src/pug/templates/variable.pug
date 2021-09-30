@@ -1,34 +1,62 @@
 -
-    var
-        accordion_item = [
+  var
+          menuItems = [
             {
-                id_header: 'headingOne',
-                class: '',
-                data_bs_toggle: 'collapse',
-                data_bs_target: 'collapseOne',
-                aria_expanded: 'true',
-                header_text: 'Accordion Item #1',
-                strong_text: 'This is the first item\'s accordion body.',
-                text: 'It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+              title: 'Таблицы',
+              url: 'tables',
+              submenu: false
+            },{
+              title: 'Аккордеон',
+              url: 'accordeon',
+              submenu: false
+            },
+          ],
+          accordeons = [
+            {
+                id: 'accordionExample1',
+                noParent: true,
+                list: [
+                  {
+                      active: true,
+                      headerId: 'headingOne',
+                      id: 'collapseOne',
+                      title: 'Accordion Item #1',
+                      body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+                  },
+                  {
+                      active: false,
+                      headerId: 'headingTwo',
+                      id: 'collapseTwo',
+                      title: 'Accordion Item #2',
+                      body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+                  },
+                ]
             },
             {
-                id_header: 'headingTwo',
-                class: 'collapsed',
-                data_bs_toggle: 'collapse',
-                data_bs_target: 'collapseTwo',
-                aria_expanded: 'false',
-                header_text: 'Accordion Item #2',
-                strong_text: 'This is the second item\'s accordion body.',
-                text: 'It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
-            },
-            {
-                id_header: 'headingThree',
-                class: 'collapsed',
-                data_bs_toggle: 'collapse',
-                data_bs_target: 'collapseThree',
-                aria_expanded: 'false',
-                header_text: 'Accordion Item #3',
-                strong_text: 'This is the third item\'s accordion body.',
-                text: 'It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+              id: 'accordionExample2',
+              flush: true,
+              list: [
+                {
+                  active: false,
+                  headerId: 'headingOne1',
+                  id: 'collapseOne1',
+                  title: 'Accordion Item #1',
+                  body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+                },
+                {
+                  active: false,
+                  headerId: 'headingTwo2',
+                  id: 'collapseTwo2',
+                  title: 'Accordion Item #2',
+                  body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+                },
+                {
+                  active: false,
+                  headerId: 'headingThree2',
+                  id: 'collapseThree2',
+                  title: 'Accordion Item #2',
+                  body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
+                },
+              ]
             }
-        ]
+          ]

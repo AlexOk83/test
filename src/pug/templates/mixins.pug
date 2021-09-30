@@ -1,0 +1,16 @@
+mixin accordeon(params)
+  - var dataparent = params.noParent ? null : '#'+params.id
+  .accordion(class={'accordion-flush': params.flush} id= params.id)
+    each item in params.list
+      .accordion-item
+        h2.accordion-header(id= item.headerId)
+          button.accordion-button(
+            class={'collapsed': !item.active}
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#"+item.id
+            aria-expanded= String(item.active)
+            aria-controls= item.id
+          )= item.title
+        .accordion-collapse.collapse(class={'show': item.active}, id=item.id, aria-labelledby= item.headerId, data-bs-parent=dataparent)
+          .accordion-body !{item.body}

@@ -1,0 +1,10 @@
+extends templates/layout
+
+block vars
+  - var page = 'accordeon'
+
+block content
+  .container
+    each a in accordeons
+      .mt-3
+        +accordeon(a)
