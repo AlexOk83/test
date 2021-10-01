@@ -1,6 +1,6 @@
 mixin navbar(params)
   if params
-    - var themeClasses = params.dark ? ['navbar-dark', 'bg-dark'] : ['navbar-light', 'bg-light']
+    - var themeClasses = params.thema && [modify.dark, modify.light].includes(params.thema) ? ['navbar-' + params.thema, 'bg-'+ params.thema] : ['navbar-light', 'bg-'+ params.thema]
     nav.navbar.navbar-expand-lg.shadow-sm(class={'sticky-top': params.sticky} class=themeClasses)
       .container-fluid
         a.navbar-brand(href="/")= params.logo
@@ -12,13 +12,13 @@ mixin navbar(params)
               each menuItem in params.menu
                 if menuItem.submenu
                   li.nav-item.dropdown
-                    a.nav-link.dropdown-toggle(href="#" id=menuItem.id role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
+                    a.nav-link.dropdown-toggle(href="#" id=menuItem.id role="button" data-bs-toggle="dropdown" aria-expanded="false")= menuItem.title
                     ul.dropdown-menu(aria-labelledby=menuItem.id)
                       each subItem in menuItem.submenu
                         if subItem.divider
                           li: hr.dropdown-divider
                         else
-                          li: a.dropdown-item(href="/#{subItem.url}.html" class={"active": page === subItem.url})= subItem.title
+                          li: a.dropdown-item(href=subItem.url + '.html' class={"active": page === subItem.url})= subItem.title
                 else
                   li.nav-item: a.nav-link(class={"active": page === menuItem.url} aria-current={"page": page === menuItem.url} href= menuItem.url + '.html')= menuItem.title
           if params.form
@@ -58,3 +58,39 @@ mixin table(headConfig, data, params)
               td(colspan= item[td.name].colspan class= item[td.name].classes)= item[td.name].title
             else if item[td.name]
               td= item[td.name]
+
+mixin alert(thema, closed)
+  .alert(class= 'alert-'+thema, class={'alert-dismissible': closed} role="alert")
+    block
+    if (closed)
+      button.btn-close(type="button" data-bs-dismiss="alert" aria-label="Close")
+
+mixin alert-header()
+  h4.alert-heading
+    block
+
+mixin button(params)
+  if params
+    - var outline = `btn-outline-${params.color}`
+    - var size = `btn-${params.size}`
+    - var color = `btn-${params.color}`
+    -
+      var
+              classesButton = {
+                [outline]: params.outline,
+                [size]: params.size,
+                [color]: !params.outline,
+                'active': params.active,
+              }
+  if (params.tag === 'a')
+    - var url = params.url ? params.url : '#'
+    a.btn(class=classesButton disabled= params.disabled role='button' href=url): block
+  else if (params.tag === 'input')
+    input.btn(class=classesButton disabled= params.disabled role='button' type=params.type value=params.value)
+  else
+    .btn(class=classesButton disabled= params.disabled type=params.type): block
+
+mixin buttonGroup(size, list)
+  .btn-group(role="group")
+    each btn in list
+      +button(btn)

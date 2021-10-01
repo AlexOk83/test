@@ -1,0 +1,16 @@
+extends templates/layout
+
+block vars
+  - var page = 'alerts'
+
+block content
+  .container
+    .mt-3: +alert(modify.primary, true) Lorem ipsum dolor sit amet.
+    .mt-3: +alert(modify.danger, true) Lorem ipsum dolor sit amet.
+    .mt-3: +alert(modify.info) Lorem ipsum dolor sit amet.
+    .mt-3: +alert(modify.dark) Lorem ipsum dolor sit amet.
+    .mt-3: +alert(modify.success, true)
+      +alert-header() well done!
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam consequuntur dolorem dolorum nulla perferendis quam unde! Cumque eos iste quasi reprehenderit temporibus. Blanditiis, et.
+      hr
+      p Lorem ipsum dolor sit.

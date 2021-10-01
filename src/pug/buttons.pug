@@ -1,0 +1,47 @@
+extends templates/layout
+
+block vars
+  - var page = 'buttons'
+
+block content
+  .container
+    .mt-3
+      h2 Outline
+      +button({ outline: true, color: modify.primary }) button
+      +button({ outline: true, color: modify.secondary }) button
+      +button({ outline: true, color: modify.success }) button
+      +button({ outline: true, color: modify.danger }) button
+      +button({ outline: true, color: modify.warning }) button
+      +button({ outline: true, color: modify.info }) button
+      +button({ outline: true, color: modify.light }) button
+      +button({ outline: true, color: modify.dark }) button
+
+    .mt-3
+      h2 large
+      +button({ size: 'lg', outline: false, color: modify.primary }) button
+      +button({ size: 'lg', outline: false, color: modify.secondary }) button
+      +button({ size: 'lg', outline: false, color: modify.success }) button
+      +button({ size: 'lg', outline: false, color: modify.danger }) button
+      +button({ size: 'lg', outline: false, color: modify.warning }) button
+      +button({ size: 'lg', outline: false, color: modify.info }) button
+      +button({ size: 'lg', outline: false, color: modify.light }) button
+      +button({ size: 'lg', outline: false, color: modify.dark }) button
+      +button({ size: 'lg', outline: false, color: modify.link }) button
+    .mt-3
+      h2 small
+      +button({ size: 'sm', outline: false, color: modify.primary }) button
+      +button({ size: 'sm', outline: false, color: modify.secondary }) button
+      +button({ size: 'sm', outline: false, color: modify.success }) button
+      +button({ size: 'sm', outline: false, color: modify.danger }) button
+      +button({ size: 'sm', outline: false, color: modify.warning }) button
+      +button({ size: 'sm', outline: false, color: modify.info }) button
+      +button({ size: 'sm', outline: false, color: modify.light }) button
+      +button({ size: 'sm', outline: false, color: modify.dark }) button
+      +button({ size: 'sm', outline: false, color: modify.link }) button
+    .mt-3
+      h2 tags
+      +button({color: modify.primary, tag: 'a', url:'/'}) link
+      +button({color: modify.secondary, type: 'submit'}) submit
+      +button({color: modify.success, tag: 'input', type: 'button', value: 'button'})
+      +button({color: modify.danger, tag: 'input', type: 'submit', value: 'submit'})
+      +button({color: modify.warning, tag: 'input', type: 'reset', value: 'reset'})

@@ -12,110 +12,24 @@
             info: 'info',
             light: 'light',
             dark: 'dark',
+            link: 'link'
           },
           menuItems = [
             {
-              title: 'Таблицы',
-              url: 'tables',
-              submenu: false
-            }, {
-              title: 'Аккордеон',
-              url: 'accordeon',
-              submenu: false
+              title: 'Контент',
+              submenu: [
+                { title: 'Таблицы', url: 'tables' },
+              ]
             },
+            { title: 'Компоненты', submenu: [
+                { title: 'Аккордеон', url: 'accordeon' },
+                { title: 'Алерты', url: 'alerts' },
+                { title: 'Кнопки', url: 'buttons' },
+              ] },
           ],
           navParams = {
             sticky: true,
-            dark: true,
+            thema: modify.warning,
             logo: 'Bootstrap 5',
             menu: menuItems,
-          },
-          accordeons = [
-            {
-                id: 'accordionExample1',
-                noParent: true,
-                list: [
-                  {
-                      active: true,
-                      headerId: 'headingOne',
-                      id: 'collapseOne',
-                      title: 'Accordion Item #1',
-                      body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
-                  },
-                  {
-                      active: false,
-                      headerId: 'headingTwo',
-                      id: 'collapseTwo',
-                      title: 'Accordion Item #2',
-                      body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
-                  },
-                ]
-            },
-            {
-              id: 'accordionExample2',
-              flush: true,
-              list: [
-                {
-                  active: false,
-                  headerId: 'headingOne1',
-                  id: 'collapseOne1',
-                  title: 'Accordion Item #1',
-                  body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
-                },
-                {
-                  active: false,
-                  headerId: 'headingTwo2',
-                  id: 'collapseTwo2',
-                  title: 'Accordion Item #2',
-                  body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
-                },
-                {
-                  active: false,
-                  headerId: 'headingThree2',
-                  id: 'collapseThree2',
-                  title: 'Accordion Item #2',
-                  body: '<strong>This is the first item\'s accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It\'s also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.'
-                },
-              ]
-            }
-          ],
-          tableConfig = [
-            { name: 'number', title: '#' },
-            { name: 'one', title: 'First' },
-            { name: 'two', title: 'Last' },
-            { name: 'three', title: 'Handle' },
-          ],
-          tables = [
-              [
-                { number: 1, one: 'Mark', two: 'Otto', three: '@mdo' },
-                { number: 2, one: 'Jacob', two: 'Thornton', three: '@fat' },
-                { number: 3, one: { title: 'Larry the Bird', colspan: 2, classes: ['table-active'] }, three: '@twitter' },
-              ],
-              [
-                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo', classes: ['table-active']},
-                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
-                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
-              ],
-              [
-                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo'},
-                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
-                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
-              ],
-              [
-                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo'},
-                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
-                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
-              ],
-              [
-                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo'},
-                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
-                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
-              ]
-          ],
-          tablesParams = [
-            [ modify.hover, modify.striped, modify.danger ],
-            [ modify.hover, modify.striped, modify.dark ],
-            [ modify.hover, modify.striped, modify.success ],
-            [ modify.hover, modify.striped, modify.primary ],
-            [ modify.hover, modify.striped, modify.info ],
-          ]
+          }
