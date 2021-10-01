@@ -3,7 +3,8 @@ extends templates/layout
 block vars
   - var page = 'tables'
 
-
 block content
   .container
-    div(style={height: '2000px'})
+    each tableData, index in tables
+      .mt-3
+        +table(tableConfig, tableData, tablesParams[index])

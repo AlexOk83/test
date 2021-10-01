@@ -1,16 +1,35 @@
 -
   var
+          modify = {
+            hover: 'hover',
+            striped: 'striped',
+            secondary: 'secondary',
+            success: 'success',
+            primary: 'primary',
+            default: 'default',
+            danger: 'danger',
+            warning: 'warning',
+            info: 'info',
+            light: 'light',
+            dark: 'dark',
+          },
           menuItems = [
             {
               title: 'Таблицы',
               url: 'tables',
               submenu: false
-            },{
+            }, {
               title: 'Аккордеон',
               url: 'accordeon',
               submenu: false
             },
           ],
+          navParams = {
+            sticky: true,
+            dark: true,
+            logo: 'Bootstrap 5',
+            menu: menuItems,
+          },
           accordeons = [
             {
                 id: 'accordionExample1',
@@ -59,4 +78,44 @@
                 },
               ]
             }
+          ],
+          tableConfig = [
+            { name: 'number', title: '#' },
+            { name: 'one', title: 'First' },
+            { name: 'two', title: 'Last' },
+            { name: 'three', title: 'Handle' },
+          ],
+          tables = [
+              [
+                { number: 1, one: 'Mark', two: 'Otto', three: '@mdo' },
+                { number: 2, one: 'Jacob', two: 'Thornton', three: '@fat' },
+                { number: 3, one: { title: 'Larry the Bird', colspan: 2, classes: ['table-active'] }, three: '@twitter' },
+              ],
+              [
+                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo', classes: ['table-active']},
+                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
+                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
+              ],
+              [
+                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo'},
+                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
+                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
+              ],
+              [
+                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo'},
+                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
+                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
+              ],
+              [
+                {number: 1, one: 'Mark', two: 'Otto', three: '@mdo'},
+                {number: 2, one: 'Jacob', two: 'Thornton', three: '@fat'},
+                {number: 3, one: 'Larry', two: 'Garry', three: '@twitter'},
+              ]
+          ],
+          tablesParams = [
+            [ modify.hover, modify.striped ],
+            [ modify.hover, modify.dark ],
+            [ modify.hover, modify.success ],
+            [ modify.hover, modify.primary ],
+            [ modify.hover, modify.info ],
           ]

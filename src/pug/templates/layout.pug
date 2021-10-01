@@ -16,28 +16,7 @@ html(lang="ru")
 
 	body
 		block vars
-		nav.navbar.navbar-expand-lg.navbar-dark.bg-primary.sticky-top
-			.container-fluid
-				a.navbar-brand(href="#") Navbar
-				button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
-					span.navbar-toggler-icon
-				.collapse.navbar-collapse#navbarSupportedContent
-					ul.navbar-nav.me-auto.mb-2.mb-lg-0
-						each menuItem in menuItems
-							if menuItem.submenu
-								li.nav-item.dropdown
-									a.nav-link.dropdown-toggle(href="#" id=menuItem.id role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
-									ul.dropdown-menu(aria-labelledby=menuItem.id)
-										each subItem in menuItem.submenu
-											if subItem.divider
-												li: hr.dropdown-divider
-											else
-												li: a.dropdown-item(href="/#{subItem.url}.html" class={"active": page === subItem.url})= subItem.title
-							else
-								li.nav-item: a.nav-link(class={"active": page === menuItem.url} aria-current={"page": page === menuItem.url} href= menuItem.url + '.html')= menuItem.title
-					form.d-flex
-						input.form-control.me-2(type="search" placeholder="Search" aria-label="Search")
-						button.btn.btn-outline-defaut(type="submit") Search
+		+navbar(navParams)
 
 		block content
 		script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js", integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM", crossorigin="anonymous")

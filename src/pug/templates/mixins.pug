@@ -1,3 +1,31 @@
+mixin navbar(params)
+  if params
+    - var themeClasses = params.dark ? ['navbar-dark', 'bg-dark'] : ['navbar-light', 'bg-light']
+    nav.navbar.navbar-expand-lg.shadow-sm(class={'sticky-top': params.sticky} class=themeClasses)
+      .container-fluid
+        a.navbar-brand(href="/")= params.logo
+        button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
+          span.navbar-toggler-icon
+        .collapse.navbar-collapse#navbarSupportedContent
+          if params.menu && params.menu.length !== 0
+            ul.navbar-nav.me-auto.mb-2.mb-lg-0
+              each menuItem in params.menu
+                if menuItem.submenu
+                  li.nav-item.dropdown
+                    a.nav-link.dropdown-toggle(href="#" id=menuItem.id role="button" data-bs-toggle="dropdown" aria-expanded="false") Dropdown
+                    ul.dropdown-menu(aria-labelledby=menuItem.id)
+                      each subItem in menuItem.submenu
+                        if subItem.divider
+                          li: hr.dropdown-divider
+                        else
+                          li: a.dropdown-item(href="/#{subItem.url}.html" class={"active": page === subItem.url})= subItem.title
+                else
+                  li.nav-item: a.nav-link(class={"active": page === menuItem.url} aria-current={"page": page === menuItem.url} href= menuItem.url + '.html')= menuItem.title
+          if params.form
+            form.d-flex
+              input.form-control.me-2(type="search" placeholder="Search" aria-label="Search")
+              button.btn.btn-outline-defaut(type="submit") Search
+
 mixin accordeon(params)
   - var dataparent = params.noParent ? null : '#'+params.id
   .accordion(class={'accordion-flush': params.flush} id= params.id)
@@ -14,3 +42,19 @@ mixin accordeon(params)
           )= item.title
         .accordion-collapse.collapse(class={'show': item.active}, id=item.id, aria-labelledby= item.headerId, data-bs-parent=dataparent)
           .accordion-body !{item.body}
+
+mixin table(headConfig, data, params)
+  - var tableClasses = params ? params.map(p => ('table-'+ p)) : ''
+  table.table(class= tableClasses)
+    thead
+      tr
+        each th_item in headConfig
+          th= th_item.title
+    tbody
+      each item in data
+        tr(class= item['classes'])
+          each td in headConfig
+            if (item[td.name] && item[td.name].title)
+              td(colspan= item[td.name].colspan class= item[td.name].classes)= item[td.name].title
+            else if item[td.name]
+              td= item[td.name]
