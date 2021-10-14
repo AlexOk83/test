@@ -1,3 +1,13 @@
 extends templates/layout
 
 block content
+  header.app__header
+    h1.app__title.app__title--small
+      span WELCOME TO
+      span THE CAPTAIN MORGAN
+    .app__logo
+      span DRINKS
+      span.app__logo--ml WORKS
+  section.app__body
+    a.button(href='#'): .button__text UNSURE WHERE TO START?
+    a.button(href='/step2.html'): .button__text DISCOVER TASTY RECIPES
