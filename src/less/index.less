@@ -1,0 +1,103 @@
+@import "mixins";
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header {
+  width: 100%;
+  background-color: white;
+  padding-top: 27px;
+  height: 95px;
+  box-shadow: 0 0 3px rgba(black, 0.15);
+  margin-bottom: 30px;
+  .logo svg {
+    .media_mobile({
+      width: 50px;
+    });
+  }
+  &__title {
+    .font(32px, 38px);
+    padding-top: 5px;
+    margin-left: 39px;
+    .media_mobile({
+      .font(18px, 32px);
+      margin-left: 15px;
+    });
+  }
+}
+.page {
+  background-color: @bg;
+  min-height: 100vh;
+  padding-bottom: 50px;
+  &__title {
+    width: 100%;
+    text-align: center;
+    .font(1.3rem, 2rem);
+    margin-bottom: 37px;
+  }
+}
+.list {
+  &__item {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin-bottom: 59px;
+    padding-left: 50px;
+
+    &-number {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+.wrapper-for-button {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+}
+.button {
+  position: relative;
+  &__link {
+    .circle(52px);
+    border: 2px solid @blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    position: relative;
+  }
+  &:before {
+    content: 'Видеозвонок';
+    position: absolute;
+    display: block;
+    right: 52px + 17px;
+    top: 0;
+    .font(20px, 50px);
+    width: 185px;
+    height: 50px;
+    background-color: @blue;
+    color: white;
+    text-align: right;
+    border-radius: 10px;
+    padding-right: 16px;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 52px + 17px - 5px;
+    top: 17px;
+    background-color: @blue;
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+  }
+}
