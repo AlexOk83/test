@@ -1,294 +1,281 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
+  <head>
     <title>MetaLamp</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
     <script src="js/jquery.js"></script>
     <link rel="styleSheet" media="all" type="text/css" href="css/styles.min.css">
-</head>
-<body>
-<div class="ui-kit">
-    <div class="container">
+  </head>
+  <body>
+    <div class="ui-kit">
+      <div class="container">
         <div class="ui-kit__row">
-            <div class="ui-kit__column">
-                <div class="form-control">
-                    <label class="form-control__label" for="text">text field</label>
-                    <input class="form-control__input" type="text" id="text" placeholder="Email">
-                </div>
-                <div class="form-control">
-                    <label class="form-control__label" for="1">dropdown</label>
-                    <div class="dropdown" holder="Сколько гостей">
-                        <div class="dropdown__select">Сколько гостей</div>
-                        <div class="dropdown__list">
-                            <div class="dropdown__item">
-                                <div class="title">взрослых</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="parent-1" value="0">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__item">
-                                <div class="title">детей</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="children-1" value="0">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__item">
-                                <div class="title">младенцев</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="baby-1" value="0">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-control">
-                    <label class="form-control__label" for="2">dropdown</label>
-                    <div class="dropdown" holder="Сколько гостей" total-params="гость, гостя, гостей">
-                        <div class="dropdown__select">Сколько гостей</div>
-                        <div class="dropdown__list">
-                            <div class="dropdown__item">
-                                <div class="title">взрослые</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="parent-2" value="2">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__item">
-                                <div class="title">дети</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="children-2" value="0">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__item">
-                                <div class="title">младенцы</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="baby-2" value="0">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__footer">
-                                <div class="link link__clear">очистить</div>
-                                <div class="link link__submit">применить</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-control">
-                    <label class="form-control__label" for="3">dropdown</label>
-                    <div class="dropdown" holder="Удобства">
-                        <div class="dropdown__select">Удобства</div>
-                        <div class="dropdown__list">
-                            <div class="dropdown__item">
-                                <div class="title">спальни</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="bedroom-3" value="2">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__item">
-                                <div class="title">кровати</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="bad-3" value="0">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__item">
-                                <div class="title">ванные комнаты</div>
-                                <div class="counter">
-                                    <div class="counter__btn counter__btn--minus"></div>
-                                    <input class="counter__value" type="text" disabled name="bathroom-3" value="0">
-                                    <div class="counter__btn counter__btn--plus"></div>
-                                </div>
-                            </div>
-                            <div class="dropdown__footer">
-                                <div class="link link__clear">очистить</div>
-                                <div class="link link__submit">применить</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-control">
-                    <div class="checkboxes">
-                        <div class="checkboxes__select">checkBoxList</div>
-                        <div class="checkboxes__list">
-                            <div class="form-control__checkbox">
-                                <input type="checkbox" id="check-31" name="check-31">
-                                <label for="check-31">Завтрак</label>
-                            </div>
-                            <div class="form-control__checkbox">
-                                <input type="checkbox" id="check-32" name="check-32" checked>
-                                <label for="check-32">Письменный стол</label>
-                            </div>
-                            <div class="form-control__checkbox">
-                                <input type="checkbox" id="check-33" name="check-33" checked>
-                                <label for="check-33">Стул для кормления</label>
-                            </div>
-                            <div class="form-control__checkbox">
-                                <input type="checkbox" id="check-34" name="check-34" checked>
-                                <label for="check-34">Кроватка</label>
-                            </div>
-                            <div class="form-control__checkbox">
-                                <input type="checkbox" id="check-35" name="check-35" checked>
-                                <label for="check-35">Телевизор</label>
-                            </div>
-                            <div class="form-control__checkbox">
-                                <input type="checkbox" id="check-36" name="check-36" checked>
-                                <label for="check-36">Шампунь</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="ui-kit__column">
+            <div class="form-control">
+              <label class="form-control__label" for="text">text field</label>
+              <input class="form-control__input" type="text" id="text" placeholder="Email">
             </div>
-            <div class="ui-kit__column">
-                <div class="form-control__label">Checkbox Buttons</div>
-                <div class="ui-kit__wrapper">
-                    <div class="form-control">
-                        <div class="form-control__checkbox">
-                            <input type="checkbox" id="check-1" name="check-1">
-                            <label for="check-1">Можно курить</label>
-                        </div>
+            <div class="form-control">
+              <label class="form-control__label" for="1">dropdown</label>
+              <div class="dropdown" holder="Сколько гостей">
+                <div class="dropdown__select">Сколько гостей</div>
+                <div class="dropdown__list">
+                  <div class="dropdown__item">
+                    <div class="title">взрослых</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="parent-1" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
                     </div>
-                    <div class="form-control">
-                        <div class="form-control__checkbox">
-                            <input type="checkbox" id="check-2" name="check-2" checked>
-                            <label for="check-2">Можно с питомцами</label>
-                        </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">детей</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="children-1" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
                     </div>
-                    <div class="form-control">
-                        <div class="form-control__checkbox">
-                            <input type="checkbox" id="check-3" name="check-3" checked>
-                            <label for="check-3">Можно пригласить гостей (до 10 человек)</label>
-                        </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">младенцев</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="baby-1" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
                     </div>
+                  </div>
                 </div>
-                <div class="form-control__label">radio Buttons</div>
-                <div class="ui-kit__wrapper">
-                    <div class="form-control__list form-control__list--line-20">
-                        <div class="form-control">
-                            <div class="form-control__radio">
-                                <input type="radio" id="male" name="sex" value="male" checked>
-                                <label for="male">Мужчина</label>
-                            </div>
-                        </div>
-                        <div class="form-control">
-                            <div class="form-control__radio">
-                                <input type="radio" id="female" name="sex" value="female">
-                                <label for="female">Женщина</label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-control__label">toggle</div>
-                <div class="ui-kit__wrapper">
-                    <div class="form-control">
-                        <div class="form-control__toggle">
-                            <input type="checkbox" id="toggle-1" name="toggle-1" checked>
-                            <label for="toggle-1">Получать спецпредложения</label>
-                        </div>
-                    </div>
-                    <div class="form-control">
-                        <div class="form-control__toggle">
-                            <input type="checkbox" id="toggle-2" name="toggle-2">
-                            <label for="toggle-2">Получать спецпредложения</label>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-control__label">like button</div>
-                <div class="ui-kit__wrapper">
-                    <div class="form-control__list form-control__list--line-10">
-                        <div class="form-control">
-                            <div class="form-control__like">
-                                <input type="text" name="like-1" value="6" disabled>
-                            </div>
-                        </div>
-                        <div class="form-control">
-                            <div class="form-control__like clicked">
-                                <input type="text" name="like-2" value="12" disabled>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-control__label">rate button</div>
-                <div class="ui-kit__wrapper">
-                    <div class="form-control__list form-control__list--line-10">
-                        <div class="form-control">
-                            <div class="form-control__rate form-control__rate--35"><span
-                                    class="star star--1"></span><span class="star star--2"></span><span
-                                    class="star star--3"></span><span class="star star--4"></span><span
-                                    class="star star--5"></span>
-                            </div>
-                        </div>
-                        <div class="form-control">
-                            <div class="form-control__rate form-control__rate--50"><span
-                                    class="star star--1"></span><span class="star star--2"></span><span
-                                    class="star star--3"></span><span class="star star--4"></span><span
-                                    class="star star--5"></span>
-                            </div>
-                        </div>
-                        <div class="form-control">
-                            <div class="form-control__rate form-control__rate--15"><span
-                                    class="star star--1"></span><span class="star star--2"></span><span
-                                    class="star star--3"></span><span class="star star--4"></span><span
-                                    class="star star--5"></span>
-                            </div>
-                        </div>
-                        <div class="form-control">
-                            <div class="form-control__rate form-control__rate--20"><span
-                                    class="star star--1"></span><span class="star star--2"></span><span
-                                    class="star star--3"></span><span class="star star--4"></span><span
-                                    class="star star--5"></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
-            <div class="ui-kit__column">
+            <div class="form-control">
+              <label class="form-control__label" for="2">dropdown</label>
+              <div class="dropdown" holder="Сколько гостей" total-params="гость, гостя, гостей">
+                <div class="dropdown__select">Сколько гостей</div>
+                <div class="dropdown__list">
+                  <div class="dropdown__item">
+                    <div class="title">взрослые</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="parent-2" value="2">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">дети</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="children-2" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">младенцы</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="baby-2" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__footer">
+                    <div class="link link__clear">очистить</div>
+                    <div class="link link__submit">применить</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-control">
+              <label class="form-control__label" for="3">dropdown</label>
+              <div class="dropdown" holder="Удобства">
+                <div class="dropdown__select">Удобства</div>
+                <div class="dropdown__list">
+                  <div class="dropdown__item">
+                    <div class="title">спальни</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="bedroom-3" value="2">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">кровати</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="bad-3" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__item">
+                    <div class="title">ванные комнаты</div>
+                    <div class="counter">
+                      <div class="counter__btn counter__btn--minus"></div>
+                      <input class="counter__value" type="text" disabled name="bathroom-3" value="0">
+                      <div class="counter__btn counter__btn--plus"></div>
+                    </div>
+                  </div>
+                  <div class="dropdown__footer">
+                    <div class="link link__clear">очистить</div>
+                    <div class="link link__submit">применить</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-control">
+              <div class="checkboxes">
+                <div class="checkboxes__select">checkBoxList</div>
+                <div class="checkboxes__list">
+                  <div class="form-control__checkbox">
+                    <input type="checkbox" id="check-31" name="check-31">
+                    <label for="check-31">Завтрак</label>
+                  </div>
+                  <div class="form-control__checkbox">
+                    <input type="checkbox" id="check-32" name="check-32" checked>
+                    <label for="check-32">Письменный стол</label>
+                  </div>
+                  <div class="form-control__checkbox">
+                    <input type="checkbox" id="check-33" name="check-33" checked>
+                    <label for="check-33">Стул для кормления</label>
+                  </div>
+                  <div class="form-control__checkbox">
+                    <input type="checkbox" id="check-34" name="check-34" checked>
+                    <label for="check-34">Кроватка</label>
+                  </div>
+                  <div class="form-control__checkbox">
+                    <input type="checkbox" id="check-35" name="check-35" checked>
+                    <label for="check-35">Телевизор</label>
+                  </div>
+                  <div class="form-control__checkbox">
+                    <input type="checkbox" id="check-36" name="check-36" checked>
+                    <label for="check-36">Шампунь</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui-kit__column">
+            <div class="form-control__label">Checkbox Buttons</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control">
+                <div class="form-control__checkbox">
+                  <input type="checkbox" id="check-1" name="check-1">
+                  <label for="check-1">Можно курить</label>
+                </div>
+              </div>
+              <div class="form-control">
+                <div class="form-control__checkbox">
+                  <input type="checkbox" id="check-2" name="check-2" checked>
+                  <label for="check-2">Можно с питомцами</label>
+                </div>
+              </div>
+              <div class="form-control">
+                <div class="form-control__checkbox">
+                  <input type="checkbox" id="check-3" name="check-3" checked>
+                  <label for="check-3">Можно пригласить гостей (до 10 человек)</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-control__label">radio Buttons</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control__list form-control__list--line-20">
                 <div class="form-control">
-                    <label class="form-control__label" for="1">range slider</label>
-                    <div class="form-control__range" data-id="1" data-min="0" data-max="15000">
-                        <div class="slider" id="slider-1">
-                            <div class="slider__value"><span class="slider__count" id="first-1">5000</span><span
-                                    class="slider__count" id="last-1">10000</span></div>
-                            <input type="text" id="count-min-1" name="cost-min" value="5000">
-                            <input type="text" id="count-max-1" name="cost-max" value="10000">
-                        </div>
-                    </div>
+                  <div class="form-control__radio">
+                    <input type="radio" id="male" name="sex" value="male" checked>
+                    <label for="male">Мужчина</label>
+                  </div>
                 </div>
-                <div class="form-control__label">buttons</div>
-                <div class="ui-kit__wrapper">
-                    <div class="btn btn--color">click me
-                    </div>
-                    <button class="btn btn--color" type="submit" disabled>click me
-                    </button>
-                    <div class="btn btn--border">click me
-                    </div>
-                    <button class="btn btn--border" type="submit" disabled>click me
-                    </button>
-                    <div class="btn btn--link">click me
-                    </div>
-                    <div class="btn btn--color btn--full btn--arrow-right">перейти к оплате
-                    </div>
-                    <button class="btn btn--color btn--full btn--arrow-right" type="submit" disabled>перейти к оплате
-                    </button>
+                <div class="form-control">
+                  <div class="form-control__radio">
+                    <input type="radio" id="female" name="sex" value="female">
+                    <label for="female">Женщина</label>
+                  </div>
                 </div>
+              </div>
             </div>
+            <div class="form-control__label">toggle</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control">
+                <div class="form-control__toggle">
+                  <input type="checkbox" id="toggle-1" name="toggle-1" checked>
+                  <label for="toggle-1">Получать спецпредложения</label>
+                </div>
+              </div>
+              <div class="form-control">
+                <div class="form-control__toggle">
+                  <input type="checkbox" id="toggle-2" name="toggle-2">
+                  <label for="toggle-2">Получать спецпредложения</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-control__label">like button</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control__list form-control__list--line-10">
+                <div class="form-control">
+                  <div class="form-control__like">
+                    <input type="text" name="like-1" value="6" disabled>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__like clicked">
+                    <input type="text" name="like-2" value="12" disabled>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-control__label">rate button</div>
+            <div class="ui-kit__wrapper">
+              <div class="form-control__list form-control__list--line-10">
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--35"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--50"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--15"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+                <div class="form-control">
+                  <div class="form-control__rate form-control__rate--20"><span class="star star--1"></span><span class="star star--2"></span><span class="star star--3"></span><span class="star star--4"></span><span class="star star--5"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="ui-kit__column">
+            <div class="form-control">
+              <label class="form-control__label" for="1">range slider</label>
+              <div class="form-control__range" data-id="1" data-min="0" data-max="15000">
+                <div class="slider" id="slider-1">
+                  <div class="slider__value"><span class="slider__count" id="first-1">5000</span><span class="slider__count" id="last-1">10000</span></div>
+                  <input type="text" id="count-min-1" name="cost-min" value="5000">
+                  <input type="text" id="count-max-1" name="cost-max" value="10000">
+                </div>
+              </div>
+            </div>
+            <div class="form-control__label">buttons</div>
+            <div class="ui-kit__wrapper">
+              <div class="btn btn--color">click me
+              </div>
+              <button class="btn btn--color" type="submit" disabled>click me
+              </button>
+              <div class="btn btn--border">click me
+              </div>
+              <button class="btn btn--border" type="submit" disabled>click me
+              </button>
+              <div class="btn btn--link">click me
+              </div>
+              <div class="btn btn--color btn--full btn--arrow-right">перейти к оплате
+              </div>
+              <button class="btn btn--color btn--full btn--arrow-right" type="submit" disabled>перейти к оплате
+              </button>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
-<script src="js/nouislider.min.js"></script>
-<script src="js/script.js"></script>
-</body>
+    <script src="js/nouislider.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
 </html>
